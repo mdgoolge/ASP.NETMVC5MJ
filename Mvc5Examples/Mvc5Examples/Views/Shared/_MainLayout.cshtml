@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</head>
+<body>
+    <div class="container">
+        <img src="/common/images/home/mainpage.jpg" style="width: 100%; height: 153px;" />
+    </div>
+    <div class="container">
+        <nav class="navbar navbar-inverse">
+            <nav class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </nav>
+            <nav class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("第1章", "Index", "ch01NavDemos", new { area = "Chapter01", id = "ch01Index" }, null)</li>
+                    @for (int i = 2; i <= 9; i++)
+                    {
+                        var areaName = "Chapter" + i.ToString("d2");
+                        var chIndex = string.Format("ch{0:d2}Index", i);
+                        <li>
+                            @Html.ActionLink(
+                            string.Format("第{0}章", i),   //链接提示信息(linkText)
+                            "Index",  //操作方法名(actionName)
+                            string.Format("ch{0:d2}Demos", i), //控制器名
+                            new { area = areaName ,id = chIndex}, //路由参数(routervalues)
+                            null  //HTML特性(htmlAttributes)
+                         )
+                        </li>
+                    }
+                    <li>@Html.ActionLink("第10章", "Index", "ch10", new { area = "Chapter10", id = "ch10Index" }, null)</li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("模拟运行", "emulator", "Home", new { area = "" }, null)</li>
+                </ul>
+            </nav>
+        </nav>
+        @RenderBody()
+        <div class="panel-footer  text-center">
+            @Html.ActionLink("转到模板默认的主页", "Index", "Home")
+        </div>
+    </div>
+</body>
+</html>

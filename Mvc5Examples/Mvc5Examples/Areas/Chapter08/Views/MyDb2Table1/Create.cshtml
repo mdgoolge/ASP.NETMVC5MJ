@@ -1,0 +1,39 @@
+﻿@model Mvc5Examples.Areas.Chapter08.Models.MyDb2Model.MyTable1
+@{
+    var a1 = new { @class = "col-md-2 control-label" };
+    var a2 = "col-md-10";
+    var a3 = new { htmlAttributes = new { @class = "form-control" } };
+    var a4 = new { @class = "text-danger" };
+}
+<style>
+    input { max-width: 200px; }
+</style>
+<h4 class="modal-title">添加新行</h4>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.KeChengID, a1)
+            <div class="@a2">
+                @Html.EditorFor(model => model.KeChengID, a3)
+                @Html.ValidationMessageFor(model => model.KeChengID, "", a4)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.KeChengName, a1)
+            <div class="@a2">
+                @Html.EditorFor(model => model.KeChengName, a3)
+                @Html.ValidationMessageFor(model => model.KeChengName, "", a4)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+                <input type="submit" value="添加" class="btn btn-primary" />
+                <a class="btn btn-primary" href="@Url.Action("Index")">取消</a>
+            </div>
+        </div>
+    </div>
+}

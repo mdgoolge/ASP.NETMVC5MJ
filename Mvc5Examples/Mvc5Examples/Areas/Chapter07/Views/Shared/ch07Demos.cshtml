@@ -1,0 +1,40 @@
+﻿@{
+    AjaxOptions opts = (AjaxOptions)TempData["AjaxOptions"];
+    string a = "Index", c = "ch07Demos";
+    var attr = new { @class = "list-group-item" };
+}
+<div id="demo" class="accordionDemo">
+    <h3 class="btn-success">常用组件和插件</h3>
+    <div class="list-group" style="max-height:200px">
+        @Ajax.ActionLink("例1-buttonsetUI", a, c, new { id = "buttonsetUI" }, opts, attr)
+        @Ajax.ActionLink("例2-面板", a, c, new { id = "panel1" }, opts, attr)
+        @Ajax.ActionLink("例3-嵌套面板", a, c, new { id = "panel2" }, opts, attr)
+        @Ajax.ActionLink("例4-折叠面板1", a, c, new { id = "accordion1" }, opts, attr)
+        @Ajax.ActionLink("例5-折叠面板2(UI)", a, c, new { id = "accordion2UI" }, opts, attr)
+        @Ajax.ActionLink("例6-警告框", a, c, new { id = "dialogAlert" }, opts, attr)
+        @Ajax.ActionLink("例7-模式对话框", a, c, new { id = "dialogModal" }, opts, attr)
+        @Ajax.ActionLink("例8-弹出框", a, c, new { id = "popover" }, opts, attr)
+        @Ajax.ActionLink("例9-工具提示", a, c, new { id = "tooltip" }, opts, attr)
+        @Ajax.ActionLink("例10-进度条", a, c, new { id = "progressBar" }, opts, attr)
+        @Ajax.ActionLink("例11-滑动条（UI）", a, c, new { id = "sliderUI" }, opts, attr)
+        @Ajax.ActionLink("例12-菜单（UI）", a, c, new { id = "menu1UI" }, opts, attr)
+        @Ajax.ActionLink("例13-下拉菜单1", a, c, new { id = "dropdown1" }, opts, attr)
+        @Ajax.ActionLink("例14-下拉菜单2", a, c, new { id = "dropdown2" }, opts, attr)
+        @Ajax.ActionLink("例15-日期选择器（UI）", a, c, new { id = "datePickerUI" }, opts, attr)
+    </div>
+    <h3 class="btn-info">用CSS3实现复杂动画</h3>
+    <div class="list-group">
+        @Ajax.ActionLink("例16-CSS3关键帧动画1", a, c, new { id = "animation1" }, opts, attr)
+        @Ajax.ActionLink("例17-CSS3关键帧动画2", a, c, new { id = "animation2" }, opts, attr)
+        @Ajax.ActionLink("例18-CSS3变换动画", a, c, new { id = "animation3" }, opts, attr)
+    </div>
+    <h3 class="btn-warning">用jQuery实现常见动画</h3>
+    <div class="list-group">
+        @Ajax.ActionLink("例19-jQuery动画1", a, c, new { id = "animation4" }, opts, attr)
+        @Ajax.ActionLink("例20-jQuery动画2", a, c, new { id = "animation5" }, opts, attr)
+        @Ajax.ActionLink("例21-jQuery动画3", a, c, new { id = "animation6" }, opts, attr)
+    </div>
+</div>
+<script>
+    $("#demo").accordion({ heightStyle: "content", collapsible: true });
+</script>

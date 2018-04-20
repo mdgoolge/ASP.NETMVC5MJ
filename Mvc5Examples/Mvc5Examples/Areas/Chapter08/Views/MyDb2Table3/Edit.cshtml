@@ -1,0 +1,41 @@
+﻿@model  List<Mvc5Examples.Areas.Chapter08.Models.MyDb2Model.MyTable3>
+
+<p class="text-center" style="font-size:20px">编辑成绩</p>
+@using (Html.BeginForm(new { kcID = ViewBag.kcID }))
+{
+    @Html.AntiForgeryToken()
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                @{var t = Model.FirstOrDefault();}
+                <th>@Html.DisplayNameFor(model => t.StudentID)</th>
+                <th>@Html.DisplayNameFor(model => t.MyTable2.StudentName)</th>
+                <th>@Html.DisplayNameFor(model => t.MyTable1.KeChengID)</th>
+                <th>@Html.DisplayNameFor(model => t.MyTable1.KeChengName)</th>
+                <th>@Html.DisplayNameFor(model => t.Grade)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var m in Model)
+            {
+                var k = "a" + m.ID.ToString();
+                @Html.HiddenFor(modelitem => m.ID)
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => m.StudentID)</td>
+                    <td>@Html.DisplayFor(modelItem => m.MyTable2.StudentName)</td>
+                    <td>@Html.DisplayFor(modelItem => m.KeChengID)</td>
+                    <td>@Html.DisplayFor(modelItem => m.MyTable1.KeChengName)</td>
+                    <td>
+                        @Html.EditorFor(modelItem => m.Grade, "MyTable3", k, new { htmlAttributes = new { @class = "text-center", style = "max-width:60px;" } })
+                        @Html.ValidationMessage(k, "", new { style = "color:red;" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="center-block text-center">
+        <button type="submit" class="btn btn-success">保存</button>
+        <a href="@Url.Action("Index")" class="btn btn-success">返回</a>
+    </div>
+
+}

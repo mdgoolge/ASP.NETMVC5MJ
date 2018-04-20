@@ -1,0 +1,118 @@
+﻿@{
+    var nums6 = "0 1 2 3 4 5";
+    var nums10 = "0 1 2 3 4 5 6 7 8 9";
+}
+
+<style>
+    .timer {
+        margin-top:20px;
+        padding: 10px;
+        display: inline-block;
+        border: 7px solid #efefef;
+        border-radius: 5px;
+        position: relative;
+        background: linear-gradient(to top, #222, #444);
+        box-shadow: inset
+                    0 0 5px 3px rgba(255,0,0,.6),
+                    0 0 5px 6px rgba(0,182,0,.6),
+                    0 0 5px 10px rgba(255,255,0,.6);
+    }
+
+    .cell {
+        width: 35px;
+        font-size: 36px;
+        height: 45px;
+        overflow: hidden;
+        position: relative;
+        float: left;
+    }
+    .cell-v{overflow:visible; border: 1px solid blue;}
+
+    .n {
+        width: 30px; text-align: center;
+        line-height: 45px; vertical-align: middle;
+        position: absolute; top: 0; left:0;
+        animation-play-state: paused;
+    }
+
+    .n-shadow{
+        text-shadow: 0 0 5px rgba(255, 255, 255, 1);
+        color: #fff;
+    }
+
+    .n6{ animation:move6 1s steps(6, end) infinite; }
+    .n10{ animation:move10 1s steps(10, end) infinite; }
+
+    .m2 { animation-duration: 3600s; }
+    .m1 { animation-duration: 600s; }
+    .s2 { animation-duration: 60s; }
+    .s1 { animation-duration: 10s; }
+    .ms3 { animation-duration: 1s; }
+    .ms2 { animation-duration: 100ms; }
+    .ms1 { animation-duration: 10ms; }
+
+    .stop-play { animation: none; }
+
+    @@keyframes move10 {
+        0% { top: 0; }
+        100% { top: -450px; }
+    }
+    @@keyframes move6 {
+        0% { top: 0; }
+        100% { top: -270px; }
+    }
+</style>
+<div class="row" style="position:relative">
+    <div class="col-md-7">
+        <h4>数字秒表计时器</h4>
+        <div class="timer">
+            <div class="cell"><div class="n n-shadow n6 m2">@nums6</div></div>
+            <div class="cell"><div class="n n-shadow n10 m1">@nums10</div></div>
+
+            <div class="cell"><div class="n n-shadow">:</div></div>
+            <div class="cell"><div class="n n-shadow n6 s2">@nums6</div></div>
+            <div class="cell"><div class="n n-shadow n10 s1">@nums10</div></div>
+
+            <div class="cell"><div class="n n-shadow">:</div></div>
+            <div class="cell"><div class="n n-shadow n10 ms3">@nums10</div></div>
+            <div class="cell"><div class="n n-shadow n10 ms2">@nums10</div></div>
+            <div class="cell"><div class="n n-shadow n10 ms1">@nums10</div></div>
+        </div>
+        <div class="btn-block" style="margin-top:30px;margin-left:45px">
+            <button id="start" class="btn btn-primary">开始</button>
+            <button id="pause" class="btn btn-primary">暂停</button>
+            <button id="continue" class="btn btn-primary">继续</button>
+            <button id="stop" class="btn btn-primary">停止</button>
+        </div>
+        <h5 style="margin-top:30px">请观察右侧（分、秒、毫秒）的动画执行情况理解具体实现</h5>
+    </div>
+    <div class="col-md-5">
+        <div>
+            <div class="cell cell-v"><div class="n n6 m2">@nums6</div></div>
+            <div class="cell cell-v"><div class="n n10 m1">@nums10</div></div>
+
+            <div class="cell"><div class="n">:</div></div>
+            <div class="cell cell-v"><div class="n n6 s2">@nums6</div></div>
+            <div class="cell cell-v"><div class="n n10 s1">@nums10</div></div>
+
+            <div class="cell"><div class="n">:</div></div>
+            <div class="cell cell-v"><div class="n n10 ms3">@nums10</div></div>
+        </div>
+    </div>
+</div>
+<script>
+    var t = $(".n");
+    $("#start").click(function () {
+        t.removeClass("stop-play");
+        t.css({ "animation-play-state": "running" });
+    });
+    $("#pause").click(function () {
+        t.css({ "animation-play-state": "paused" });
+    });
+    $("#continue").click(function () {
+        t.css({ "animation-play-state": "running" });
+    });
+    $("#stop").click(function () {
+        t.addClass("stop-play");
+    });
+</script>

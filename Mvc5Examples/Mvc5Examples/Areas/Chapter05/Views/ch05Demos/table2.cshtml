@@ -1,0 +1,103 @@
+﻿<h3>表格（table）基本用法2</h3>
+
+<h4>（1）仅有横线的表格（table）</h4>
+<table class="table">
+    @Html.Partial("tablePartial")
+</table>
+
+<h4>（2）条纹状表格（table-striped）</h4>
+<table class="table table-striped">
+    @Html.Partial("tablePartial")
+</table>
+
+<h4>（3）带边框的表格（table-bordered）</h4>
+<table class="table table-bordered">
+    @Html.Partial("tablePartial")
+</table>
+
+
+<h4>（4）紧缩表格（table-condensed）</h4>
+<table class="table table-bordered table-condensed">
+    @Html.Partial("tablePartial")
+</table>
+
+<h4>（5）鼠标悬停（table-hover）</h4>
+<table class="table table-bordered table-condensed table-hover">
+    @Html.Partial("tablePartial")
+</table>
+
+
+<h4>（6）状态类（active、success、info、warning、danger）</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Column heading</th>
+            <th>Column heading</th>
+            <th>Column heading</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="active">
+            <td>1</td>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+        </tr>
+        <tr class="success">
+            <td>3</td>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+        </tr>
+        <tr class="info">
+            <td>5</td>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+        </tr>
+        <tr class="warning">
+            <td>7</td>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+        </tr>
+        <tr class="danger">
+            <td>9</td>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>（7）响应式表格</h4>
+<div class="table-responsive">
+    <table class="table table-bordered">
+        @Html.Partial("tablePartial")
+    </table>
+</div>

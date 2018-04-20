@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "razor1";
+    int m = 5;
+    int n = 10;
+    var foreColor = "white";
+    var backColor = "red";
+}
+
+@*在CSS中使用@符号*@
+<style>
+    #div1{ color: @foreColor; background-color: @backColor; }
+</style>
+
+@*在HTML元素中使用@符号*@
+<div>
+    m = 5, n = 10, m + n = @(m + n)
+</div>
+<div id="div1"></div>
+
+@*在脚本中使用@符号*@
+<script>
+    $("#div1").text("获取URL路由字符串：@Url.Action("Welcome", "ch02Demos")");
+</script>
+
+@*变量与内联表达式*@
+<h4 class="btn-primary">@Html.Raw("用@符号标识其后的变量或内联表达式")</h4>
+<p>用法1（变量右边有空格或能区分时，可直接写）:这是 @m 的结果。</p>
+<p>用法2（变量右边无空格或无法区分时，需要加括号）:这是@(m)的结果</p>
+<p>用法3（是表达式时，需要加括号）:这是@(m + n)的结果</p>
+
+<h4 class="btn-primary">@Html.Raw("单语句块")</h4>
+@{ var myMessage = "Hello"; }
+<p>myMessage的值是：@myMessage</p>
+
+<h4 class="btn-primary">@Html.Raw("多语句块")</h4>
+@{
+    var greeting = "欢迎访问!";
+    var weekDay = DateTime.Now.ToString("dddd");
+    var greetingMessage = greeting + " 今天是：" + weekDay;
+}
+<p>@greetingMessage</p>
+
+<h4 class="btn-primary">@Html.Raw("特殊字符的用法")</h4>
+<p>@Html.Raw("<张三>说：\"今天天气真好！\"")</p>

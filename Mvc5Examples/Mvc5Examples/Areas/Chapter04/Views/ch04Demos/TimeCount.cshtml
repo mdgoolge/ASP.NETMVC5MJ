@@ -1,0 +1,33 @@
+﻿<div class="text-center">
+    <h2>计时器基本用法（TimeCount）</h2>
+    <p>计时时间（秒）：<label id="txt1"></label></p>
+    <p>剩余时间（秒）：<label id="txt2"></label></p>
+    <p>
+        <button id="btn1" type="button" class="btn btn-primary">开始计时</button>
+        <button id="btn2" type="button" class="btn btn-warning">停止计时</button>
+    </p>
+    <pre>提示：单击开始计时按钮，输入框会每秒更新1次计时时间，按停止计时按钮结束计时。</pre>
+</div>
+<script>
+    var m = 30;
+    var n1 = 0;
+    var n2 = m;
+    var t;
+    $(function () {
+        $("#btn1").click(function () { start() });
+        $("#btn2").click(function () { stop(); });
+    });
+    function start() {
+        $("#txt1").html(n1.toString());
+        $("#txt2").html(n2.toString());
+        n1++; n2--;
+        if (n1 > m) stop();
+        else t = window.setTimeout("start()", 1000);
+    }
+    function stop() {
+        window.clearTimeout(t);
+        n1 = 0; n2 = m;
+        $("#txt1").html("已停止");
+        $("#txt2").html("已停止");
+    }
+</script>

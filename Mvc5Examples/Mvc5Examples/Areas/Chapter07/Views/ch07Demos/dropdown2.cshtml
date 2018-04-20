@@ -1,0 +1,27 @@
+﻿<style>
+    .ui-menu {
+        width: 150px;
+    }
+</style>
+<h4>下拉菜单基本用法2（和jQueryUI的menu结合使用）</h4>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <ul class="list-inline">
+            <li class="dropdown">
+                <a data-toggle="dropdown" href="#">菜单项1<span class="caret"></span></a>
+                @Html.Partial("menu2UI")
+            </li>
+            <li class="dropdown">
+                <a data-toggle="dropdown" href="#">菜单项2<span class="caret"></span></a>
+                @Html.Partial("menu3UI")
+            </li>
+        </ul>
+    </div>
+    <div class="panel-body" style="min-height:200px">
+        hello
+    </div>
+</div>
+@*<script>
+    $("#menu1").menu();
+    $("#menu2").menu();
+</script>*@

@@ -1,0 +1,15 @@
+﻿<h2>JavaScript数组的基本用法</h2>
+<pre id="pre1"></pre>
+<pre id="pre2"></pre>
+<script>
+    $(document).ready(function () {
+        var a = ["aaa", "bb", 12];
+        $("#pre1").html('a=["aaa","bb",12]');
+        var s = "";
+        for (var i = 0; i < a.length; i++) {
+            s += "a[" + i + "]=" + a[i] + "<br/>";
+        }
+        $("#pre2").html(s);
+    });
+</script>
+

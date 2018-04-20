@@ -1,0 +1,33 @@
+﻿@{
+    var svg1 = "/Areas/Chapter10/common/svgFiles/myRect1.svg";
+    int x = 10, dx = 15, w = 100, h = 80;
+}
+<style>
+    .a1 { fill: red; stroke: green; stroke-width: 5; }
+    .a2 { fill: none; stroke: red; stroke-width: 5; }
+</style>
+<h5>直接实现</h5>
+<div class="dl-horizontal" style="border:1px solid grey">
+    <svg width="260" height="120">
+        <rect class="a1" x="@x" y="10" width="@w" height="@h" />
+        <rect class="a2" x="@(x+w+2*dx)" y="10" width="@w" height="@h" />
+    </svg>
+    <button id="btn1" class="btn btn-primary" style="margin-top:-100px">[显示/隐藏]文字</button>
+    <svg width="150" height="120">
+        <rect class="a1" x="@x" y="10" width="@w" height="@h" />
+        <text id="t2" x="30" y="65" style="display:none; fill:white">Hello</text>
+    </svg>
+</div>
+<h5>在myRect1.svg文件中实现</h5>
+<div class="dl-horizontal" style="border:1px solid grey">
+    @*建议的做法（可交互）*@
+    <object data="@svg1"></object>
+
+    @*仅仅将.svg文件作为图像文件来看待*@
+    <embed src="@svg1" type="image/svg+xml" />
+    <img src="@svg1" />
+    <img src="@svg1" width="200" />
+</div>
+<script>
+    $("#btn1").click(function () { $("#t2").toggle(); })
+</script>

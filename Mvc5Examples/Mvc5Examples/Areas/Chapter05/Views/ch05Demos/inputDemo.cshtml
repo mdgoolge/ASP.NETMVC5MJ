@@ -1,0 +1,47 @@
+﻿@{
+    var ajaxOptions = new AjaxOptions { UpdateTargetId = "bodyContent" };
+    var c1 = "control-label col-md-3";
+    var c2 = "col-md-2 form-control";
+}
+<style>
+    input { max-width: 130px; }
+</style>
+<div class="center-block panel panel-primary" style="width:70%;">
+    <div class="panel-heading">input元素及其常用特性的基本用法</div>
+    @using (Ajax.BeginForm(ajaxOptions))
+    {
+        <div class="panel-body form-horizontal">
+            <div class="form-group">
+                <label class="@c1">用户id：</label>
+                <input class="@c2" name="userId" type="text" readonly />
+                <label class="@c1">注册信息：</label>
+                <input class="@c2" name="userInfo" type="text" disabled />
+            </div>
+            <div class="form-group">
+                <label class="@c1">用户名：</label>
+                <input class="@c2" name="userName" type="text" maxlength="5" required placeholder="输入用户名" />
+                <label class="@c1">密码：</label>
+                <input class="@c2" name="pwd" type="password" required placeholder="输入密码" />
+            </div>
+            <div class="form-group">
+            </div>
+            <div class="form-group">
+                <label class="@c1">邮箱：</label>
+                <input class="@c2" name="email" type="email" required />
+                <label class="@c1">网址：</label>
+                <input class="@c2" name="url" type="url" required />
+            </div>
+            <div class="form-group">
+                <label class="@c1">第1个数(n1)：</label>
+                <input class="@c2" name="n1" type="number" min="5" max="10" required />
+                <label class="@c1">第2个数(n2)：</label>
+                <input class="@c2" name="n2" type="number" min="5" max="10" required />
+            </div>
+            <hr style=" background-color:blue; height:3px;" />
+            <div class="form-group text-center">
+                <input name="btn" type="submit" value="提交" class="btn btn-success" />
+            </div>
+        </div>
+    }
+    <div class="panel-footer text-center">@ViewBag.Result</div>
+</div>

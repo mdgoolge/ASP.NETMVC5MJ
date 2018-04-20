@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "GET方式";
+    var action = Url.Action("HttpGetDemo", "ch05Demos");
+}
+<h2>HttpGet</h2>
+<form method="get" action="@action" class="form-inline">
+    <div class="form-group">
+        <label for="text1">姓名:</label>
+        <input name="text1" type="text" value="@ViewBag.UserName" class="form-control">
+        <label for="text2">年龄:</label>
+        <input name="text2" type="text" value="@ViewBag.Age" class="form-control">
+        <button type="submit" class="btn btn-default">提交</button>
+    </div>
+</form>
+<br />
+<pre>
+    @(string.Format("传输方式：{0}，提交结果：姓名={1}，年龄={2}",
+    Request.HttpMethod, ViewBag.UserName, ViewBag.Age))
+</pre>

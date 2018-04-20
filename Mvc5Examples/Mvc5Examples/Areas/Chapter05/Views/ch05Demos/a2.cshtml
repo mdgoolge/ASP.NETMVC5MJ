@@ -1,0 +1,25 @@
+﻿<h2 class="text-center">系统功能简介</h2>
+<div class="row">
+    <div class="col-md-3">
+        <ul class="list-group">
+            <li class="list-group-item"><a href="#div1">第1部分</a></li>
+            <li class="list-group-item"><a href="#div2">第2部分</a></li>
+            <li class="list-group-item"><a href="#div3">第3部分</a></li>
+            <li class="list-group-item"><a href="#div4">第4部分</a></li>
+        </ul>
+    </div>
+    <div class="col-md-9" style="border: 1px solid blue; height: 300px; overflow: scroll;">
+        <div id="div1">
+            @Html.Partial("a2Part1")
+        </div>
+        <div id="div2"">
+            @Html.Partial("a2Part2")
+        </div>
+        <div id="div3">
+            @Html.Partial("a2Part3")
+        </div>
+        <div id="div4">
+            @Html.Partial("a2Part4")
+        </div>
+    </div>
+</div>

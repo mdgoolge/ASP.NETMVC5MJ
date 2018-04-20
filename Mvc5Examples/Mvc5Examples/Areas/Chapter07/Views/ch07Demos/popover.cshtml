@@ -1,0 +1,40 @@
+﻿<style>
+    input[type=text]{max-width:150px;}
+</style>
+<h3>Bootstrap提供的弹出框基本用法</h3>
+<h5>用法1：不指定位置时，默认在右侧弹出</h5>
+<div class="form-horizontal">
+    <div class="form-group">
+        <label class="col-md-2 control-label">姓名：</label>
+        <div class="col-md-6">
+            <input type="text" class="form-control" data-content="请输入长度在3～20之间的字符" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">年龄：</label>
+        <div class="col-md-6">
+            <input type="text" class="form-control" title="提示" data-content="请输入18～60之间的数字" />
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <h5>用法2：指定位置（仅指定弹出内容）</h5>
+        <button type="button" class="btn btn-default" data-placement="left" data-content="左侧弹出框内容">左侧弹出</button>
+        <button type="button" class="btn btn-default" data-placement="top" data-content="上方弹出框内容">上方弹出</button>
+        <button type="button" class="btn btn-default" data-placement="bottom" data-content="下方弹出框内容">下方弹出</button>
+        <button type="button" class="btn btn-default" data-placement="right" data-content="右侧弹出框内容">右侧弹出</button>
+    </div>
+    <div class="col-md-6">
+        <h5>用法3：指定位置（同时指定标题和内容）</h5>
+        <button type="button" class="btn btn-default" data-placement="left" title="标题1" data-content="左侧弹出框内容">左侧弹出</button>
+        <button type="button" class="btn btn-default" data-placement="top" title="标题2" data-content="上方弹出框内容">上方弹出</button>
+        <button type="button" class="btn btn-default" data-placement="bottom" title="标题3" data-content="下方弹出框内容">下方弹出</button>
+        <button type="button" class="btn btn-default" data-placement="right" title="标题4" data-content="右侧弹出框内容">右侧弹出</button>
+    </div>
+</div>
+<script>
+    //不指定触发器选项时默认为click（单击弹出，再次单击消失，所以一般指定选项）
+    $("input[type=text]").popover({ trigger: "hover", placement:"right" }); 
+    $(".btn").popover({ trigger: "hover" });
+</script>

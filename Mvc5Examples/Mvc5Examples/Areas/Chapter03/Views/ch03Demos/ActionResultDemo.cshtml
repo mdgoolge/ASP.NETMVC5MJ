@@ -1,0 +1,64 @@
+﻿@{
+    var c1 = "col-md-4";
+    var c2 = "col-md-6";
+}
+<h3>ActionResult基本用法</h3>
+<p class="row">
+    <div class="@c1">
+        @Ajax.ActionLink("ContentResult示例1", "ContentResultDemo1", "ch03Demos", new AjaxOptions { UpdateTargetId = "div1" })
+    </div>
+    <div class="@c2" id="div1"></div>
+</p>
+
+<p class="row">
+    <div class="@c1">
+        @Ajax.ActionLink("ContentResult示例2", "ContentResultDemo2", "ch03Demos", new AjaxOptions())
+    </div>
+</p>
+
+<p class="row">
+    <div class="@c1">
+        @Ajax.ActionLink("JavaScriptResult示例", "JavaScriptResultDemo", "ch03Demos", new AjaxOptions())
+    </div>
+</p>
+
+<p class="row">
+    <div class="@c1">
+        @Ajax.ActionLink("JsonResult示例1", "JsonResultDemo1", "ch03Demos",
+        new AjaxOptions { UpdateTargetId = "div2", HttpMethod = "POST" })
+    </div>
+    <div class="@c2" id="div2"></div>
+</p>
+
+<p class="row">
+    <div class="@c1">
+        @Ajax.ActionLink("JsonResult示例2", "JsonResultDemo2", "ch03Demos",
+        new AjaxOptions
+        {
+            HttpMethod = "POST",
+            OnSuccess = "UpdateDiv3"
+        })
+    </div>
+    <div class="@c2" id="div3">
+        <span id="enName"></span>
+        <span id="cnName"></span>
+    </div>
+    <script>
+        function UpdateDiv3(context) {
+            $("#enName").html("英文名：" + context.EnglishName + "，");
+            $("#cnName").html("中文名：" + context.ChineseName);
+        }
+    </script>
+</p>
+
+<p class="row">
+    <div class="@c1">
+        @Html.ActionLink("FileResult示例", "FileResultDemo", "ch03Demos")
+    </div>
+</p>
+
+<p class="row">
+    <div class="@c1">
+        @Html.ActionLink("RedirectResult示例", "RedirectResultDemo", "ch03Demos")
+    </div>
+</p>

@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "btnDemo4";
+}
+
+<h2>Bootstrap单选按钮基本用法（btnRadioButton1）（将一组单选框组合为按钮组使用，并添加 data-toggle="buttons" ，可以为它们赋予单选框样式）</h2>
+<h6>对于预先选定的值（也就是单选框），需要为其对应的 label 标签添加 .active 类</h6>
+<div class="btn-group" data-toggle="buttons">
+  <label class="btn btn-default active"><input type="radio" name="options" id="option1" checked>选项1</label>
+  <label class="btn btn-default"><input type="radio" name="options" id="option2">选项2</label>
+  <label class="btn btn-default"><input type="radio" name="options" id="option3">选项3</label>
+</div>

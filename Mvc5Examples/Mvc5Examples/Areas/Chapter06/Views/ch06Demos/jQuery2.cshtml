@@ -1,0 +1,63 @@
+﻿<style>
+    .mydiv {
+        margin-bottom: 15px;
+        border: 1px solid grey;
+    }
+    .myClass {
+        border: 3px solid red;
+        width: 100px;
+    }
+    .selected {
+        background-color: Red;
+        color: White;
+    }
+    input[checked] {
+        margin-left: 5px;
+    }
+</style>
+
+<h4 class="btn-block btn-success text-center">jQuery提供的基本过滤选择器的用法</h4>
+<div class="row" style="border:1px solid grey; margin:15px 45px">
+    <div class="col-md-6">
+        <div class="mydiv" style="margin-top:15px">第1个div</div>
+        <div class="mydiv">第2个div</div>
+        <div class="mydiv">第3个div</div>
+        <div class="mydiv">第4个div</div>
+        <div class="mydiv">第5个div</div>
+        <div style="margin-bottom:15px">
+            <input id="c1" type="checkbox" />选项1
+            <input id="c2" type="checkbox" checked="checked" />选项2
+            <input id="c3" type="checkbox" checked="checked" />选项3
+            <input id="c4" type="checkbox" />选项4
+        </div>
+    </div>
+    <div class="col-md-6" style="border-left:1px solid grey">
+        <input type="button" class="btn-block" id="btn1" style="margin-top:15px" value="用法1:选取第一个div元素" />
+        <input type="button" class="btn-block" id="btn2" value="用法2:选取最后一个div元素" />
+        <input type="button" class="btn-block" id="btn3" value="用法3:选取索引是偶数的div元素" />
+        <input type="button" class="btn-block" id="btn4" value="用法4:选取索引是奇数的div元素" />
+        <input type="button" class="btn-block" id="btn5" value="用法5:选取索引等于1的div元素" />
+        <input type="button" class="btn-block" id="btn6" value="用法6:选取索引大于1的div元素" />
+        <input type="button" class="btn-block" id="btn7" value="用法7:选取索引小于3的div元素" />
+        <input type="button" class="btn-block" id="btn8" style="margin-bottom:15px" value="用法8:选择未选中的input元素" />
+    </div>
+</div>
+<pre id="pre1" class="text-center"></pre>
+<script>
+    $(document).ready(function () {
+        $("#btn1").click({ d1: ".mydiv:first", d2: "1" }, myFunc);
+        $("#btn2").click({ d1: ".mydiv:last", d2: "2" }, myFunc);
+        $("#btn3").click({ d1: ".mydiv:even", d2: "3" }, myFunc);
+        $("#btn4").click({ d1: ".mydiv:odd", d2: "4" }, myFunc);
+        $("#btn5").click({ d1: ".mydiv:eq(1)", d2: "5" }, myFunc);
+        $("#btn6").click({ d1: ".mydiv:gt(1)", d2: "6" }, myFunc);
+        $("#btn7").click({ d1: ".mydiv:lt(3)", d2: "7" }, myFunc);
+    });
+    function myFunc(e) {
+        $(".mydiv").removeClass("selected");
+        $(e.data.d1).addClass("selected", 1000); //动画持续1秒
+        $("#pre1").text($.validator.format(
+            "（用法{0}）的选择器为：{1}", e.data.d2, e.data.d1));
+    }
+</script>
+

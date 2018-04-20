@@ -1,0 +1,40 @@
+﻿<h2>JavaScript的if语句和switch语句的基本用法</h2>
+<label>请输入整数：<input id="textbox1" type="text" value="15" /></label>
+<button id="btn1" class="btn btn-primary">确定</button>
+<pre id="pre1"></pre>
+<script>
+    $(function () {
+        $("#btn1").click(function () {
+            var textbox = $("#textbox1");
+            var n = parseInt(textbox.val());
+            var result = "";
+            if (n >= 60) {
+                textbox.css("color", "black");
+                result = "n=" + n + "（及格）";
+            }
+            else {
+                textbox.css("color", "red");
+                result = "n=" + n + "（不及格）";
+            }
+            var x = parseInt(n / 10);
+            switch (x) {
+                case 0:
+                    result += "，结果在0-9范围内";
+                    break;
+                case 1:
+                case 2:
+                    result += "，结果在10-29范围内";
+                    break;
+                case 3:
+                case 4:
+                case 5:
+                    result += "，结果在30-59范围内";
+                    break;
+                default:
+                    result += "，结果在60以上";
+                    break;
+            }
+            $("#pre1").html(result);
+        });
+    });
+</script>

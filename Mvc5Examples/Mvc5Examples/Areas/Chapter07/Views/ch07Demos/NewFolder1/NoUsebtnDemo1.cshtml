@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "btnDemo1";
+}
+
+<h2>btnDemo1(为按钮添加 data-loading-text="Loading..." 属性可以让按钮展示“正在加载”状态。)</h2>
+<button type="button" id="loading-btn" data-loading-text="正在加载..." class="btn btn-primary">
+    Loading state
+</button>
+<script>
+
+
+    $('#loading-btn').click(function () {
+        var btn = $(this);
+        btn.button('loading');
+        //$.ajax(...).always(function () {
+        //  btn.button('reset')
+        //});
+    });
+</script>

@@ -1,0 +1,73 @@
+﻿@{
+    Layout = "~/Areas/Chapter10/Views/Shared/_ch10Layout3D.cshtml";
+}
+<div id="container"></div>
+<div id="info">3D设计基本用法3：给对象添加材质</div>
+<script>
+    var container = document.getElementById('container');
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(50, width / height, 1, 1000);
+    var renderer = new THREE.WebGLRenderer({ antialias: true });
+    var mesh1 = new THREE.Mesh( new THREE.SphereGeometry(5, 16, 8), null);
+    var mesh2 = new THREE.Mesh( new THREE.BoxGeometry(16, 16, 16), null);
+    var light = new THREE.DirectionalLight(0xffffff);
+
+    function init() {
+        camera.position.z = 250;
+        scene.add(camera);
+
+        light.position.set(0, 0, 1);
+        scene.add(light);
+
+        //添加纹理和材质
+        var map = THREE.ImageUtils.loadTexture(
+            "/Threejs/examples/textures/UV_Grid_Sm.jpg");
+        map.wrapS = map.wrapT = THREE.RepeatWrapping;
+        map.anisotropy = 16;
+        var material = new THREE.MeshLambertMaterial({ ambient: 0xbbbbbb, map: map, side: THREE.DoubleSide });
+
+        mesh1.material = material;
+        mesh1.position.x = -100;
+        mesh1.scale.x = mesh1.scale.y = mesh1.scale.z = 10;
+        scene.add(mesh1);
+
+        mesh2.material = material;
+        mesh2.position.x = 100;
+        mesh2.scale.x = mesh2.scale.y = mesh2.scale.z = 4;
+        scene.add(mesh2);
+
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(width, height);
+        container.appendChild(renderer.domElement);
+        window.addEventListener('resize', onWindowResize, false);
+    }
+
+    function animate() {
+        requestAnimationFrame(animate);
+        render();
+    }
+
+    function render() {
+        var timer = Date.now() * 0.0005;
+        camera.position.x = Math.cos(timer) * 300;
+        camera.position.y = Math.sin(timer) * 200;
+        camera.lookAt(scene.position);
+
+        mesh1.rotation.x += 0.01;
+        mesh1.rotation.y += 0.01;
+        mesh2.rotation.x += 0.01;
+        mesh2.rotation.y += 0.01;
+
+        renderer.render(scene, camera);
+    }
+
+    function onWindowResize() {
+        width = windows.innerWidth;
+        height = window.innerHeight;
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+        renderer.setSize(width, height);
+    }
+</script>

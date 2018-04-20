@@ -1,0 +1,7 @@
+﻿.round { border-style: none; background-color: #008080; color: white; height: 40px; border-radius: 15px; margin: 10px; }
+
+div.round1, div.round2 { clear: both; display: inline-block; width: 200px; height: 50px; margin: 10px; padding-top: 10px; }
+
+div.round1 { border: 6px solid; border-radius: 12px; }
+
+div.round2 { border: 6px solid red; border-radius: 40%; }

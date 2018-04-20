@@ -1,0 +1,30 @@
+﻿@{
+    var opt = (AjaxOptions)TempData["AjaxOptions"];
+    var attr = new { @class = "list-group-item" };
+    string a = "Index1", c = "ch06Demos";
+}
+<div style="perspective:350px">
+    <div id="AccordionDemoRight" class="accordionDemo"
+         style="transform: rotateY(-15deg) translate3d(6px, 17px, 0) scaleX(1.18) skewY(17deg)">
+        <h3 class="btn-success">常用样式控制属性</h3>
+        <div class="list-group" style="max-height: 200px;">
+            @Ajax.ActionLink("例10-背景控制", a, c, new { id = "background" }, opt, attr)
+            @Ajax.ActionLink("例11-居中显示", a, c, new { id = "display" }, opt, attr)
+            @Ajax.ActionLink("例12-文本控制", a, c, new { id = "text1" }, opt, attr)
+            @Ajax.ActionLink("例13-定位控制", a, c, new { id = "position" }, opt, attr)
+            @Ajax.ActionLink("例14-浮动", a, c, new { id = "text2" }, opt, attr)
+            @Ajax.ActionLink("例15-边框控制", a, c, new { id = "RoundCorner" }, opt, attr)
+            @Ajax.ActionLink("例16-flex", a, c, new { id = "flex" }, opt, attr)
+            @Ajax.ActionLink("例17-变换控制", a, c, new { id = "transform" }, opt, attr)
+            @Ajax.ActionLink("例18-jQuery1", a, c, new { id = "jQuery1" }, opt, attr)
+            @Ajax.ActionLink("例19-jQuery2", a, c, new { id = "jQuery2" }, opt, attr)
+        </div>
+    </div>
+</div>
+<script>
+    var options = {
+        heightStyle: "content",
+        collapsible: true
+    };
+    $("#AccordionDemoRight").accordion(options);
+</script>

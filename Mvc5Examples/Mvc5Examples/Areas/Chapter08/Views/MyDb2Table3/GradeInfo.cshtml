@@ -1,0 +1,41 @@
+﻿@model List<Mvc5Examples.Areas.Chapter08.Models.MyDb2Model.MyTable3>
+
+@using (Ajax.BeginForm(new AjaxOptions {UpdateTargetId="bodyContent" }))
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="col-md-4 control-label">查询内容（姓名或课程名称）：</label>
+            <div class="col-md-4">
+                <input type="text" name="search" value="@ViewBag.search" class="form-control" placeholder="全部" />
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-success">查询</button>
+            </div>
+        </div>
+    </div>
+}
+<h4 class="text-center">查询结果<span class="small">（提示：单击列标题可按该列排序）</span></h4>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            @{var t = Model.FirstOrDefault();}
+            <th>@Html.ActionLink("学号", "GradeInfo", new { sortOrder = "StudentID", search = ViewBag.search })</th>
+            <th>@Html.DisplayNameFor(model => t.MyTable2.StudentName)</th>
+            <th>@Html.ActionLink("课程编号", "GradeInfo", new { sortOrder = "KeChengID", search = ViewBag.search })</th>
+            <th>@Html.DisplayNameFor(model => t.MyTable1.KeChengName)</th>
+            <th>@Html.DisplayNameFor(model => t.Grade)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => m.StudentID)</td>
+                <td>@Html.DisplayFor(modelItem => m.MyTable2.StudentName)</td>
+                <td>@Html.DisplayFor(modelItem => m.KeChengID)</td>
+                <td>@Html.DisplayFor(modelItem => m.MyTable1.KeChengName)</td>
+                <td>@Html.DisplayFor(modelItem => m.Grade)</td>
+            </tr>
+        }
+    </tbody>
+</table>

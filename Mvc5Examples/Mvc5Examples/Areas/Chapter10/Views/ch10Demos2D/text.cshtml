@@ -1,0 +1,58 @@
+﻿<style>
+    svg, canvas { border: 1px solid grey; }
+    .mcanvas { border: 1px solid grey; }
+    .a1 { fill: #0094ff; stroke: #ff0000; }
+</style>
+<h3 class="btn-success">文本绘制</h3>
+<h4>用svg实现</h4>
+<svg width="100%" height="140" viewBox="0 0 1100 300">
+    <defs>
+        <path id="MyPath" d="M 100,200
+            C 200,100  300,0    400,100
+            C 500,200  600,300  700,200
+            C 800,100  900,100  900,100
+            C 1000,110 1100,120 1150,150" />
+    </defs>
+    <text font-family="Verdana" font-size="50.5" fill="blue">
+        <textPath href="#MyPath">
+            小花猫
+            <tspan dy="-30" fill="red">跳</tspan>
+            <tspan dy="30">起来,</tspan>
+            刺溜刺溜掉下来，一摆一摆又上来。
+        </textPath>
+    </text>
+</svg>
+<svg width="100%" height="70">
+    <defs>
+        <linearGradient id="gradient1">
+            <stop offset="0%" stop-color="yellow" />
+            <stop offset="30%" stop-color="#00FF00" />
+            <stop offset="60%" stop-color="red" />
+            <stop offset="100%" stop-color="#FFFFFF" />
+        </linearGradient>
+    </defs>
+    <text x="0" y="60" style="font: 40px '宋体'; fill:rgba(0, 0, 0, 0.5)">黑色透明的文本</text>
+    <text x="350" y="60" style="font: 60px '宋体' bold; fill:url(#gradient1)">渐变的文本</text>
+</svg>
+<h4>用canvas实现</h4>
+<canvas id="c1" style="width:100%; height:70px;"></canvas>
+<script>
+    var v = $("#c1");
+    v.attr("width", v.css("width"));
+    v.attr("height", v.css("height"));
+    var ctx = document.getElementById("c1").getContext("2d");
+    ctx.font = "40px '宋体'";
+    ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
+    ctx.fillText("黑色透明的文本", 0, 60);
+    ctx.restore();  //恢复绘图状态
+
+    var gradient = ctx.createLinearGradient(350, 100, 800, 100);
+    gradient.addColorStop(0, "Yellow");
+    gradient.addColorStop(0.3, "#00FF00");
+    gradient.addColorStop(0.6, "Red");
+    gradient.addColorStop(1.0, "#FFFFFF");
+    ctx.fillStyle = gradient;
+    ctx.font = "60px '宋体' bold";
+    ctx.fillText("渐变的文本", 350, 60);
+    ctx.restore();
+</script>

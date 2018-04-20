@@ -1,0 +1,31 @@
+﻿<style>
+    .mydiv { border: 5px solid #008080; height:100px; text-align:center; }
+    .roundCorner1 { border-radius: 15px; }
+    .roundCorner2 { border-radius: 50%; }
+    .roundCorner3 { border-top-left-radius:25px; border-top-right-radius:25px; }
+</style>
+<h5>圆角边框示例：</h5>
+<div class="row">
+    <div class="col-md-4">
+        <div class="mydiv roundCorner1">
+            div1
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="mydiv roundCorner2" style="padding-top:25px">
+            用长度表示4个角的圆角（顺序：左上、右上、右下、左下）
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="mydiv roundCorner3">
+            分别设置每个角
+        </div>
+    </div>
+</div>
+<h5>圆角按钮示例：</h5>
+<div class="center-block text-center">
+    <button class="btn btn-primary roundCorner1">按钮1</button>
+    <button class="btn btn-success roundCorner2">按钮2</button>
+    <button class="btn btn-danger roundCorner3">按钮3</button>
+</div>
+

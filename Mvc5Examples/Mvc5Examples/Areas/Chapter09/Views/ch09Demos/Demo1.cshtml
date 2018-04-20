@@ -1,0 +1,89 @@
+﻿@{
+    var r1 = "/api/MyStudents";
+    var r2 = "/api/MyStudents/15001002";
+    var r3 = "/api/MyStudents/15001005";
+    
+    //也可以用下面的办法实现
+    //var r1 = Url.HttpRouteUrl("DefaultApi", new { controller = "MyStudents" });
+    //var r2 = Url.HttpRouteUrl("DefaultApi", new { controller = "MyStudents",id="15001002" });
+}
+<ul id="result"></ul>
+
+<h4 class="bg-primary">r1（获取所有对象），URL=@r1，结果为：</h4>
+<ul id="result1"></ul>
+<h4 class="bg-primary">r2（获取指定对象），URL=@r2，结果为：</h4>
+<ul id="result2"></ul>
+<h4 class="bg-primary">r3（找不到的情况），URL=@r3，结果为：</h4>
+<ul id="result3"></ul>
+
+<script>
+    $(document).ready(function () {
+
+        //下面的代码演示了如何用JavaScript直接定义JSON数组对象，并用jQuery访问它的每个元素
+        //但是，这种硬编码的方式在实际项目中很少见，此处仅仅是为了演示基本用法
+        var a = [
+                    { "ID": "001", "Name": "张三", "Grade": 85 },
+                    { "ID": "002", "Name": "李四", "Grade": 86 },
+                    { "ID": "003", "Name": "王五", "Grade": 87 },
+        ];
+        $.each(a, function (key, value) {
+            $('#result').append('<li>' + key + "：" + Details(value) + '</li>');
+        });
+
+        //下面的代码演示了如何用$.getJSON访问MyStudents中用C#定义的JSON数组对象
+        $.getJSON('@r1')
+            .done(function (data) {
+                $.each(data, function (index, item) {
+                    $('#result1').append('<li>' + index + "：" + Details(item) + '</li>');
+                });
+            })
+            .fail(function (jqXHR) {
+                showFail(jqXHR, $('#result1'));
+            });
+        //$.getJSON也可以用下面的$.ajax实现，结果完全相同
+        @*$.ajax('@r1')
+            .done(function (data) {
+                $.each(data, function (index, item) {
+                    $('#result1').append('<li>' + index + "：" + Details(item) + '</li>');
+                });
+            })
+            .fail(function (jqXHR) {
+                showFail(jqXHR, $('#result1'));
+            });*@
+
+        $.getJSON('@r2')
+            .done(function (data) {
+                $('#result2').append('<li>' + Details(data) + '</li>');
+            })
+            .fail(function (jqXHR) {
+                showFail(jqXHR, $('#result2'));
+            });
+
+        $.getJSON('@r3')
+            .done(function (data) {
+                $('#result3').append('<li>' + Details(data) + '</li>');
+            })
+            .fail(function (jqXHR) {
+                showFail(jqXHR, $('#result3'));
+            });
+
+    });
+    function Details(item) {
+        var s = "";
+        $.each(item, function (key, value) {
+            s += $.validator.format('{0}={1}，', key, value);
+        });
+        return s.substr(0, s.length - 1);
+    }
+    function showFail(xhr, selector) {
+        selector.append('<li>出错了！</li>');
+        if (xhr.responseText != null) {
+            $.each(xhr.responseText, function (key, value) {
+                $('<li>' + key + '：' + value + '</li>').appendTo(selector);
+            });
+        }
+        selector.append(
+            '<li>status：' + xhr.status + '</li>' +
+            '<li>statusText：' + xhr.statusText + '</li>');
+    }
+</script>

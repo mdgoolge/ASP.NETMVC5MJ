@@ -1,0 +1,91 @@
+﻿<style>
+    #div1,#div2 { border: solid 1px blue;
+                         display: flex; height:200px; margin:15px auto;}
+    .a1{ font-size:20px; color:white; height:50px;}
+    .a2{background-color: red;}
+    .a3{background-color: green;}
+    .w1{ width:200px;}
+    .w2{ width:100px;}
+</style>
+<h4>flex（缩放盒）基本用法</h4>
+<div class="btn-block">
+    <span>flex-direction: </span>
+    <div class="btn-group btn-group-xs" style="margin:5px;">
+        <label class="b0 btn btn-success"><input type="radio" name="r0" checked />row</label>
+        <label class="b0 btn btn-success"><input type="radio" name="r0" />column</label>
+    </div>
+    <br />
+    <span>flex-wrap: </span>
+    <div class="btn-group btn-group-xs" style="margin:5px;">
+        <label class="b1 btn btn-success"><input type="radio" name="r1" checked />nowrap</label>
+        <label class="b1 btn btn-success"><input type="radio" name="r1" />wrap</label>
+        <label class="b1 btn btn-success"><input type="radio" name="r1" />wrap-reverse</label>
+    </div>
+    <br />
+    <span>justify-content: </span>
+    <div class="btn-group btn-group-xs" style="margin:5px;">
+        <label class="b2 btn btn-success"><input type="radio" name="r2" checked />flex-start</label>
+        <label class="b2 btn btn-success"><input type="radio" name="r2" />flex-end</label>
+        <label class="b2 btn btn-success"><input type="radio" name="r2" />center</label>
+        <label class="b2 btn btn-success"><input type="radio" name="r2" />space-around</label>
+        <label class="b2 btn btn-success"><input type="radio" name="r2" />space-between</label>
+    </div>
+    <br />
+    <span>align-self: </span>
+    <div class="btn-group btn-group-xs" style="margin:5px;">
+        <label class="b3 btn btn-success"><input type="radio" name="r3" checked />auto</label>
+        <label class="b3 btn btn-success"><input type="radio" name="r3" />baseline</label>
+        <label class="b3 btn btn-success"><input type="radio" name="r3" />center</label>
+        <label class="b3 btn btn-success"><input type="radio" name="r3" />flex-start</label>
+        <label class="b3 btn btn-success"><input type="radio" name="r3" />flex-end</label>
+        <label class="b3 btn btn-success"><input type="radio" name="r3" />stretch</label>
+    </div>
+    <br />
+    <span>align-content: </span>
+    <div class="btn-group btn-group-xs" style="margin:5px;">
+        <label class="b4 btn btn-success"><input type="radio" name="r4" checked />flex-start</label>
+        <label class="b4 btn btn-success"><input type="radio" name="r4" />flex-end</label>
+        <label class="b4 btn btn-success"><input type="radio" name="r4" />center</label>
+        <label class="b4 btn btn-success"><input type="radio" name="r4" />space-around</label>
+        <label class="b4 btn btn-success"><input type="radio" name="r4" />space-between</label>
+    </div>
+</div>
+<div style="display:flex; height:260px; border:4px double #000000; ">
+    <div id="div1">
+        <div class="a1 a2 w1">1</div>
+        <div class="a1 a3 w1">2</div>
+        <div class="a1 a2 w1">3</div>
+        <div class="a1 a3 w1">4</div>
+        <div class="a1 a2 w1">5</div>
+        <div class="a1 a3 w1">6</div>
+        <div class="a1 a2 w1">7</div>
+    </div>
+    <div id="div2">
+        <div class="a1 a2 w2">1</div>
+        <div class="a1 a3 w2">2</div>
+        <div class="a1 a2">3</div>
+    </div>
+</div>
+<script>
+    var v = $("#div1,#div2");
+    $(".b0").click(function () {
+        var s = $(this).text();
+        v.css("flex-direction", s);
+    });
+    $(".b1").click(function () {
+        var s = $(this).text();
+        v.css("flex-wrap", s);
+    });
+    $(".b2").click(function () {
+        var s = $(this).text();
+        v.css("justify-content", s);
+    });
+    $(".b3").click(function () {
+        var s = $(this).text();
+        v.css("align-self", s);
+    });
+    $(".b4").click(function () {
+        var s = $(this).text();
+        v.css("align-content", s);
+    });
+</script>

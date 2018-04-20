@@ -1,0 +1,14 @@
+﻿<h2>获取客户端屏幕的高度和宽度等信息（GetScreenInfo）</h2>
+<pre id="pre1"></pre>
+<script>
+    $(function () {
+        var a = [
+            "screen.width=" + screen.width,
+            "screen.height=" + screen.height,
+            "screen.availWidth=" + screen.availWidth,
+            "screen.availHeight=" + screen.availHeight,
+            "screen.colorDepth=" + screen.colorDepth
+        ];
+        $("#pre1").html(a.join("<br/>"));
+    });
+</script>

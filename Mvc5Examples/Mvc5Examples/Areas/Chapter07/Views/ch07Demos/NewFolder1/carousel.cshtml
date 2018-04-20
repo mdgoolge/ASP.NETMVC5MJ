@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "carousel";
+}
+
+<h4>Bootstrap轮播功能基本用法（carousel）</h4>
+<div class="col-md-4 col-md-offset-2">
+
+    <div id="mycarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#mycarousel" data-slide-to="1"></li>
+            <li data-target="#mycarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="~/Images/pic1.jpg" alt="">
+                <div class="carousel-caption">
+                    <h4>图片1文字标注</h4>
+                    <p>..............</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="~/Images/pic2.jpg" alt="">
+                <div class="carousel-caption">
+                    <h4>图片2文字标注</h4>
+                    <p>..............</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="~/Images/pic3.jpg" alt="">
+                <div class="carousel-caption">
+                    <h4>图片3文字标注</h4>
+                    <p>..............</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#mycarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#mycarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+
+</div>

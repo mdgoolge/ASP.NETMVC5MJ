@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "selectMenu1";
+}
+
+<h2>selectMenu1</h2>
+<select id="select1">
+    <option value="50">50米</option>
+    <option value="100">100米</option>
+    <option value="150" selected="selected">150米</option>
+    <option value="200">200米</option>
+    <option value="250">250米</option>
+</select>
+<pre id="pre1"></pre>
+<script>
+    $(function () {
+        var v = $("#select1");
+        v.selectmenu({ "width": 120 });
+        $("#pre1").text("当前值为：" + v.val());
+    });
+</script>
+

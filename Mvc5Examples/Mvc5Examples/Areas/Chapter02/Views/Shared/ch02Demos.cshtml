@@ -1,0 +1,36 @@
+﻿@{
+    var ajaxOptions = (AjaxOptions)TempData["AjaxOptions"];
+}
+<div id="demo" class="accordionDemo panel panel-success">
+    <h3 class="panel-heading">基本用法</h3>
+    <div class="list-group" style="max-height: 300px;">
+        @{
+            string[,] s =
+            {
+                    {"例1-Welcome", "Welcome"},
+                    {"例2-razor基本语法1", "razor1"},
+                    {"例3-razor基本语法2", "razor2"},
+                    {"例4-Url帮助器基本用法", "UrlHelperDemo"},
+                    {"例5-Ajax帮助器基本用法", "AjaxDemo"},
+                    {"例6-text前缀", "prefixtext"},
+                    {"例7-bg前缀", "prefixbg"},
+                    {"例8-btn前缀", "prefixbtn"},
+                    {"例9-栅格用法1", "grid1"},
+                    {"例10-栅格用法2", "grid2"},
+                    {"例11-栅格用法3", "grid3"},
+                    {"例12-栅格用法4", "grid4"},
+                    {"例13-栅格用法5", "grid5"},
+                    {"例14-Bootstrap图标", "icon1"},
+                    {"例15-图标基本用法", "icon2"}
+            };
+            for (int i = 0; i < s.GetLength(0); i++)
+            {
+                @Ajax.ActionLink(s[i, 0], "Index", "ch02Demos", new { id = s[i, 1] },
+                      ajaxOptions, new { @class = "list-group-item" });
+            }
+        }
+    </div>
+</div>
+<script>
+    $("#demo").accordion({ heightStyle: "content", collapsible: true });
+</script>

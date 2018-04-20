@@ -1,0 +1,9 @@
+﻿@if ((bool)ViewBag.IsValid == true)
+{
+    if (this.IsPost)
+    {
+        <script>
+            alert("@ViewBag.Result");
+        </script>
+    }
+}

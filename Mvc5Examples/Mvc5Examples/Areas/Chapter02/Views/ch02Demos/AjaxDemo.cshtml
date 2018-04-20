@@ -1,0 +1,41 @@
+﻿<h3>Ajax帮助器基本用法</h3>
+<h5 class="btn-danger">基本用法1-直接用jQuery的Ajax实现</h5>
+<div id="div1"></div>
+<script>
+    $.ajax({
+        url: '@Url.Action("Ajax1", "ch02Demos")',
+        success: function (result) { $("#div1").html(result); alert("更新div1出错了"); },
+        error: function () { alert("更新div1出错了"); }
+    });
+</script>
+
+<h5 class="btn-danger">基本用法2-用超链接实现局部更新请求</h5>
+<p>请交替单击下面的超链接观察结果：</p>
+@{
+    AjaxOptions opts1 = new AjaxOptions
+    {
+        UpdateTargetId = "div2",
+        OnFailure = "ShowError('更新div2出错了')"
+    };
+}
+@Ajax.ActionLink("获取当前日期和时间", "Ajax1", "ch02Demos", opts1)
+@Ajax.ActionLink("显示razor2", "Index", "ch02Demos", new { id = "razor2" }, opts1, new { @style = "margin-left:20px;" })
+<div id="div2" style="margin-top:10px; margin-right:50%; border:1px solid grey"></div>
+
+<h5 class="btn-danger">基本用法3-用表单实现局部更新请求</h5>
+@using (Ajax.BeginForm(new AjaxOptions
+{
+    UpdateTargetId = "div3",
+    Url = Url.Action("Ajax1", "ch02Demos"),
+    OnFailure = "ShowError('更新div3出错了')"
+}))
+{
+    <button type="submit">获取当前日期和时间（请多次单击）</button>
+}
+<div id="div3"></div>
+
+<script>
+    function ShowError(errorInfo) {
+        alert(errorInfo);
+    }
+</script>

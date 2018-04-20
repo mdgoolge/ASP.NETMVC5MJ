@@ -1,0 +1,8 @@
+﻿@model  IQueryable<Mvc5Examples.StudentsService.Student>
+<h4 class="bg-primary">获取成绩大于等于91的所有学生信息</h4>
+<ul>
+    @foreach (var v in Model)
+    {
+        <li>@string.Format("{0},{1},{2}", v.ID, v.Name, v.Grade)</li>
+    }
+</ul>

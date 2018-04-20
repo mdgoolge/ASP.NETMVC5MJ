@@ -1,0 +1,7 @@
+﻿.style1 { font-size:30pt; color:Red; }
+.style2 {
+    border-radius: 15px;
+    border-width: 10px;
+    border-style: solid double;
+    border-color: Red;
+ }

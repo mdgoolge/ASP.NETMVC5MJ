@@ -1,0 +1,26 @@
+﻿@{
+    var opts = (AjaxOptions)TempData["AjaxOptions"];
+}
+<div id="demo" class="accordionDemo panel panel-success">
+    <h3 class="panel-heading">基本用法</h3>
+    <div class="list-group" style="max-height: 300px;">
+        @Ajax.ActionLink("例1-jQuery调用API", "Index", "ch09Demos", new { id = "Demo1" }, opts, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例2-jQuery调用OData", "Index", "ch09Demos", new { id = "Demo2" }, opts, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例3-GetStudents", "Demo3", "ch09Demos", null, opts, new { @class = "list-group-item" })
+        @Ajax.ActionLink("其他示例(1)-GetByID", "Other1_GetByID", "ch09Demos", new { id = "15001002" }, opts, new { @class = "list-group-item" })
+        @Ajax.ActionLink("其他示例(2)-Filter", "Other2_Filter", "ch09Demos", new { grade = 92 }, opts, new { @class = "list-group-item" })
+        @Ajax.ActionLink("其他示例(3)-OrderBy", "Other3_OrderBy", "ch09Demos", null, opts, new { @class = "list-group-item" })
+        @Ajax.ActionLink("其他示例(4)-Paging", "Other4_Paging", "ch09Demos", null, opts, new { @class = "list-group-item" })
+        @Ajax.ActionLink("其他示例(5)-Create", "Other5_Create", "ch09Demos", null, opts, new { @class = "list-group-item" })
+        @Ajax.ActionLink("其他示例(6)-Update", "Other6_Update", "ch09Demos", new { id="15001002",grade=50 }, opts, new { @class = "list-group-item" })
+        @Ajax.ActionLink("其他示例(7)-Delete", "Other7_Delete", "ch09Demos", new { id="15001010" }, opts, new { @class = "list-group-item" })
+    </div>
+    <h3 class="panel-heading">辅助功能</h3>
+    <div class="list-group" style="max-height: 300px;">
+        @Ajax.ActionLink("初始化测试数据", "Init", "ch09Demos", null, opts, new { @class = "list-group-item" })
+        @Ajax.ActionLink("HTTP状态码速查", "Index", "ch09Demos", new { id = "HttpStatusCode" }, opts, new { @class = "list-group-item" })
+    </div>
+</div>
+<script>
+    $("#demo").accordion({ heightStyle: "content", collapsible: true });
+</script>

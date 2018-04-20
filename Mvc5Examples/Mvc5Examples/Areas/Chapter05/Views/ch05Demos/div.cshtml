@@ -1,0 +1,25 @@
+﻿<style>
+    .solid-border { border: 1px solid red; margin-top: 5px; margin-bottom: 5px; }
+    .custom-width { width: 70%; min-width: 100px; }
+</style>
+
+<div class="panel panel-default">
+    <div class="panel-heading">div基本用法</div>
+    <div class="panel-body">
+        <button type="button" class="center-block btn btn-primary text-center" style="margin-top: 15px;">【显示/隐藏】div1～div4的边框</button>
+        <br />
+        <div id="div0" style="border: 1px solid #ffd800;">
+            <div id="div1">div1：div宽度默认占父容器的100%，div内的内容默认左对齐</div>
+            <div id="div2" class="center-block text-center">div2：让div内的内容居中</div>
+            <div id="div3" class="center-block custom-width">div3：指定div的宽度，不指定div内的内容对齐方式（默认左对齐）</div>
+            <div id="div4" class="center-block custom-width text-center">div4：指定div的宽度，而且让div内的内容也居中</div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            $("#div0").children().toggleClass("solid-border");
+        });
+    });
+</script>

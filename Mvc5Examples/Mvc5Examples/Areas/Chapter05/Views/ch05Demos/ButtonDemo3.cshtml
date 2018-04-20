@@ -1,0 +1,38 @@
+﻿@model Mvc5Examples.Areas.Chapter05.Models.MyClass1Model
+@{
+    var ajaxOptions = new AjaxOptions { UpdateTargetId = "bodyContent" };
+    var c1 = new { @class = "control-label col-md-5" };
+    var c2 = "col-md-3";
+    var c3 = new { @class = "form-control" };
+    var c4 = new{ @style = "color:red;"};
+}
+<h4>多按钮基本用法:求两数的和或者乘积</h4>
+@using (Ajax.BeginForm(ajaxOptions))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.Label("第1个数(n1)：",c1)
+            <div class="@c2">
+                @Html.TextBoxFor(m => m.n1, c3)
+                @Html.ValidationMessageFor(m => m.n1, "", c4)
+            </div>
+        </div>
+        <div class="form-group text-center">
+            @Html.Label("第2个数(n2)：", c1)
+            <div class="@c2">
+                @Html.TextBoxFor(m => m.n2, c3)
+                @Html.ValidationMessageFor(m => m.n2, "", c4)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-3 col-md-offset-5">
+                <input name="btn" value="求和" type="submit" class="btn btn-primary" />
+                <input name="btn" value="求积" type="submit" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+<pre>
+    @ViewBag.Result
+</pre>

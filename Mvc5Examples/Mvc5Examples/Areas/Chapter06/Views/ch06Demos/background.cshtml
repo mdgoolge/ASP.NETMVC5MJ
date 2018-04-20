@@ -1,0 +1,55 @@
+﻿<style>
+    #demo1 { background: url(/Areas/Chapter06/common/border.png) #faf6df no-repeat center 5%; }
+
+    #demo2 { background-image: url(/Areas/Chapter06/common/a1.jpg);
+             background-color: #c2dcd1;
+             background-repeat: no-repeat;
+             background-attachment: fixed;
+             background-size: 80px;
+             background-position: center 40%; }
+
+    #demo3 { background-image: linear-gradient(to right, red, yellow, green); }
+
+    #demo4 { background-image: radial-gradient(red, yellow, green); background-origin: border-box; border-width: 10px; border-radius: 50%; }
+
+    #demo5 { background-image: radial-gradient(red, yellow, green); }
+</style>
+<h5>用法1-图像背景（背景图不重复，图像随元素移动）</h5>
+<div style="max-height:90px; overflow: auto">
+    <div id="demo1">
+        @{
+            string a = "ABCDEFG-XYZ";
+            for (int i = 0; i < a.Length; i++)
+            {
+                string a1 = new string(a[i], 80);
+                <p class="text-nowrap" style="overflow:hidden">@a1</p>
+            }
+        }
+    </div>
+</div>
+<h5>用法2-图像背景（背景图不重复，图像不随元素移动）</h5>
+<div style="max-height:90px; overflow: auto">
+    <div id="demo2">
+        @{
+            string b = "今天阳光明媚晴空万里";
+            for (int i = 0; i < b.Length; i++)
+            {
+                string b1 = new string(b[i], 60);
+                <p class="text-nowrap" style="overflow:hidden">@b1</p>
+            }
+        }
+    </div>
+</div>
+
+<h5>用法3-渐变背景</h5>
+<div class="row" style="margin-left:15px; margin-right:15px">
+    <div id="demo3" class="col-md-4" style="height:80px">
+        线性渐变
+    </div>
+    <div id="demo4" class="col-md-4" style="height:80px">
+        径向渐变1
+    </div>
+    <div id="demo5" class="col-md-4" style="height:80px">
+        径向渐变2
+    </div>
+</div>

@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Mvc5Examples.Areas.Chapter08.Models.MyDb2Model.MyTable2>
+<h2>基本信息管理</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.StudentID)</th>
+        <th>@Html.DisplayNameFor(model => model.StudentName)</th>
+        <th>@Html.DisplayNameFor(model => model.RuXueShiJian)</th>
+        <th>操作</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.StudentID)</td>
+            <td>@Html.DisplayFor(modelItem => item.StudentName)</td>
+            <td>@Html.DisplayFor(modelItem => item.RuXueShiJian)</td>
+            <td>
+                @Html.ActionLink("编辑", "Edit", new { id = item.StudentID }) |
+                @Html.ActionLink("删除", "Delete", new { id = item.StudentID })
+            </td>
+        </tr>
+    }
+    <tr>
+        <td colspan="4" class="text-center">
+            @Html.ActionLink("添加新行", "Create")
+        </td>
+    </tr>
+</table>

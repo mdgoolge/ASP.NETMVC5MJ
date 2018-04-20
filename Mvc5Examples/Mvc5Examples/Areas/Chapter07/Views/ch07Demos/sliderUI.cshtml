@@ -1,0 +1,58 @@
+﻿<h3>jQueryUI滑动条（slider）基本用法</h3>
+<style>
+    #mydiv div { display: inline-block; }
+    /*设置未滑动过的滑动条一端的样式*/
+    #slider2 .ui-slider-range-max,
+    #slider3 .ui-slider-range-max,
+    #slider4 .ui-slider-range-max,
+    #slider5 .ui-slider-range-max { background: white; }
+    /*也可以按下面的办法单独设置滑动条和滑动块的样式*/
+    #slider2, #slider2 .ui-slider-handle { background: red; }
+</style>
+<div id="mydiv" style="line-height:30px">
+    <p><div id="slider1" style="width:80%"></div>
+        值1：<div id="div1">20</div>
+    </p>
+    <p><div id="slider2"></div>值2：<div id="div2"></div></p>
+    <p>
+        <div id="slider3" class="btn-success"></div>
+        值3：<div id="div3"></div>
+    </p>
+    <p>
+        <div id="slider4" class="btn-primary"></div>
+        值4：<div id="div4"></div>
+    </p>
+    <p>
+        <div id="slider5" class="btn-warning progress-bar-striped"></div>
+        值5：<div id="div5"></div>
+    </p>
+</div>
+<script>
+    $("#slider1").slider({
+        range: "min",  //从哪端显示滑动过的部分
+        value: 20,
+        slide: function (event, ui) { $("#div1").text(ui.value); }
+    });
+    InitSlide("#slider2", "#div2");
+    InitSlide("#slider3", "#div3");
+    InitSlide("#slider4", "#div4");
+    InitSlide("#slider5", "#div5");
+
+    function InitSlide(slideId, valueId) {
+        var options = {
+            range: "max",
+            min: 0,
+            max: 100,
+            value: 30,
+            slide: function (event, ui) {
+                $(valueId).text(ui.value);
+            }
+        };
+        $(slideId).css("width", "80%");
+        //初始化
+        $(slideId).slider(options);
+        //获取value选项的值
+        var v = $(slideId).slider("option", "value");
+        $(valueId).text(v);
+    }
+</script>

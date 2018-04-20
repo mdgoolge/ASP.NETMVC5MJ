@@ -1,0 +1,24 @@
+﻿<h2>JavaScript字符串的基本用法</h2>
+<pre id="pre1"></pre>
+<pre id="pre2"></pre>
+<script>
+    $(document).ready(function () {
+        $("#pre1").html("a=' How are you   '，x = 100，y = 200");
+        $("#pre2").html(myFunc());
+    });
+    function myFunc() {
+        var x = 100, y = 200;
+        var a = "  How are you   ";
+        var b =
+        [
+            "a.charAt(3)结果为：'" + a.charAt(3) + "'",
+            "a.indexOf(\"are\")结果为：" + a.indexOf("are"),
+            "a.substring(5)结果为：'" + a.substring(5) + "'",
+            "a.length结果为：" + a.length,
+            "a.split(\" \")结果为：{" + a.split(" ") + "}",
+            "$.trim(a)结果为：'" + $.trim(a) + "'",
+            $.validator.format("格式化字符串结果为：'{0}+{1}={2}'", x, y, x + y)
+        ];
+        return b.join("<br/>");
+    }
+</script>

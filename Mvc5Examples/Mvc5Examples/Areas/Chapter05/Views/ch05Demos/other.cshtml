@@ -1,0 +1,52 @@
+﻿<h3 class="bg-danger text-center">其他界面交互元素的基本用法</h3>
+<div class="row">
+    <div class="col-md-4" style="border:1px solid grey;">
+        <h4 class="bg-primary">fieldset元素</h4>
+        <fieldset>
+            <legend>分组1标题</legend>
+            <p>姓名：<input type="text" size="30" /></p>
+            <p>地址：<input type="text" size="30" /></p>
+        </fieldset>
+        <fieldset>
+            <legend>分组2标题</legend>
+            <p>aaaaa</p>
+        </fieldset>
+    </div>
+    <div class="col-md-6 col-md-offset-1" style="border:1px solid grey;">
+        <h4 class="bg-primary">textarea元素</h4>
+        <p>用法1：用style设置宽和高</p>
+        <textarea style="height:60px; width:300px;"></textarea>
+        <br/>
+        <p>用法2：用.form-control类设置宽度和样式，用rows设置高度</p>
+        <textarea class="form-control" rows="3"></textarea>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-7" style="border:1px solid grey;">
+        <h4 class="bg-primary">select元素</h4>
+        <div class="row">
+            <div class="col-md-4">
+                <select name="gender" style="width:150px;">
+                    <option selected>男</option>
+                    <option>女</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <select name="gender" multiple>
+                    <option selected>C#程序设计及应用教程（第3版）</option>
+                    <option>C#网络应用编程（第3版）</option>
+                    <option>ASP.NET MVC程序设计教程（第3版）</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-md-offset-1" style="border:1px solid grey;">
+        <h4 class="bg-primary">datalist元素</h4>
+        <input name="gender" type="text" list="genders" />
+        <datalist id="genders">
+            <option>男</option>
+            <option>女</option>
+        </datalist>
+    </div>
+</div>

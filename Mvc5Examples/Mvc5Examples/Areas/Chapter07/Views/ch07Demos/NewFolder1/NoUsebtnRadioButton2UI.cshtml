@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "btnRadioButton2";
+}
+
+<h2>jQueryUI单选按钮基本用法（btnRadioButton2）</h2>
+<form>
+  <div id="r">
+    <input type="radio" id="radio1" name="radio"><label for="radio1">选项1</label>
+    <input type="radio" id="radio2" name="radio" checked="checked"><label for="radio2">选项2</label>
+    <input type="radio" id="radio3" name="radio"><label for="radio3">选项3</label>
+  </div>
+    <div id="r1">
+        <input class="btn-primary" type="radio" id="radio4" name="radio1"><label for="radio4">选项1</label>
+        <input class="btn-primary" type="radio" id="radio5" name="radio1" checked="checked"><label for="radio5">选项2</label>
+        <input class="btn-primary" type="radio" id="radio6" name="radio1"><label for="radio6">选项3</label>
+    </div>
+</form>
+    <script>
+        //var btn = $.fn.button.noConflict();
+        //$.fn.btn = btn;
+
+        //$.ui.buttonset(null, $("#r")); //"input[type=radio]");
+        //$("#r1").buttonset();
+
+        $("#r1").button();
+        // $.ui.buttonset({}, "#radios");
+        //$(function () {
+        //    //这两行代码是为了解决按钮冲突的
+        //    var bootstrapBtn = $.fn.button.noConflict(); // return $.fn.button to previously assigned value
+        //    $.fn.btn = bootstrapBtn;            // give $().bootstrapBtn the Bootstrap functionality
+
+        //    //解决冲突后，如果需要的话可以用下面的语句调用Bootstrap的button方法
+        //    //$("#radio").btn();
+
+        //    //解决冲突后，就可以用下面的语句调用jQueryUI的button和buttonset方法
+        //    $("#radio").buttonset();
+        //});
+    </script>
+

@@ -1,0 +1,30 @@
+﻿<h2>特性（attribute）和属性（property）的区别</h2>
+<form id="form1" method="post">
+    <p>请多次单击复选框，观察特性值和属性值的变化：</p>
+    <p>
+        <input id="checkbox1" type="checkbox" checked="checked" aria-selected="true" />
+        <label for="checkbox1">选中/不选中</label>
+    </p>
+</form>
+<pre id="result">
+</pre>
+<script>
+    $(document).ready(function () {
+        ShowResult();
+        $("input:checkbox").change(function () {
+            ShowResult();
+        });
+    });
+    function ShowResult() {
+        var a = $("#checkbox1");
+        var s = "checked特性：" + a.attr("checked") + "<br/>" +
+                "checked属性：" + a.prop("checked") + "<br/>" +
+               "id特性：" + a.attr("id") + "<br/>" +
+               "id属性：" + a.prop("id") + "<br/>" +
+               "style特性：" + a.attr("style") + "<br/>" +
+               "style属性：" + a.prop("style") + "<br/>" +
+               "aria-selected特性：" + a.attr("aria-selected") + "<br/>" +
+               "aria-selected属性：" + a.prop("aria-selected") + "<br/>";
+        $("#result").html(s);
+    }
+</script>

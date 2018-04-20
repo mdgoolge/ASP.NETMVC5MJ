@@ -1,0 +1,13 @@
+﻿<div class="bg-primary">在C#代码块中使用HTML元素</div>
+@{
+    List<string> list = new List<string>();
+    for (int i = 1; i < 6; i++)
+    {
+        list.Add(string.Format("第{0}项", i));
+    }
+    <p>今天是 @DateTime.Now.DayOfWeek</p>
+    foreach (var v in list)
+    {
+        <p>@v</p>
+    }
+}

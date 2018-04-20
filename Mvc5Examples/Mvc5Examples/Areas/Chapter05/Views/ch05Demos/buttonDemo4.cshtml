@@ -1,0 +1,84 @@
+﻿<h4>按钮组基本用法</h4>
+<hr />
+<h5>1、默认</h5>
+<div class="btn-group">
+    <button type="button" class="btn btn-default">按钮1</button>
+    <button type="button" class="btn btn-default">按钮2</button>
+    <button type="button" class="btn btn-default">按钮3</button>
+</div>
+
+<h5>2、按钮工具栏（将按钮分为2组）</h5>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="btn-toolbar">
+            <div class="btn-group">
+                <button type="button" class="btn btn-success" data-placement="bottom" title="按钮1">按钮1</button>
+                <button type="button" class="btn btn-success" data-placement="bottom" title="按钮2">按钮2</button>
+                <button type="button" class="btn btn-success" data-placement="bottom" title="按钮3">按钮3</button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-warning">按钮4</button>
+                <button type="button" class="btn btn-warning">按钮5</button>
+                <button type="button" class="btn btn-warning">按钮6</button>
+                <button type="button" class="btn btn-warning">按钮7</button>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        Hello
+    </div>
+</div>
+
+<h5>3、图标按钮工具栏（将按钮分为4组）</h5>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <div class="btn-toolbar">
+            <div class="btn-group">
+                <button type="button" class="btn btn-success" data-placement="bottom" title="按钮11">
+                    <span class="glyphicon glyphicon-home"></span>
+                </button>
+                <button type="button" class="btn btn-success" data-placement="bottom" title="按钮12">
+                    <span class="glyphicon glyphicon-book"></span>
+                </button>
+                <button type="button" class="btn btn-success" data-placement="bottom" title="按钮13">
+                   <span class="glyphicon glyphicon-gift"></span>
+                </button>
+                <button type="button" class="btn btn-success" data-placement="bottom" title="按钮14">
+                   <span class="glyphicon glyphicon-calendar"></span>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-danger" data-placement="bottom" title="按钮21">
+                    <span class="glyphicon glyphicon-camera"></span>
+                </button>
+                <button type="button" class="btn btn-danger" data-placement="bottom" title="按钮22">
+                    <span class="glyphicon glyphicon-music"></span>
+                </button>
+                <button type="button" class="btn btn-danger" data-placement="bottom" title="按钮23">
+                    <span class="glyphicon glyphicon-film"></span>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-warning" data-placement="bottom" title="按钮31">
+                    <span class="glyphicon glyphicon-cog"></span>
+                </button>
+            </div>
+            <div class="pull-right">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-info" data-placement="bottom" title="按钮41">
+                        <span class="glyphicon glyphicon-collapse-down"></span>
+                    </button>
+                    <button type="button" class="btn btn-info" data-placement="bottom" title="按钮42">
+                        <span class="glyphicon glyphicon-collapse-up"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        Hello
+    </div>
+</div>
+<script>
+    $(".btn").tooltip();
+</script>

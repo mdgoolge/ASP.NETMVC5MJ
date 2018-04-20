@@ -1,0 +1,50 @@
+﻿<style>
+    svg, canvas { width: 100%; height: 150px; border: 1px solid grey; }
+    .a1 { fill: #00FF00; stroke: red; }
+</style>
+<h3 class="btn-success">折线和多边形</h3>
+<h4>用svg实现</h4>
+@*<svg width="320" height="320">
+        <g>
+            <text id="t1" font-size="120" y="160" x="160">马
+                <animate attributeName="x" begin="0s" dur="10s" type="rotate" from="0 160 160" to="360 160 160" repeatCount="indefinite" />
+            </text>
+        </g>
+    </svg>*@
+<svg>
+    @{
+        int x = 0, y1 = 80, y2 = 90;
+        string p1 = "", p2 = "";
+        for (int i = 1; i < 20; i++)
+        {
+            p1 += string.Format(" {0},{1}", x, y1);
+            p2 += string.Format(" {0},{1}", x, y2);
+            x = i * 20;
+            y1 = i % 2 == 0 ? 80 : 40;
+            y2 = i % 2 == 0 ? 90 : 130;
+        }
+    }
+    <polyline points="@p1" style="fill:none; stroke:red;stroke-width:4 " />
+    <polyline points="@p2" style="fill:yellow;stroke:red;stroke-width:4 " />
+    <polygon points="500,0 440,150 590,60 410,60 560,150"
+             style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd" />
+</svg>
+<h4>用canvas实现</h4>
+<canvas id="c1"></canvas>
+<script>
+    var v = $("#c1");
+    v.attr("width", v.css("width"));
+    v.attr("height", v.css("height"));
+    var ctx = document.getElementById("c1").getContext("2d");
+    ctx.beginPath();
+    ctx.moveTo(0, 80);
+    var x = 0, y1 = 80, y2 = 90;
+    var p1 = "", p2 = "";
+    for (var i = 1; i < 20; i++) {
+        ctx.lineTo(x, y1);
+        x = i * 20;
+        y1 = i % 2 == 0 ? 80 : 40;
+    }
+    ctx.stroke();
+</script>
+

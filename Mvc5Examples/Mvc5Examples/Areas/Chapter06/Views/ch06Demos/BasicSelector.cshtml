@@ -1,0 +1,44 @@
+﻿<style>
+    .mydiv { margin: 5px auto; padding: 2px; width: 550px; border: 1px solid #ccc; }
+    .demo { border-radius: 15px; width: 180px; height: 30px; border: 1px solid blue; }
+    .active { background-color: Green; color: White; }
+    .demo1 { background-color: Green; color: White; height: 30px; line-height: 30px; }
+</style>
+<h2>基本选择器的用法</h2>
+<div class="mydiv">
+    <p id="p1">这是p元素(id="p1")</p>
+    <p id="p2">这是p元素(id="p2")</p>
+    <div id="div1" class="demo1">这是div1(id="div1",class="demo1")</div>
+    <div id="div2" class="demo1">这是div2(id="div2",class="demo1")</div>
+</div>
+<hr />
+<input id="btn1" class="btn btn-primary" type="button" value="选择元素所有div文字全部变为红色" />
+<input id="btn2" type="button" value="改变demo1前景和背景色" />
+<input id="btn3" type="button" value="改变div2前景和背景色" />
+<script>
+    $(document).ready(function () {
+        $("#btn1").click(function () {
+            ResetStyle();
+            //元素选择器
+            $(".mydiv div").css("color", "Red");
+            $(this).addClass("active");
+        });
+        $("#btn2").click(function () {
+            ResetStyle();
+            //类选择器
+            $(".demo1").css({ "background-color": "Yellow", "color": "Gray" });
+            $(this).addClass("active");
+        });
+        $("#btn3").click(function () {
+            ResetStyle();
+            //id选择器
+            $("#div1").removeAttr("style");
+            $("#div2").css({ "background-color": "Yellow", "color": "Gray" });
+            $(this).addClass("active");
+        });
+    });
+    function ResetStyle(e) {
+        $("input").removeClass("active");
+    }
+</script>
+

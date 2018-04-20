@@ -1,0 +1,197 @@
+﻿@{
+    AjaxOptions opts = (AjaxOptions)TempData["AjaxOptions"];
+    var a1 = "Index";
+    var c1 = "ch10Demos2D";
+    var attr = new { @class = "list-group-item" };
+}
+<div id="demo" class="accordionDemo panel panel-primary">
+    <h3 class="panel-heading">二维</h3>
+    <div class="list-group" style="max-height: 200px;">
+        @Ajax.ActionLink("例1-svg元素", a1, c1, new { id = "demo1_svg" }, opts, attr)
+        @Ajax.ActionLink("例2-svg视区盒", a1, c1, new { id = "demo2_svg_viewbox" }, opts, attr)
+        @Ajax.ActionLink("例3-svg图形符号", a1, c1, new { id = "demo3_svg_symbol" }, opts, attr)
+        @Ajax.ActionLink("例4-canvas元素", a1, c1, new { id = "demo4_canvas" }, opts, attr)
+        @Ajax.ActionLink("例5-矩形", a1, c1, new { id = "rect" }, opts, attr)
+        @Ajax.ActionLink("例6-圆和椭圆", a1, c1, new { id = "elipse" }, opts, attr)
+        @Ajax.ActionLink("例7-直线", a1, c1, new { id = "line" }, opts, attr)
+        @Ajax.ActionLink("例8-折线和多边形", a1, c1, new { id = "polyline_polygon" }, opts, attr)
+        @Ajax.ActionLink("例9-曲线", a1, c1, new { id = "curves" }, opts, attr)
+        @Ajax.ActionLink("例10-文本", a1, c1, new { id = "text" }, opts, attr)
+    </div>
+    <h3 class="panel-heading">三维</h3>
+    <div class="list-group">
+        @Ajax.ActionLink("例11-demo1", "Index3d", "ch10Demos3D", new { id = "demo1" }, opts, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例12-demo2", "Index3d", "ch10Demos3D", new { id = "demo2" }, opts, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例13-demo3", "Index3d", "ch10Demos3D", new { id = "demo3" }, opts, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例14-animationCloth", "Index3d", "ch10Demos3D", new { id = "animationCloth" }, opts, new { @class = "list-group-item" })
+    </div>
+    <h3 class="panel-heading">更多例子</h3>
+    <div class="list-group" style="max-height:350px">
+        @{
+            string[] files1 =
+            {
+                "webgl_animation_cloth",
+               	"webgl_animation_skinning_blending",
+				"webgl_animation_skinning_morph",
+				"webgl_buffergeometry",
+				"webgl_buffergeometry_custom_attributes_particles",
+				"webgl_buffergeometry_drawcalls",
+				"webgl_buffergeometry_lines",
+				"webgl_buffergeometry_lines_indexed",
+				"webgl_buffergeometry_particles",
+				"webgl_buffergeometry_rawshader",
+				"webgl_buffergeometry_uint",
+				"webgl_camera",
+				"webgl_camera_logarithmicdepthbuffer",
+				"webgl_custom_attributes",
+				"webgl_custom_attributes_lines",
+				"webgl_custom_attributes_particles",
+				"webgl_custom_attributes_particles2",
+				"webgl_custom_attributes_particles3",
+				"webgl_decals",
+				"webgl_effects_anaglyph",
+				"webgl_effects_oculusrift",
+				"webgl_effects_parallaxbarrier",
+				"webgl_effects_stereo",
+				"webgl_effects_vr",
+				"webgl_geometries",
+				"webgl_geometries2",
+				"webgl_geometry_colors",
+				"webgl_geometry_colors_blender",
+				"webgl_geometry_convex",
+				"webgl_geometry_cube",
+				"webgl_geometry_dynamic",
+				"webgl_geometry_extrude_shapes",
+				"webgl_geometry_extrude_shapes2",
+				"webgl_geometry_extrude_splines",
+				"webgl_geometry_hierarchy",
+				"webgl_geometry_hierarchy2",
+				"webgl_geometry_large_mesh",
+				"webgl_geometry_minecraft",
+				"webgl_geometry_minecraft_ao",
+				"webgl_geometry_normals",
+				"webgl_geometry_nurbs",
+				"webgl_geometry_shapes",
+				"webgl_geometry_terrain",
+				"webgl_geometry_terrain_fog",
+				"webgl_geometry_terrain_raycast",
+				"webgl_geometry_text",
+				"webgl_geometry_text2",
+				"webgl_gpgpu_birds",
+				"webgl_hdr",
+				"webgl_helpers",
+				"webgl_interactive_buffergeometry",
+				"webgl_interactive_cubes",
+				"webgl_interactive_cubes_gpu",
+				"webgl_interactive_cubes_ortho",
+				"webgl_interactive_draggablecubes",
+				"webgl_interactive_lines",
+				"webgl_interactive_particles",
+				"webgl_interactive_raycasting_pointcloud",
+				"webgl_interactive_voxelpainter",
+				"webgl_lensflares",
+				"webgl_lights_hemisphere",
+				"webgl_lights_pointlights",
+				"webgl_lights_pointlights2",
+				"webgl_lines_colors",
+				"webgl_lines_cubes",
+				"webgl_lines_dashed",
+				"webgl_lines_sphere",
+				"webgl_lines_splines",
+				"webgl_loader_json_objconverter",
+				"webgl_loader_stl",
+				"webgl_loader_vrml",
+				"webgl_lod",
+				"webgl_marchingcubes",
+				"webgl_materials",
+				"webgl_materials_blending",
+				"webgl_materials_blending_custom",
+				"webgl_materials_bumpmap",
+				"webgl_materials_bumpmap_skin",
+				"webgl_materials_cars",
+				"webgl_materials_cars_camaro",
+				"webgl_materials_cubemap",
+				"webgl_materials_cubemap_balls_reflection",
+				"webgl_materials_cubemap_balls_refraction",
+				"webgl_materials_cubemap_dynamic",
+				"webgl_materials_cubemap_dynamic2",
+				"webgl_materials_cubemap_refraction",
+				"webgl_materials_envmaps",
+				"webgl_materials_grass",
+				"webgl_materials_lightmap",
+				"webgl_materials_normaldisplacementmap",
+				"webgl_materials_normalmap",
+				"webgl_materials_shaders_fresnel",
+				"webgl_materials_skin",
+				"webgl_materials_texture_anisotropy",
+				"webgl_materials_texture_filters",
+				"webgl_materials_texture_manualmipmap",
+				"webgl_materials_wireframe",
+				"webgl_materials2",
+				"webgl_mirror",
+				"webgl_modifier_subdivision",
+				"webgl_modifier_tessellation",
+				"webgl_morphnormals",
+				"webgl_morphtargets",
+				"webgl_morphtargets_horse",
+				"webgl_morphtargets_md2",
+				"webgl_morphtargets_md2_control",
+				"webgl_multiple_canvases_circle",
+				"webgl_multiple_canvases_complex",
+				"webgl_multiple_canvases_grid",
+				"webgl_multiple_views",
+				"webgl_nearestneighbour",
+				"webgl_octree",
+				"webgl_octree_raycasting",
+				"webgl_panorama_equirectangular",
+				"webgl_particles_billboards",
+				"webgl_particles_billboards_colors",
+				"webgl_particles_dynamic",
+				"webgl_particles_random",
+				"webgl_particles_shapes",
+				"webgl_particles_sprites",
+				"webgl_performance",
+				"webgl_performance_doublesided",
+				"webgl_performance_static",
+				"webgl_postprocessing",
+				"webgl_postprocessing_advanced",
+				"webgl_postprocessing_crossfade",
+				"webgl_postprocessing_dof",
+				"webgl_postprocessing_dof2",
+				"webgl_postprocessing_glitch",
+				"webgl_postprocessing_godrays",
+				"webgl_rtt",
+				"webgl_sandbox",
+				"webgl_shader",
+				"webgl_shader_lava",
+				"webgl_shader2",
+				"webgl_shaders_ocean",
+                "webgl_webgl_shaders_ocean2",
+				"webgl_shaders_sky",
+				"webgl_shaders_vector",
+				"webgl_shading_physical",
+				"webgl_shadowmap",
+				"webgl_shadowmap_performance",
+                "webgl_skinning_simple",
+				"webgl_sprites",
+				"webgl_terrain_dynamic",
+				"webgl_test_memory",
+				"webgl_trails",
+				"webgldeferred_animation",
+				"webgldeferred_arealights",
+				"webgldeferred_pointlights",
+            };
+            for (int i = 0; i < files1.Length; i++)
+            {
+                @Ajax.ActionLink((i+1)+":"+files1[i], "aIndex", "ThreejsExamples", new { id = files1[i] }, opts, new { @class = "list-group-item" })
+            }
+        }
+    </div>
+</div>
+<script>
+    var options = {
+        heightStyle: "content",
+        collapsible: true
+    };
+    $("#demo").accordion(options);
+</script>

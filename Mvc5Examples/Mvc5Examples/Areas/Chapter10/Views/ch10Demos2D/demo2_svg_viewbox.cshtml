@@ -1,0 +1,55 @@
+﻿<style>
+    .mysvg { width: 100px; height: 50px; border: 1px solid green; }
+    .myrect { fill: yellow; stroke: red; }
+    .mytext { font-size: 40px; fill: white; stroke: blue; }
+</style>
+@{
+    double w = 100.0; //和.mysvg中的width相等
+    double h = 50.0;  //和.mysvg中的height相等
+}
+<div class="row">
+    <div class="col-md-6">
+        <p>(svg1)原始大小，viewport="0,0 100,50"，viewbox="0,0 100,50"</p>
+        <svg class="mysvg" viewBox="0,0 @w,@h">
+            <rect class="myrect" x="0" y="0" width="80" height="40"></rect>
+            <text class="mytext" x="0" y="30">svg1</text>
+        </svg>
+        <p>(svg2)放大到原来的1.2倍viewbox="0,0 @(Math.Round(w / 1.2)),@(Math.Round(h / 1.2))"</p>
+        <svg class="mysvg" viewBox="0,0 @(w/1.2),@(h/1.2)">
+            <rect class="myrect" x="0" y="0" width="80" height="40"></rect>
+            <text class="mytext" x="0" y="30">svg2</text>
+        </svg>
+        <p>(svg3)放大到原来的2倍viewbox="0,0 50,25"</p>
+        <svg class="mysvg" viewBox="0,0 @(w/2),@(h/2)">
+            <rect class="myrect" x="0" y="0" width="80" height="40"></rect>
+            <text class="mytext" x="0" y="30">svg3</text>
+        </svg>
+        <p>(svg4)缩小到原来的1/2，viewbox="0,0 200,100"</p>
+        <svg class="mysvg" viewBox="0,0 @(w*2),@(h*2)">
+            <rect class="myrect" x="0" y="0" width="80" height="40"></rect>
+            <text class="mytext" x="0" y="30">svg4</text>
+        </svg>
+    </div>
+    <div class="col-md-6">
+        <p>(svg5)将左上角平移到(20,5),viewbox="-20,-5 100,50"</p>
+        <svg class="mysvg" viewBox="-20,-5 @w,@h">
+            <rect class="myrect" x="0" y="10" width="80" height="40"></rect>
+            <text class="mytext" x="0" y="30">svg5</text>
+        </svg>
+        <p>(svg6)剪切viewbox="20,5 100,50"</p>
+        <svg class="mysvg" viewBox="20,5 @w,@h">
+            <rect class="myrect" x="0" y="10" width="80" height="40"></rect>
+            <text class="mytext" x="0" y="30">svg6</text>
+        </svg>
+        <p>(svg7)剪切后放大到原来的2倍，viewbox="20,5 50,25"</p>
+        <svg class="mysvg" viewBox="20,5 @(w*0.5),@(h*0.5)">
+            <rect class="myrect" x="0" y="10" width="80" height="40"></rect>
+            <text class="mytext" x="0" y="30">svg7</text>
+        </svg>
+        <p>(svg8)剪切后缩小到原来的1/2，viewbox="20,5 200,100"</p>
+        <svg class="mysvg" viewBox="20,5 @(w*2),@(h*2)">
+            <rect class="myrect" x="0" y="10" width="80" height="40"></rect>
+            <text class="mytext" x="0" y="30">svg8</text>
+        </svg>
+    </div>
+</div>

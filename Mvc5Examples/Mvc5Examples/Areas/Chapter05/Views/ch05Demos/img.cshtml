@@ -1,0 +1,18 @@
+﻿<h2>img基本用法</h2>
+@{
+    var imageUrl = "/Areas/Chapter05/common/pic1.jpg";
+}
+<div class="row">
+    <div class="col-md-4">
+        <h4>将图像显示为圆角</h4>
+        <img src="@imageUrl" style="width:100%" class="img-rounded" alt="圆角图像">
+    </div>
+    <div class="col-md-4">
+        <h4>将图像显示为椭圆</h4>
+        <img src="@imageUrl" style="width:100%" class="img-circle" alt="椭圆图像">
+    </div>
+    <div class="col-md-4">
+        <h4>将图像显示为缩略图</h4>
+        <img src="@imageUrl" style="width:50%" class="img-thumbnail" alt="缩略图">
+    </div>
+</div>

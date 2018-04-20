@@ -1,0 +1,22 @@
+﻿<style>
+    .mydiv { position: absolute;
+             width: 120px; height: 50px;
+             color: #fff; background-color: #C00; }
+    .LeftTop { left: 0; top: 0; }
+    .LeftBottom { left: 0; bottom: 0; }
+    .RightTop { right: 0; top: 0; }
+    .RightBottom { right: 0; bottom: 0; }
+    .position1 { left: 225px; top: 100px; z-index:100; background-color: #ef2e2e; }
+    .position2 { left: 275px; top: 150px; z-index:300; background-color: #33ba36; }
+    .position3 { left: 250px; top: 125px; z-index:200; background-color: #1a32ee; }
+</style>
+<h3 class="text-center">定位控制（relative、absolute、z-index的含义）</h3>
+<div style="position:relative; border: 1px solid red; height:300px;">
+    <div class="mydiv LeftTop">我在左上角</div>
+    <div class="mydiv LeftBottom">我在左下角</div>
+    <div class="mydiv RightTop">我在右上角</div>
+    <div class="mydiv RightBottom">我在右下角</div>
+    <div class="mydiv position1">我是position1</div>
+    <div class="mydiv position2">我是position2</div>
+    <div class="mydiv position3">我是position3</div>
+</div>

@@ -1,0 +1,85 @@
+﻿@{
+    Layout = "~/Areas/Chapter10/Views/Shared/_ch10Layout3D.cshtml";
+}
+<div id="container"></div>
+<div id="info">
+    <p>3D设计基本用法1</p>
+    <p>
+        <button id="btn1" class="btn btn-success">[显示/隐藏]网格</button>
+    </p>
+</div>
+<script>
+    //创建WebGL容器
+    var container = document.getElementById('container');
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+
+    //创建场景
+    var scene = new THREE.Scene();
+
+    //创建相机
+    var camera = new THREE.PerspectiveCamera(50, width / height, 1, 1000);
+
+    //创建WebGL渲染器
+    var renderer = new THREE.WebGLRenderer({ antialias: true });
+
+    //创建球体对象
+    var mesh1 = new THREE.Mesh(
+        new THREE.SphereGeometry(5, 16, 8),
+        new THREE.MeshBasicMaterial({ color: 0x0000ff, wireframe: true }));
+
+    //创建立方体对象
+    var mesh2 = new THREE.Mesh(
+        new THREE.BoxGeometry(16, 16, 16),
+        new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true }));
+
+    //创建直射光
+    var light = new THREE.DirectionalLight(0xffffff);
+
+    //初始化3D场景
+    function init() {
+        //将相机添加到场景中
+        camera.position.z = 250;
+        scene.add(camera);
+
+        //将直射光添加到场景中
+        light.position.set(0, 0, 1);
+        scene.add(light);
+
+        //将球体对象添加到场景中
+        mesh1.position.x = -100;
+        mesh1.scale.x = mesh1.scale.y = mesh1.scale.z = 10;
+        scene.add(mesh1);
+
+        //将立方体对象添加到场景中
+        mesh2.position.x = 100;
+        mesh2.scale.x = mesh2.scale.y = mesh2.scale.z = 4;
+        scene.add(mesh2);
+
+        //初始化WebGL渲染器
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(width, height);
+        container.appendChild(renderer.domElement);
+        window.addEventListener('resize', onWindowResize, false);
+    }
+
+    //渲染场景
+    function animate() {
+        requestAnimationFrame(animate);
+        renderer.render(scene, camera);
+    }
+
+    //当浏览器窗口大小改变时重新计算容器大小
+    function onWindowResize() {
+        width = windows.innerWidth;
+        height = window.innerHeight;
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+        renderer.setSize(width, height);
+    }
+
+    $("#btn1").click(function () {
+        mesh1.material.wireframe = !mesh1.material.wireframe;
+        mesh2.material.wireframe = !mesh2.material.wireframe;
+    });
+</script>

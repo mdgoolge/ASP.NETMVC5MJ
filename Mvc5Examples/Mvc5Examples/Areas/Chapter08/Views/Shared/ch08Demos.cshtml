@@ -1,0 +1,31 @@
+﻿@{
+    var opts = (AjaxOptions)TempData["AjaxOptions"];
+    var a1 = "list-group-item";
+}
+<style>
+    #demo .list-group-item { padding-top: 7px; padding-bottom: 7px; }
+</style>
+
+<div id="demo" class="list-group">
+    <a href="#" class="@a1 active" data-toggle="collapse" data-target="#div1">
+        预处理示例 <span class="caret"></span>
+    </a>
+    @*class="collapse in"表示默认展开，class="collapse"表示默认折叠*@
+    <div id="div1" class="collapse in">
+        @Ajax.ActionLink("初始化测试数据", "InitMyDb2", "ch08Demos", null, opts, new { @class = a1 })
+    </div>
+    <a href="#" class="@a1 active" data-toggle="collapse" data-target="#div2">
+        管理员功能示例 <span class="caret"></span>
+    </a>
+    <div id="div2" class="collapse in">
+        @Ajax.ActionLink("课程编码管理", "Index", "MyDb2Table1", null, opts, new { @class = a1 })
+        @Ajax.ActionLink("基本信息管理", "Index", "MyDb2Table2", null, opts, new { @class = a1 })
+        @Ajax.ActionLink("成绩管理", "Index", "MyDb2Table3", null, opts, new { @class = a1 })
+    </div>
+    <a href="#" class="@a1 active" data-toggle="collapse" data-target="#div3">
+        一般人员功能示例 <span class="caret"></span>
+    </a>
+    <div id="div3" class="collapse in">
+        @Ajax.ActionLink("成绩查询", "GradeInfo","MyDb2Table3",null, opts, new { @class = a1 })
+    </div>
+</div>

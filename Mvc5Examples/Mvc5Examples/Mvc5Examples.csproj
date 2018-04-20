@@ -1,0 +1,1535 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{99D88842-8303-4443-94A8-222C5F44CCDB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mvc5Examples</RootNamespace>
+    <AssemblyName>Mvc5Examples</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.6.0\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Spatial, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.6.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.5.3.1\lib\net45\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiService\Controllers\MyStudentsController.cs" />
+    <Compile Include="ApiService\Controllers\StudentsController.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Chapter01\Chapter01AreaRegistration.cs" />
+    <Compile Include="Areas\Chapter01\Controllers\ch01NavDemosController.cs" />
+    <Compile Include="Areas\Chapter02\Chapter02AreaRegistration.cs" />
+    <Compile Include="Areas\Chapter02\Controllers\ch02DemosController.cs" />
+    <Compile Include="Areas\Chapter03\Controllers\ch03NavDemosController.cs" />
+    <Compile Include="Areas\Chapter03\Models\MyColorModel.cs" />
+    <Compile Include="Areas\Chapter03\Models\MyStudentModel.cs" />
+    <Compile Include="Areas\Chapter03\Chapter03AreaRegistration.cs" />
+    <Compile Include="Areas\Chapter03\Controllers\ch03DemosController.cs" />
+    <Compile Include="Areas\Chapter03\Models\MyUserModel.cs" />
+    <Compile Include="Areas\Chapter04\Chapter04AreaRegistration.cs" />
+    <Compile Include="Areas\Chapter04\Controllers\ch04DemosController.cs" />
+    <Compile Include="Areas\Chapter05\Models\MyClass1Model.cs" />
+    <Compile Include="Areas\Chapter05\Chapter05AreaRegistration.cs" />
+    <Compile Include="Areas\Chapter05\Controllers\ch05DemosController.cs" />
+    <Compile Include="Areas\Chapter05\Models\MyClass2Model.cs" />
+    <Compile Include="Areas\Chapter06\Chapter06AreaRegistration.cs" />
+    <Compile Include="Areas\Chapter06\Controllers\ch06DemosController.cs" />
+    <Compile Include="Areas\Chapter07\Chapter07AreaRegistration.cs" />
+    <Compile Include="Areas\Chapter07\Controllers\ch07DemosController.cs" />
+    <Compile Include="Areas\Chapter08\Chapter08AreaRegistration.cs" />
+    <Compile Include="Areas\Chapter08\Controllers\ch08DemosController.cs" />
+    <Compile Include="Areas\Chapter08\Controllers\MyDb2Controllers\MyDb2Table3Controller.cs" />
+    <Compile Include="Areas\Chapter08\Controllers\MyDb2Controllers\MyDb2Table1Controller.cs" />
+    <Compile Include="Areas\Chapter08\cs\MyDb2InitAlways.cs" />
+    <Compile Include="Areas\Chapter08\cs\MyDb2Init.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Areas\Chapter08\Controllers\MyDb2Controllers\MyDb2Table2Controller.cs" />
+    <Compile Include="Areas\Chapter08\Models\MyDb1Model\MyDb1.cs" />
+    <Compile Include="Areas\Chapter08\Models\MyDb1Model\MyTable1.cs" />
+    <Compile Include="Areas\Chapter08\Models\MyDb1Model\MyTable2.cs" />
+    <Compile Include="Areas\Chapter08\Models\MyDb1Model\MyTable3.cs" />
+    <Compile Include="Areas\Chapter08\Models\MyDb2Model\MyDb2.cs" />
+    <Compile Include="Areas\Chapter08\Models\MyDb2Model\MyTable1.cs" />
+    <Compile Include="Areas\Chapter08\Models\MyDb2Model\MyTable3.cs" />
+    <Compile Include="Areas\Chapter08\Models\MyDb2Model\MyTable2.cs" />
+    <Compile Include="ApiService\Models\MyStudent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ApiService\Models\MyDb3.cs" />
+    <Compile Include="ApiService\Models\Student.cs" />
+    <Compile Include="Areas\Chapter09\Chapter09AreaRegistration.cs" />
+    <Compile Include="Areas\Chapter09\Controllers\ch09DemosController.cs" />
+    <Compile Include="Areas\Chapter10\Chapter10AreaRegistration.cs" />
+    <Compile Include="Areas\Chapter10\Controllers\ch10Controller.cs" />
+    <Compile Include="Areas\Chapter10\Controllers\ch10Demos2DController.cs" />
+    <Compile Include="Areas\Chapter10\Controllers\ch10Demos3DController.cs" />
+    <Compile Include="Areas\Chapter10\Controllers\ThreejsExamplesController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\StudentsService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.datasvcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\MyDb1.mdf" />
+    <Content Include="App_Data\MyDb1_log.ldf">
+      <DependentUpon>MyDb1.mdf</DependentUpon>
+    </Content>
+    <Content Include="Areas\Chapter03\css\ch03Styles.css" />
+    <Content Include="Areas\Chapter06\common\smile.gif" />
+    <Content Include="Areas\Chapter06\common\a1.jpg" />
+    <Content Include="Areas\Chapter07\common\ch07Styles.css" />
+    <Content Include="Areas\Chapter05\common\dj.mp3" />
+    <Content Include="Areas\Chapter06\common\ch06Styles.css" />
+    <Content Include="Areas\Chapter06\common\border.png" />
+    <Content Include="common\images\ch08\smile.gif" />
+    <Content Include="common\images\ch08\xiaotu.jpg" />
+    <Content Include="Service References\StudentsService\Reference.datasvcmap">
+      <Generator>DataServicesCoreClientGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Threejs\build\three.js" />
+    <Content Include="Threejs\build\three.min.js" />
+    <Content Include="Threejs\examples\fonts\droid\droid_sans_bold.typeface.js" />
+    <Content Include="Threejs\examples\fonts\droid\droid_sans_mono_regular.typeface.js" />
+    <Content Include="Threejs\examples\fonts\droid\droid_sans_regular.typeface.js" />
+    <Content Include="Threejs\examples\fonts\droid\droid_serif_bold.typeface.js" />
+    <Content Include="Threejs\examples\fonts\droid\droid_serif_regular.typeface.js" />
+    <Content Include="Threejs\examples\fonts\droid\README.txt" />
+    <Content Include="Threejs\examples\fonts\gentilis_bold.typeface.js" />
+    <Content Include="Threejs\examples\fonts\gentilis_regular.typeface.js" />
+    <Content Include="Threejs\examples\fonts\helvetiker_bold.typeface.js" />
+    <Content Include="Threejs\examples\fonts\helvetiker_regular.typeface.js" />
+    <Content Include="Threejs\examples\fonts\optimer_bold.typeface.js" />
+    <Content Include="Threejs\examples\fonts\optimer_regular.typeface.js" />
+    <Content Include="Threejs\examples\js\AudioObject.js" />
+    <Content Include="Threejs\examples\js\BlendCharacter.js" />
+    <Content Include="Threejs\examples\js\BlendCharacterGui.js" />
+    <Content Include="Threejs\examples\js\cameras\CombinedCamera.js" />
+    <Content Include="Threejs\examples\js\Car.js" />
+    <Content Include="Threejs\examples\js\Cloth.js" />
+    <Content Include="Threejs\examples\js\controls\DeviceOrientationControls.js" />
+    <Content Include="Threejs\examples\js\controls\EditorControls.js" />
+    <Content Include="Threejs\examples\js\controls\FirstPersonControls.js" />
+    <Content Include="Threejs\examples\js\controls\FlyControls.js" />
+    <Content Include="Threejs\examples\js\controls\MouseControls.js" />
+    <Content Include="Threejs\examples\js\controls\OculusControls.js" />
+    <Content Include="Threejs\examples\js\controls\OrbitControls.js" />
+    <Content Include="Threejs\examples\js\controls\OrthographicTrackballControls.js" />
+    <Content Include="Threejs\examples\js\controls\PointerLockControls.js" />
+    <Content Include="Threejs\examples\js\controls\TrackballControls.js" />
+    <Content Include="Threejs\examples\js\controls\TransformControls.js" />
+    <Content Include="Threejs\examples\js\controls\VRControls.js" />
+    <Content Include="Threejs\examples\js\crossfade\gui.js" />
+    <Content Include="Threejs\examples\js\crossfade\scenes.js" />
+    <Content Include="Threejs\examples\js\crossfade\transition.js" />
+    <Content Include="Threejs\examples\js\CurveExtras.js" />
+    <Content Include="Threejs\examples\js\curves\NURBSCurve.js" />
+    <Content Include="Threejs\examples\js\curves\NURBSSurface.js" />
+    <Content Include="Threejs\examples\js\curves\NURBSUtils.js" />
+    <Content Include="Threejs\examples\js\Detector.js" />
+    <Content Include="Threejs\examples\js\effects\AnaglyphEffect.js" />
+    <Content Include="Threejs\examples\js\effects\AsciiEffect.js" />
+    <Content Include="Threejs\examples\js\effects\OculusRiftEffect.js" />
+    <Content Include="Threejs\examples\js\effects\ParallaxBarrierEffect.js" />
+    <Content Include="Threejs\examples\js\effects\StereoEffect.js" />
+    <Content Include="Threejs\examples\js\effects\VREffect.js" />
+    <Content Include="Threejs\examples\js\exporters\OBJExporter.js" />
+    <Content Include="Threejs\examples\js\exporters\SceneExporter.js" />
+    <Content Include="Threejs\examples\js\exporters\STLBinaryExporter.js" />
+    <Content Include="Threejs\examples\js\exporters\STLExporter.js" />
+    <Content Include="Threejs\examples\js\exporters\TypedGeometryExporter.js" />
+    <Content Include="Threejs\examples\js\geometries\ConvexGeometry.js" />
+    <Content Include="Threejs\examples\js\geometries\DecalGeometry.js" />
+    <Content Include="Threejs\examples\js\geometries\hilbert2D.js" />
+    <Content Include="Threejs\examples\js\geometries\hilbert3D.js" />
+    <Content Include="Threejs\examples\js\ImprovedNoise.js" />
+    <Content Include="Threejs\examples\js\libs\dat.gui.min.js" />
+    <Content Include="Threejs\examples\js\libs\msgpack-js.js" />
+    <Content Include="Threejs\examples\js\libs\pnltri.min.js" />
+    <Content Include="Threejs\examples\js\libs\require.js" />
+    <Content Include="Threejs\examples\js\libs\stats.min.js" />
+    <Content Include="Threejs\examples\js\libs\system.min.js" />
+    <Content Include="Threejs\examples\js\libs\tween.min.js" />
+    <Content Include="Threejs\examples\js\loaders\AssimpJSONLoader.js" />
+    <Content Include="Threejs\examples\js\loaders\AWDLoader.js" />
+    <Content Include="Threejs\examples\js\loaders\BabylonLoader.js" />
+    <Content Include="Threejs\examples\js\loaders\BinaryLoader.js" />
+    <Content Include="Threejs\examples\js\loaders\ColladaLoader.js" />
+    <Content Include="Threejs\examples\js\loaders\ctm\ctm.js" />
+    <Content Include="Threejs\examples\js\loaders\ctm\CTMLoader.js" />
+    <Content Include="Threejs\examples\js\loaders\ctm\CTMWorker.js" />
+    <Content Include="Threejs\examples\js\loaders\ctm\license\js-lzma.txt" />
+    <Content Include="Threejs\examples\js\loaders\ctm\license\js-openctm.txt" />
+    <Content Include="Threejs\examples\js\loaders\ctm\license\OpenCTM.txt" />
+    <Content Include="Threejs\examples\js\loaders\ctm\lzma.js" />
+    <Content Include="Threejs\examples\js\loaders\DDSLoader.js" />
+    <Content Include="Threejs\examples\js\loaders\gltf\glTF-parser.js" />
+    <Content Include="Threejs\examples\js\loaders\gltf\glTFAnimation.js" />
+    <Content Include="Threejs\examples\js\loaders\gltf\glTFLoader.js" />
+    <Content Include="Threejs\examples\js\loaders\gltf\glTFLoaderUtils.js" />
+    <Content Include="Threejs\examples\js\loaders\MTLLoader.js" />
+    <Content Include="Threejs\examples\js\loaders\OBJLoader.js" />
+    <Content Include="Threejs\examples\js\loaders\OBJMTLLoader.js" />
+    <Content Include="Threejs\examples\js\loaders\PDBLoader.js" />
+    <Content Include="Threejs\examples\js\loaders\PLYLoader.js" />
+    <Content Include="Threejs\examples\js\loaders\PVRLoader.js" />
+    <Content Include="Threejs\examples\js\loaders\RGBELoader.js" />
+    <Content Include="Threejs\examples\js\loaders\SceneLoader.js" />
+    <Content Include="Threejs\examples\js\loaders\STLLoader.js" />
+    <Content Include="Threejs\examples\js\loaders\SVGLoader.js" />
+    <Content Include="Threejs\examples\js\loaders\TGALoader.js" />
+    <Content Include="Threejs\examples\js\loaders\UTF8Loader.js" />
+    <Content Include="Threejs\examples\js\loaders\VRMLLoader.js" />
+    <Content Include="Threejs\examples\js\loaders\VTKLoader.js" />
+    <Content Include="Threejs\examples\js\MarchingCubes.js" />
+    <Content Include="Threejs\examples\js\math\ColorConverter.js" />
+    <Content Include="Threejs\examples\js\math\Lut.js" />
+    <Content Include="Threejs\examples\js\MD2Character.js" />
+    <Content Include="Threejs\examples\js\MD2CharacterComplex.js" />
+    <Content Include="Threejs\examples\js\Mirror.js" />
+    <Content Include="Threejs\examples\js\modifiers\ExplodeModifier.js" />
+    <Content Include="Threejs\examples\js\modifiers\SubdivisionModifier.js" />
+    <Content Include="Threejs\examples\js\modifiers\TessellateModifier.js" />
+    <Content Include="Threejs\examples\js\Ocean.js" />
+    <Content Include="Threejs\examples\js\Octree.js" />
+    <Content Include="Threejs\examples\js\ParametricGeometries.js" />
+    <Content Include="Threejs\examples\js\postprocessing\AdaptiveToneMappingPass.js" />
+    <Content Include="Threejs\examples\js\postprocessing\BloomPass.js" />
+    <Content Include="Threejs\examples\js\postprocessing\BokehPass.js" />
+    <Content Include="Threejs\examples\js\postprocessing\DotScreenPass.js" />
+    <Content Include="Threejs\examples\js\postprocessing\EffectComposer.js" />
+    <Content Include="Threejs\examples\js\postprocessing\FilmPass.js" />
+    <Content Include="Threejs\examples\js\postprocessing\GlitchPass.js" />
+    <Content Include="Threejs\examples\js\postprocessing\MaskPass.js" />
+    <Content Include="Threejs\examples\js\postprocessing\RenderPass.js" />
+    <Content Include="Threejs\examples\js\postprocessing\SavePass.js" />
+    <Content Include="Threejs\examples\js\postprocessing\ShaderPass.js" />
+    <Content Include="Threejs\examples\js\postprocessing\TexturePass.js" />
+    <Content Include="Threejs\examples\js\PRNG.js" />
+    <Content Include="Threejs\examples\js\renderers\CanvasRenderer.js" />
+    <Content Include="Threejs\examples\js\renderers\CSS2DRenderer.js" />
+    <Content Include="Threejs\examples\js\renderers\CSS3DRenderer.js" />
+    <Content Include="Threejs\examples\js\renderers\CSS3DStereoRenderer.js" />
+    <Content Include="Threejs\examples\js\renderers\plugins\DepthPassPlugin.js" />
+    <Content Include="Threejs\examples\js\renderers\Projector.js" />
+    <Content Include="Threejs\examples\js\renderers\RaytracingRenderer.js" />
+    <Content Include="Threejs\examples\js\renderers\SoftwareRenderer.js" />
+    <Content Include="Threejs\examples\js\renderers\SVGRenderer.js" />
+    <Content Include="Threejs\examples\js\renderers\WebGLDeferredRenderer.js" />
+    <Content Include="Threejs\examples\js\ShaderDeferred.js" />
+    <Content Include="Threejs\examples\js\ShaderGodRays.js" />
+    <Content Include="Threejs\examples\js\ShaderSkin.js" />
+    <Content Include="Threejs\examples\js\shaders\BasicShader.js" />
+    <Content Include="Threejs\examples\js\shaders\BleachBypassShader.js" />
+    <Content Include="Threejs\examples\js\shaders\BlendShader.js" />
+    <Content Include="Threejs\examples\js\shaders\BokehShader.js" />
+    <Content Include="Threejs\examples\js\shaders\BokehShader2.js" />
+    <Content Include="Threejs\examples\js\shaders\BrightnessContrastShader.js" />
+    <Content Include="Threejs\examples\js\shaders\ColorCorrectionShader.js" />
+    <Content Include="Threejs\examples\js\shaders\ColorifyShader.js" />
+    <Content Include="Threejs\examples\js\shaders\ConvolutionShader.js" />
+    <Content Include="Threejs\examples\js\shaders\CopyShader.js" />
+    <Content Include="Threejs\examples\js\shaders\DigitalGlitch.js" />
+    <Content Include="Threejs\examples\js\shaders\DOFMipMapShader.js" />
+    <Content Include="Threejs\examples\js\shaders\DotScreenShader.js" />
+    <Content Include="Threejs\examples\js\shaders\EdgeShader.js" />
+    <Content Include="Threejs\examples\js\shaders\EdgeShader2.js" />
+    <Content Include="Threejs\examples\js\shaders\FilmShader.js" />
+    <Content Include="Threejs\examples\js\shaders\FocusShader.js" />
+    <Content Include="Threejs\examples\js\shaders\FresnelShader.js" />
+    <Content Include="Threejs\examples\js\shaders\FXAAShader.js" />
+    <Content Include="Threejs\examples\js\shaders\HorizontalBlurShader.js" />
+    <Content Include="Threejs\examples\js\shaders\HorizontalTiltShiftShader.js" />
+    <Content Include="Threejs\examples\js\shaders\HueSaturationShader.js" />
+    <Content Include="Threejs\examples\js\shaders\KaleidoShader.js" />
+    <Content Include="Threejs\examples\js\shaders\LuminosityShader.js" />
+    <Content Include="Threejs\examples\js\shaders\MirrorShader.js" />
+    <Content Include="Threejs\examples\js\shaders\NormalDisplacementShader.js" />
+    <Content Include="Threejs\examples\js\shaders\NormalMapShader.js" />
+    <Content Include="Threejs\examples\js\shaders\OceanShaders.js" />
+    <Content Include="Threejs\examples\js\shaders\ParallaxShader.js" />
+    <Content Include="Threejs\examples\js\shaders\RGBShiftShader.js" />
+    <Content Include="Threejs\examples\js\shaders\SepiaShader.js" />
+    <Content Include="Threejs\examples\js\shaders\SSAOShader.js" />
+    <Content Include="Threejs\examples\js\shaders\TechnicolorShader.js" />
+    <Content Include="Threejs\examples\js\shaders\ToneMapShader.js" />
+    <Content Include="Threejs\examples\js\shaders\TriangleBlurShader.js" />
+    <Content Include="Threejs\examples\js\shaders\UnpackDepthRGBAShader.js" />
+    <Content Include="Threejs\examples\js\shaders\VerticalBlurShader.js" />
+    <Content Include="Threejs\examples\js\shaders\VerticalTiltShiftShader.js" />
+    <Content Include="Threejs\examples\js\shaders\VignetteShader.js" />
+    <Content Include="Threejs\examples\js\ShaderTerrain.js" />
+    <Content Include="Threejs\examples\js\ShaderToon.js" />
+    <Content Include="Threejs\examples\js\SimplexNoise.js" />
+    <Content Include="Threejs\examples\js\SimulationRenderer.js" />
+    <Content Include="Threejs\examples\js\SkyShader.js" />
+    <Content Include="Threejs\examples\js\Sparks.js" />
+    <Content Include="Threejs\examples\js\TypedArrayUtils.js" />
+    <Content Include="Threejs\examples\js\UCSCharacter.js" />
+    <Content Include="Threejs\examples\js\utils\GeometryUtils.js" />
+    <Content Include="Threejs\examples\js\utils\UVsDebug.js" />
+    <Content Include="Threejs\examples\js\WaterShader.js" />
+    <Content Include="Threejs\examples\js\wip\benchmark\BoxGeometry2.js" />
+    <Content Include="Threejs\examples\js\wip\benchmark\Geometry2.js" />
+    <Content Include="Threejs\examples\js\wip\benchmark\Geometry2Loader.js" />
+    <Content Include="Threejs\examples\js\wip\benchmark\Geometry3.js" />
+    <Content Include="Threejs\examples\js\wip\benchmark\Geometry4.js" />
+    <Content Include="Threejs\examples\js\wip\benchmark\Geometry5.js" />
+    <Content Include="Threejs\examples\js\wip\benchmark\Geometry5b.js" />
+    <Content Include="Threejs\examples\js\wip\benchmark\IndexedGeometry3.js" />
+    <Content Include="Threejs\examples\js\wip\benchmark\IndexedGeometry5.js" />
+    <Content Include="Threejs\examples\js\wip\benchmark\IndexedPlaneGeometry5.js" />
+    <Content Include="Threejs\examples\js\wip\benchmark\PlaneGeometry.js" />
+    <Content Include="Threejs\examples\js\wip\benchmark\PlaneGeometry2.js" />
+    <Content Include="Threejs\examples\js\wip\benchmark\PlaneGeometry2b.js" />
+    <Content Include="Threejs\examples\js\wip\benchmark\PlaneGeometry3.js" />
+    <Content Include="Threejs\examples\js\wip\benchmark\PlaneGeometry5.js" />
+    <Content Include="Threejs\examples\js\wip\benchmark\PlaneGeometry6.js" />
+    <Content Include="Threejs\examples\js\wip\benchmark\PlaneGeometry99.js" />
+    <Content Include="Threejs\examples\js\wip\benchmark\TypedGeometry.js" />
+    <Content Include="Threejs\examples\js\wip\CircleTypedGeometry.js" />
+    <Content Include="Threejs\examples\js\wip\GeometryEditor.js" />
+    <Content Include="Threejs\examples\js\wip\IndexedTypedGeometry.js" />
+    <Content Include="Threejs\examples\js\wip\PlaneTypedGeometry.js" />
+    <Content Include="Threejs\examples\js\wip\proxies\MultiColor.js" />
+    <Content Include="Threejs\examples\js\wip\proxies\MultiVector3.js" />
+    <Content Include="Threejs\examples\js\wip\proxies\ProxyColor.js" />
+    <Content Include="Threejs\examples\js\wip\proxies\ProxyFace3.js" />
+    <Content Include="Threejs\examples\js\wip\proxies\ProxyVector2.js" />
+    <Content Include="Threejs\examples\js\wip\proxies\ProxyVector3.js" />
+    <Content Include="Threejs\examples\js\wip\proxies\ProxyVector4.js" />
+    <Content Include="Threejs\examples\js\wip\ProxyGeometry.js" />
+    <Content Include="Threejs\examples\js\wip\TypedGeometry.js" />
+    <Content Include="Threejs\examples\models\animated\elderlyWalk.js" />
+    <Content Include="Threejs\examples\models\animated\flamingo.js" />
+    <Content Include="Threejs\examples\models\animated\horse.js" />
+    <Content Include="Threejs\examples\models\animated\monster\monster.jpg" />
+    <Content Include="Threejs\examples\models\animated\monster\monster.js" />
+    <Content Include="Threejs\examples\models\animated\ogro\ogro-light.js" />
+    <Content Include="Threejs\examples\models\animated\ogro\Ogro.txt" />
+    <Content Include="Threejs\examples\models\animated\ogro\skins\arboshak.png" />
+    <Content Include="Threejs\examples\models\animated\ogro\skins\ctf_b.png" />
+    <Content Include="Threejs\examples\models\animated\ogro\skins\ctf_r.png" />
+    <Content Include="Threejs\examples\models\animated\ogro\skins\darkam.png" />
+    <Content Include="Threejs\examples\models\animated\ogro\skins\freedom.png" />
+    <Content Include="Threejs\examples\models\animated\ogro\skins\gib.png" />
+    <Content Include="Threejs\examples\models\animated\ogro\skins\gordogh.png" />
+    <Content Include="Threejs\examples\models\animated\ogro\skins\grok.jpg" />
+    <Content Include="Threejs\examples\models\animated\ogro\skins\igdosh.png" />
+    <Content Include="Threejs\examples\models\animated\ogro\skins\khorne.png" />
+    <Content Include="Threejs\examples\models\animated\ogro\skins\nabogro.png" />
+    <Content Include="Threejs\examples\models\animated\ogro\skins\ogrobase.png" />
+    <Content Include="Threejs\examples\models\animated\ogro\skins\sharokh.png" />
+    <Content Include="Threejs\examples\models\animated\ogro\skins\weapon.jpg" />
+    <Content Include="Threejs\examples\models\animated\ogro\weapon-light.js" />
+    <Content Include="Threejs\examples\models\animated\parrot.js" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\ratamahatta.js" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\ratamahatta.txt" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\readme.txt" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\skins\ctf_b.png" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\skins\ctf_r.png" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\skins\dead.png" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\skins\gearwhore.png" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\skins\ratamahatta.png" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\skins\weapon.png" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\skins\w_bfg.png" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\skins\w_blaster.png" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\skins\w_chaingun.png" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\skins\w_glauncher.png" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\skins\w_hyperblaster.png" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\skins\w_machinegun.png" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\skins\w_railgun.png" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\skins\w_rlauncher.png" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\skins\w_shotgun.png" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\skins\w_sshotgun.png" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\weapon.js" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\w_bfg.js" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\w_blaster.js" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\w_chaingun.js" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\w_glauncher.js" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\w_hyperblaster.js" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\w_machinegun.js" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\w_railgun.js" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\w_rlauncher.js" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\w_shotgun.js" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\w_sshotgun.js" />
+    <Content Include="Threejs\examples\models\animated\sittingBox.js" />
+    <Content Include="Threejs\examples\models\animated\stork.js" />
+    <Content Include="Threejs\examples\models\assimp\interior\image1.jpg" />
+    <Content Include="Threejs\examples\models\assimp\interior\image2.jpg" />
+    <Content Include="Threejs\examples\models\assimp\interior\wall.jpg" />
+    <Content Include="Threejs\examples\models\assimp\jeep\jeep1.jpg" />
+    <Content Include="Threejs\examples\models\assimp\jeep\jeep1.readme.txt" />
+    <Content Include="Threejs\examples\models\awd\simple\textures\texture.jpg" />
+    <Content Include="Threejs\examples\models\collada\monster\monster.jpg" />
+    <Content Include="Threejs\examples\models\collada\monster\readme.txt" />
+    <Content Include="Threejs\examples\models\collada\pump\pump_body.jpg" />
+    <Content Include="Threejs\examples\models\collada\pump\pump_gears.jpg" />
+    <Content Include="Threejs\examples\models\collada\pump\pump_metalreflect.jpg" />
+    <Content Include="Threejs\examples\models\collada\VWS_B_Male2-2.jpg" />
+    <Content Include="Threejs\examples\models\ctm\camaro\camaro.js" />
+    <Content Include="Threejs\examples\models\ctm\camaro\car-ao.png" />
+    <Content Include="Threejs\examples\models\ctm\camaro\plane-ao-256.png" />
+    <Content Include="Threejs\examples\models\gltf\duck\duckCM.png" />
+    <Content Include="Threejs\examples\models\gltf\duck\README.txt" />
+    <Content Include="Threejs\examples\models\gltf\monster\monster.jpg" />
+    <Content Include="Threejs\examples\models\gltf\monster\readme.txt" />
+    <Content Include="Threejs\examples\models\molecules\Al2O3.pdb" />
+    <Content Include="Threejs\examples\models\molecules\aspirin.pdb" />
+    <Content Include="Threejs\examples\models\molecules\buckyball.pdb" />
+    <Content Include="Threejs\examples\models\molecules\caf2.pdb" />
+    <Content Include="Threejs\examples\models\molecules\caffeine.pdb" />
+    <Content Include="Threejs\examples\models\molecules\cholesterol.pdb" />
+    <Content Include="Threejs\examples\models\molecules\cocaine.pdb" />
+    <Content Include="Threejs\examples\models\molecules\cu.pdb" />
+    <Content Include="Threejs\examples\models\molecules\cubane.pdb" />
+    <Content Include="Threejs\examples\models\molecules\diamond.pdb" />
+    <Content Include="Threejs\examples\models\molecules\ethanol.pdb" />
+    <Content Include="Threejs\examples\models\molecules\glucose.pdb" />
+    <Content Include="Threejs\examples\models\molecules\graphite.pdb" />
+    <Content Include="Threejs\examples\models\molecules\lsd.pdb" />
+    <Content Include="Threejs\examples\models\molecules\lycopene.pdb" />
+    <Content Include="Threejs\examples\models\molecules\nacl.pdb" />
+    <Content Include="Threejs\examples\models\molecules\nicotine.pdb" />
+    <Content Include="Threejs\examples\models\molecules\ybco.pdb" />
+    <Content Include="Threejs\examples\models\platform\platform.jpg" />
+    <Content Include="Threejs\examples\models\skinned\human_walk_0_female.js" />
+    <Content Include="Threejs\examples\models\skinned\knight.js" />
+    <Content Include="Threejs\examples\models\skinned\marine\m4.js" />
+    <Content Include="Threejs\examples\models\skinned\marine\M4.png" />
+    <Content Include="Threejs\examples\models\skinned\marine\marine.js" />
+    <Content Include="Threejs\examples\models\skinned\marine\MarineCv2_color.jpg" />
+    <Content Include="Threejs\examples\models\skinned\marine\marine_anims.js" />
+    <Content Include="Threejs\examples\models\skinned\marine\marine_ikrig.js" />
+    <Content Include="Threejs\examples\models\skinned\simple\simple.js" />
+    <Content Include="Threejs\examples\models\skinned\UCS\skins\Asian_Male.jpg" />
+    <Content Include="Threejs\examples\models\skinned\UCS\skins\Black_Female.jpg" />
+    <Content Include="Threejs\examples\models\skinned\UCS\skins\Caucasion_Female.jpg" />
+    <Content Include="Threejs\examples\models\skinned\UCS\skins\Caucasion_Male.jpg" />
+    <Content Include="Threejs\examples\models\skinned\UCS\skins\Highlighted_Muscles.jpg" />
+    <Content Include="Threejs\examples\models\skinned\UCS\skins\Indian_Male.jpg" />
+    <Content Include="Threejs\examples\models\skinned\UCS\umich_ucs.js" />
+    <Content Include="Threejs\examples\models\utf8\ben.js" />
+    <Content Include="Threejs\examples\models\utf8\ben_dds.js" />
+    <Content Include="Threejs\examples\models\utf8\hand.jpg" />
+    <Content Include="Threejs\examples\models\utf8\hand.js" />
+    <Content Include="Threejs\examples\models\utf8\James_Body_Lores.jpg" />
+    <Content Include="Threejs\examples\models\utf8\James_EyeLashBotTran.png" />
+    <Content Include="Threejs\examples\models\utf8\James_EyeLashTopTran.png" />
+    <Content Include="Threejs\examples\models\utf8\James_Eye_Green.jpg" />
+    <Content Include="Threejs\examples\models\utf8\James_Eye_Inner_Green.jpg" />
+    <Content Include="Threejs\examples\models\utf8\James_Face_Color_Hair_Lores.jpg" />
+    <Content Include="Threejs\examples\models\utf8\James_Mouth_Gum_Lores.jpg" />
+    <Content Include="Threejs\examples\models\utf8\James_Tongue_Lores.jpg" />
+    <Content Include="Threejs\examples\models\utf8\MCasShoe1TEX_Lores.jpg" />
+    <Content Include="Threejs\examples\models\utf8\MJeans1TEX_Lores.jpg" />
+    <Content Include="Threejs\examples\models\utf8\MTshirt3TEX_Lores.jpg" />
+    <Content Include="Threejs\examples\models\utf8\Nail_Hand_01_Lores.jpg" />
+    <Content Include="Threejs\examples\models\utf8\WaltHi.js" />
+    <Content Include="Threejs\examples\obj\Bird.js" />
+    <Content Include="Threejs\examples\obj\blenderscene\scene.Cube.js" />
+    <Content Include="Threejs\examples\obj\blenderscene\scene.js" />
+    <Content Include="Threejs\examples\obj\blenderscene\scene.Monkey.js" />
+    <Content Include="Threejs\examples\obj\blenderscene\scene.Plane.js" />
+    <Content Include="Threejs\examples\obj\box\box.js" />
+    <Content Include="Threejs\examples\obj\camaro\CamaroNoUv_bin.js" />
+    <Content Include="Threejs\examples\obj\cubecolors\cubecolors.js" />
+    <Content Include="Threejs\examples\obj\cubecolors\cube_fvc.js" />
+    <Content Include="Threejs\examples\obj\f50\F50NoUv_bin.js" />
+    <Content Include="Threejs\examples\obj\female02\01_-_Default1noCulling.JPG" />
+    <Content Include="Threejs\examples\obj\female02\02_-_Default1noCulling.JPG" />
+    <Content Include="Threejs\examples\obj\female02\03_-_Default1noCulling.JPG" />
+    <Content Include="Threejs\examples\obj\female02\Female02_bin.js" />
+    <Content Include="Threejs\examples\obj\female02\Female02_slim.js" />
+    <Content Include="Threejs\examples\obj\female02\readme.txt" />
+    <Content Include="Threejs\examples\obj\gallardo\GallardoNoUv_bin.js" />
+    <Content Include="Threejs\examples\obj\gallardo\parts\gallardo_body_bin.js" />
+    <Content Include="Threejs\examples\obj\gallardo\parts\gallardo_wheel_bin.js" />
+    <Content Include="Threejs\examples\obj\leeperrysmith\Infinite-Level_02_Disp_NoSmoothUV-4096.jpg" />
+    <Content Include="Threejs\examples\obj\leeperrysmith\Infinite-Level_02_Tangent_SmoothUV.jpg" />
+    <Content Include="Threejs\examples\obj\leeperrysmith\LeePerrySmith.js" />
+    <Content Include="Threejs\examples\obj\leeperrysmith\LeePerrySmith_License.txt" />
+    <Content Include="Threejs\examples\obj\leeperrysmith\Map-COL.jpg" />
+    <Content Include="Threejs\examples\obj\leeperrysmith\Map-SPEC.jpg" />
+    <Content Include="Threejs\examples\obj\lightmap\lightmap-ao-shadow.png" />
+    <Content Include="Threejs\examples\obj\lightmap\lightmap.js" />
+    <Content Include="Threejs\examples\obj\lightmap\readme.txt" />
+    <Content Include="Threejs\examples\obj\lightmap\rocks.jpg" />
+    <Content Include="Threejs\examples\obj\lightmap\stone.jpg" />
+    <Content Include="Threejs\examples\obj\lucy\Lucy100k_bin.js" />
+    <Content Include="Threejs\examples\obj\lucy\Lucy100k_slim.js" />
+    <Content Include="Threejs\examples\obj\male02\01_-_Default1noCulling.JPG" />
+    <Content Include="Threejs\examples\obj\male02\male-02-1noCulling.JPG" />
+    <Content Include="Threejs\examples\obj\male02\Male02_bin.js" />
+    <Content Include="Threejs\examples\obj\male02\Male02_dds.js" />
+    <Content Include="Threejs\examples\obj\male02\Male02_slim.js" />
+    <Content Include="Threejs\examples\obj\male02\orig_02_-_Defaul1noCulling.JPG" />
+    <Content Include="Threejs\examples\obj\male02\readme.txt" />
+    <Content Include="Threejs\examples\obj\ninja\NinjaLo_bin.js" />
+    <Content Include="Threejs\examples\obj\Qrcode.js" />
+    <Content Include="Threejs\examples\obj\Suzanne.js" />
+    <Content Include="Threejs\examples\obj\suzanne\suzanne.js" />
+    <Content Include="Threejs\examples\obj\suzanne\suzanne.Monkey.003.js" />
+    <Content Include="Threejs\examples\obj\suzanne\suzanneHi.js" />
+    <Content Include="Threejs\examples\obj\suzanne\suzanneHi.Monkey.003.js" />
+    <Content Include="Threejs\examples\obj\terrain.js" />
+    <Content Include="Threejs\examples\obj\tree\tree.js" />
+    <Content Include="Threejs\examples\obj\veyron\parts\veyron_body_bin.js" />
+    <Content Include="Threejs\examples\obj\veyron\parts\veyron_wheel_bin.js" />
+    <Content Include="Threejs\examples\obj\veyron\VeyronNoUv_bin.js" />
+    <Content Include="Threejs\examples\obj\WaltHeadLo.js" />
+    <Content Include="Threejs\examples\obj\walt\WaltHead_bin.js" />
+    <Content Include="Threejs\examples\obj\walt\WaltHead_slim.js" />
+    <Content Include="Threejs\examples\scenes\robo_pigeon.js" />
+    <Content Include="Threejs\examples\scenes\test_scene.js" />
+    <Content Include="Threejs\examples\sounds\358232_j_s_song.mp3" />
+    <Content Include="Threejs\examples\sounds\376737_Skullbeatz___Bad_Cat_Maste.mp3" />
+    <Content Include="Threejs\examples\sounds\readme.txt" />
+    <Content Include="Threejs\examples\textures\2294472375_24a3b8ef46_o.jpg" />
+    <Content Include="Threejs\examples\textures\758px-Canestra_di_frutta_%28Caravaggio%29.jpg" />
+    <Content Include="Threejs\examples\textures\brick_bump.jpg" />
+    <Content Include="Threejs\examples\textures\brick_diffuse.jpg" />
+    <Content Include="Threejs\examples\textures\crate.gif" />
+    <Content Include="Threejs\examples\textures\cube\Bridge2\negx.jpg" />
+    <Content Include="Threejs\examples\textures\cube\Bridge2\negy.jpg" />
+    <Content Include="Threejs\examples\textures\cube\Bridge2\negz.jpg" />
+    <Content Include="Threejs\examples\textures\cube\Bridge2\posx.jpg" />
+    <Content Include="Threejs\examples\textures\cube\Bridge2\posy.jpg" />
+    <Content Include="Threejs\examples\textures\cube\Bridge2\posz.jpg" />
+    <Content Include="Threejs\examples\textures\cube\Bridge2\readme.txt" />
+    <Content Include="Threejs\examples\textures\cube\Escher\nx.jpg" />
+    <Content Include="Threejs\examples\textures\cube\Escher\ny.jpg" />
+    <Content Include="Threejs\examples\textures\cube\Escher\nz.jpg" />
+    <Content Include="Threejs\examples\textures\cube\Escher\px.jpg" />
+    <Content Include="Threejs\examples\textures\cube\Escher\py.jpg" />
+    <Content Include="Threejs\examples\textures\cube\Escher\pz.jpg" />
+    <Content Include="Threejs\examples\textures\cube\MilkyWay\dark-s_nx.jpg" />
+    <Content Include="Threejs\examples\textures\cube\MilkyWay\dark-s_ny.jpg" />
+    <Content Include="Threejs\examples\textures\cube\MilkyWay\dark-s_nz.jpg" />
+    <Content Include="Threejs\examples\textures\cube\MilkyWay\dark-s_px.jpg" />
+    <Content Include="Threejs\examples\textures\cube\MilkyWay\dark-s_py.jpg" />
+    <Content Include="Threejs\examples\textures\cube\MilkyWay\dark-s_pz.jpg" />
+    <Content Include="Threejs\examples\textures\cube\Park2\negx.jpg" />
+    <Content Include="Threejs\examples\textures\cube\Park2\negy.jpg" />
+    <Content Include="Threejs\examples\textures\cube\Park2\negz.jpg" />
+    <Content Include="Threejs\examples\textures\cube\Park2\posx.jpg" />
+    <Content Include="Threejs\examples\textures\cube\Park2\posy.jpg" />
+    <Content Include="Threejs\examples\textures\cube\Park2\posz.jpg" />
+    <Content Include="Threejs\examples\textures\cube\Park2\readme.txt" />
+    <Content Include="Threejs\examples\textures\cube\Park3Med\nx.jpg" />
+    <Content Include="Threejs\examples\textures\cube\Park3Med\ny.jpg" />
+    <Content Include="Threejs\examples\textures\cube\Park3Med\nz.jpg" />
+    <Content Include="Threejs\examples\textures\cube\Park3Med\px.jpg" />
+    <Content Include="Threejs\examples\textures\cube\Park3Med\py.jpg" />
+    <Content Include="Threejs\examples\textures\cube\Park3Med\pz.jpg" />
+    <Content Include="Threejs\examples\textures\cube\Park3Med\readme.txt" />
+    <Content Include="Threejs\examples\textures\cube\pisa\nx.png" />
+    <Content Include="Threejs\examples\textures\cube\pisa\ny.png" />
+    <Content Include="Threejs\examples\textures\cube\pisa\nz.png" />
+    <Content Include="Threejs\examples\textures\cube\pisa\px.png" />
+    <Content Include="Threejs\examples\textures\cube\pisa\py.png" />
+    <Content Include="Threejs\examples\textures\cube\pisa\pz.png" />
+    <Content Include="Threejs\examples\textures\cube\skybox\nx.jpg" />
+    <Content Include="Threejs\examples\textures\cube\skybox\ny.jpg" />
+    <Content Include="Threejs\examples\textures\cube\skybox\nz.jpg" />
+    <Content Include="Threejs\examples\textures\cube\skybox\px.jpg" />
+    <Content Include="Threejs\examples\textures\cube\skybox\py.jpg" />
+    <Content Include="Threejs\examples\textures\cube\skybox\pz.jpg" />
+    <Content Include="Threejs\examples\textures\cube\SwedishRoyalCastle\nx.jpg" />
+    <Content Include="Threejs\examples\textures\cube\SwedishRoyalCastle\ny.jpg" />
+    <Content Include="Threejs\examples\textures\cube\SwedishRoyalCastle\nz.jpg" />
+    <Content Include="Threejs\examples\textures\cube\SwedishRoyalCastle\px.jpg" />
+    <Content Include="Threejs\examples\textures\cube\SwedishRoyalCastle\py.jpg" />
+    <Content Include="Threejs\examples\textures\cube\SwedishRoyalCastle\pz.jpg" />
+    <Content Include="Threejs\examples\textures\cube\SwedishRoyalCastle\readme.txt" />
+    <Content Include="Threejs\examples\textures\decal\decal-diffuse.png" />
+    <Content Include="Threejs\examples\textures\decal\decal-normal.jpg" />
+    <Content Include="Threejs\examples\textures\disturb.jpg" />
+    <Content Include="Threejs\examples\textures\envmap.png" />
+    <Content Include="Threejs\examples\textures\land_ocean_ice_cloud_2048.jpg" />
+    <Content Include="Threejs\examples\textures\lava\cloud.png" />
+    <Content Include="Threejs\examples\textures\lava\lavatile.jpg" />
+    <Content Include="Threejs\examples\textures\lensflare0.png" />
+    <Content Include="Threejs\examples\textures\lensflare1.png" />
+    <Content Include="Threejs\examples\textures\lensflare2.jpg" />
+    <Content Include="Threejs\examples\textures\lensflare\hexangle.png" />
+    <Content Include="Threejs\examples\textures\lensflare\lensflare0.png" />
+    <Content Include="Threejs\examples\textures\lensflare\lensflare0_alpha.png" />
+    <Content Include="Threejs\examples\textures\lensflare\lensflare1.png" />
+    <Content Include="Threejs\examples\textures\lensflare\lensflare2.png" />
+    <Content Include="Threejs\examples\textures\lensflare\lensflare3.png" />
+    <Content Include="Threejs\examples\textures\lensflare\LICENSE.txt" />
+    <Content Include="Threejs\examples\textures\memorial.png" />
+    <Content Include="Threejs\examples\textures\metal.jpg" />
+    <Content Include="Threejs\examples\textures\minecraft\atlas.png" />
+    <Content Include="Threejs\examples\textures\minecraft\dirt.png" />
+    <Content Include="Threejs\examples\textures\minecraft\grass.png" />
+    <Content Include="Threejs\examples\textures\minecraft\grass_dirt.png" />
+    <Content Include="Threejs\examples\textures\minecraft\painterlypack.txt" />
+    <Content Include="Threejs\examples\textures\normal\ninja\ao.jpg" />
+    <Content Include="Threejs\examples\textures\normal\ninja\displacement.jpg" />
+    <Content Include="Threejs\examples\textures\normal\ninja\displacement.txt" />
+    <Content Include="Threejs\examples\textures\normal\ninja\normal.jpg" />
+    <Content Include="Threejs\examples\textures\patterns\bright_squares256.png" />
+    <Content Include="Threejs\examples\textures\patterns\circuit_pattern.png" />
+    <Content Include="Threejs\examples\textures\patterns\readme.txt" />
+    <Content Include="Threejs\examples\textures\planets\earth_atmos_2048.jpg" />
+    <Content Include="Threejs\examples\textures\planets\earth_atmos_4096.jpg" />
+    <Content Include="Threejs\examples\textures\planets\earth_clouds_1024.png" />
+    <Content Include="Threejs\examples\textures\planets\earth_clouds_2048.png" />
+    <Content Include="Threejs\examples\textures\planets\earth_lights_2048.png" />
+    <Content Include="Threejs\examples\textures\planets\earth_normal_2048.jpg" />
+    <Content Include="Threejs\examples\textures\planets\earth_specular_2048.jpg" />
+    <Content Include="Threejs\examples\textures\planets\moon_1024.jpg" />
+    <Content Include="Threejs\examples\textures\sintel.mp4" />
+    <Content Include="Threejs\examples\textures\skyboxsun25degtest.png" />
+    <Content Include="Threejs\examples\textures\skyboxsun25degtest.txt" />
+    <Content Include="Threejs\examples\textures\sprite.png" />
+    <Content Include="Threejs\examples\textures\sprite0.jpg" />
+    <Content Include="Threejs\examples\textures\sprite0.png" />
+    <Content Include="Threejs\examples\textures\sprite1.jpg" />
+    <Content Include="Threejs\examples\textures\sprite1.png" />
+    <Content Include="Threejs\examples\textures\sprite2.png" />
+    <Content Include="Threejs\examples\textures\sprites\ball.png" />
+    <Content Include="Threejs\examples\textures\sprites\circle.png" />
+    <Content Include="Threejs\examples\textures\sprites\disc.png" />
+    <Content Include="Threejs\examples\textures\sprites\snowflake1.png" />
+    <Content Include="Threejs\examples\textures\sprites\snowflake2.png" />
+    <Content Include="Threejs\examples\textures\sprites\snowflake3.png" />
+    <Content Include="Threejs\examples\textures\sprites\snowflake4.png" />
+    <Content Include="Threejs\examples\textures\sprites\snowflake5.png" />
+    <Content Include="Threejs\examples\textures\sprites\snowflake7_alpha.png" />
+    <Content Include="Threejs\examples\textures\sprites\spark1.png" />
+    <Content Include="Threejs\examples\textures\square-outline-textured.png" />
+    <Content Include="Threejs\examples\textures\square-outline.png" />
+    <Content Include="Threejs\examples\textures\terrain\backgrounddetailed6.jpg" />
+    <Content Include="Threejs\examples\textures\terrain\grasslight-big-nm.jpg" />
+    <Content Include="Threejs\examples\textures\terrain\grasslight-big.jpg" />
+    <Content Include="Threejs\examples\textures\terrain\grasslight-thin.jpg" />
+    <Content Include="Threejs\examples\textures\terrain\readme.txt" />
+    <Content Include="Threejs\examples\textures\transition\transition1.png" />
+    <Content Include="Threejs\examples\textures\transition\transition2.png" />
+    <Content Include="Threejs\examples\textures\transition\transition3.png" />
+    <Content Include="Threejs\examples\textures\transition\transition4.png" />
+    <Content Include="Threejs\examples\textures\transition\transition5.png" />
+    <Content Include="Threejs\examples\textures\transition\transition6.png" />
+    <Content Include="Threejs\examples\textures\UV_Grid_Sm.jpg" />
+    <Content Include="Threejs\examples\textures\UV_Grid_Sm.txt" />
+    <Content Include="Threejs\examples\textures\water.jpg" />
+    <Content Include="Threejs\examples\textures\waternormals.jpg" />
+    <Content Include="Areas\Chapter08\Views\MyDb2Table2\Create.cshtml" />
+    <Content Include="Areas\Chapter08\Views\MyDb2Table2\Delete.cshtml" />
+    <Content Include="Areas\Chapter08\Views\MyDb2Table2\Edit.cshtml" />
+    <Content Include="Areas\Chapter08\Views\MyDb2Table2\Index.cshtml" />
+    <Content Include="Areas\Chapter08\Views\MyDb2Table3\Edit.cshtml" />
+    <Content Include="Areas\Chapter08\Views\MyDb2Table3\Index.cshtml" />
+    <Content Include="Areas\Chapter08\Views\Shared\_ch08Layout.cshtml" />
+    <Content Include="Areas\Chapter08\Views\MyDb2Table1\Create.cshtml" />
+    <Content Include="Areas\Chapter08\Views\MyDb2Table1\Delete.cshtml" />
+    <Content Include="Areas\Chapter08\Views\MyDb2Table1\Edit.cshtml" />
+    <Content Include="Areas\Chapter08\Views\MyDb2Table1\Index.cshtml" />
+    <Content Include="Areas\Chapter08\Views\MyDb2Table3\GradeInfo.cshtml" />
+    <Content Include="Areas\Chapter08\Views\ch08Demos\InitMyDb2.cshtml" />
+    <Content Include="Areas\Chapter09\Views\ch09Demos\ch09Index.cshtml" />
+    <Content Include="Areas\Chapter09\Views\Shared\ch09Demos.cshtml" />
+    <Content Include="Areas\Chapter09\Views\ch09Demos\Demo1.cshtml" />
+    <Content Include="Areas\Chapter09\Views\ch09Demos\Demo2.cshtml" />
+    <Content Include="Areas\Chapter09\Views\ch09Demos\Demo3.cshtml" />
+    <Content Include="Areas\Chapter09\Views\ch09Demos\Other1_GetById.cshtml" />
+    <Content Include="Areas\Chapter09\Views\ch09Demos\Other2_Filter.cshtml" />
+    <Content Include="Areas\Chapter09\Views\ch09Demos\Other3_OrderBy.cshtml" />
+    <Content Include="Areas\Chapter09\Views\ch09Demos\Other4_Paging.cshtml" />
+    <Content Include="Areas\Chapter09\Views\ch09Demos\Other5_Create.cshtml" />
+    <Content Include="Areas\Chapter09\Views\ch09Demos\Other6_Update.cshtml" />
+    <Content Include="Areas\Chapter09\Views\ch09Demos\Other7_Delete.cshtml" />
+    <Content Include="Areas\Chapter09\Views\ch09Demos\Init.cshtml" />
+    <Content Include="Areas\Chapter09\Views\ch09Demos\httpStatusCode.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgldeferred_animation.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgldeferred_arealights.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgldeferred_pointlights.cshtml" />
+    <Content Include="Areas\Chapter10\Views\Shared\_ThreejsExamplesLayout.cshtml" />
+    <Content Include="Areas\Chapter10\Views\ch10Demos3D\demo2.cshtml" />
+    <Content Include="Areas\Chapter10\Views\ch10Demos3D\demo3.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_animation_cloth.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_animation_skinning_blending.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_animation_skinning_morph.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_buffergeometry.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_buffergeometry_custom_attributes_particles.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_buffergeometry_drawcalls.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_buffergeometry_lines.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_buffergeometry_lines_indexed.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_buffergeometry_particles.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_buffergeometry_rawshader.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_buffergeometry_uint.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_camera.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_camera_logarithmicdepthbuffer.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_custom_attributes.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_custom_attributes_lines.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_custom_attributes_particles.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_custom_attributes_particles2.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_custom_attributes_particles3.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_decals.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_effects_anaglyph.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_effects_oculusrift.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_effects_parallaxbarrier.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_effects_stereo.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_effects_vr.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_geometries.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_geometries2.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_geometry_colors.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_geometry_colors_blender.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_geometry_convex.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_geometry_cube.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_geometry_dynamic.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_geometry_extrude_shapes.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_geometry_extrude_shapes2.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_geometry_extrude_splines.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_geometry_hierarchy.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_geometry_hierarchy2.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_geometry_large_mesh.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_geometry_minecraft.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_geometry_minecraft_ao.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_geometry_normals.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_geometry_nurbs.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_geometry_shapes.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_geometry_terrain.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_geometry_terrain_fog.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_geometry_terrain_raycast.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_geometry_text.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_geometry_text2.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_gpgpu_birds.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_hdr.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_helpers.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_interactive_buffergeometry.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_interactive_cubes.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_interactive_cubes_gpu.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_interactive_cubes_ortho.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_interactive_draggablecubes.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_interactive_lines.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_interactive_particles.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_interactive_raycasting_pointcloud.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_interactive_voxelpainter.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_lensflares.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_lights_hemisphere.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_lights_pointlights.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_lights_pointlights2.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_lines_colors.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_lines_cubes.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_lines_dashed.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_lines_sphere.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_lines_splines.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_loader_json_objconverter.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_loader_stl.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_loader_vrml.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_lod.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_marchingcubes.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_materials.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_materials2.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_materials_blending.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_materials_blending_custom.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_materials_bumpmap.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_materials_bumpmap_skin.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_materials_cars.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_materials_cars_camaro.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_materials_cubemap.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_materials_cubemap_balls_reflection.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_materials_cubemap_balls_refraction.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_materials_cubemap_dynamic.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_materials_cubemap_dynamic2.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_materials_cubemap_refraction.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_materials_envmaps.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_materials_grass.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_materials_lightmap.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_materials_normaldisplacementmap.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_materials_normalmap.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_materials_shaders_fresnel.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_materials_skin.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_materials_texture_anisotropy.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_materials_texture_filters.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_materials_texture_hdr.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_materials_texture_manualmipmap.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_materials_wireframe.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_mirror.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_modifier_subdivision.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_modifier_tessellation.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_morphnormals.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_morphtargets.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_morphtargets_horse.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_morphtargets_md2.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_morphtargets_md2_control.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_multiple_canvases_circle.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_multiple_canvases_complex.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_multiple_canvases_grid.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_multiple_views.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_nearestneighbour.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_objects_update.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_octree.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_octree_raycasting.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_panorama_equirectangular.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_particles_billboards.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_particles_billboards_colors.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_particles_dynamic.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_particles_random.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_particles_shapes.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_particles_sprites.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_performance.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_performance_doublesided.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_performance_static.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_postprocessing.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_postprocessing_advanced.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_postprocessing_crossfade.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_postprocessing_dof.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_postprocessing_dof2.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_postprocessing_glitch.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_postprocessing_godrays.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_rtt.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_sandbox.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_shader.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_shader2.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_shaders_ocean.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_shaders_ocean2.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_shaders_sky.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_shaders_vector.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_shader_lava.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_shading_physical.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_shadowmap.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_shadowmap_performance.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_skinning_simple.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_sprites.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_terrain_dynamic.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_test_memory.cshtml" />
+    <None Include="Areas\Chapter10\Views\ThreejsExamples\webgl_trails.cshtml" />
+    <Content Include="common\images\home\ipad.jpg" />
+    <Content Include="common\images\home\mainpage.jpg" />
+    <Content Include="common\images\home\mobile.jpg" />
+    <Content Include="Areas\Chapter05\common\pic1.jpg" />
+    <Content Include="Areas\Chapter04\common\ch04Scripts.js" />
+    <Content Include="Areas\Chapter05\common\happyfit.mp4" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Areas\Chapter01\Views\web.config" />
+    <Content Include="Areas\Chapter02\Views\web.config" />
+    <Content Include="Areas\Chapter03\Views\web.config" />
+    <Content Include="Areas\Chapter04\Views\web.config" />
+    <Content Include="Areas\Chapter05\Views\web.config" />
+    <Content Include="Areas\Chapter06\Views\web.config" />
+    <Content Include="Areas\Chapter07\Views\web.config" />
+    <Content Include="Areas\Chapter08\Views\web.config" />
+    <Content Include="Areas\Chapter09\Views\web.config" />
+    <Content Include="Areas\Chapter10\Views\web.config" />
+    <Content Include="Areas\Chapter01\Views\ch01NavDemos\LayoutDemo.cshtml" />
+    <Content Include="Areas\Chapter01\Views\ch01NavDemos\ServerInfo.cshtml" />
+    <Content Include="Areas\Chapter01\Views\ch01NavDemos\ch01Index.cshtml" />
+    <Content Include="Areas\Chapter01\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Chapter01\Views\Shared\_ch01Layout.cshtml" />
+    <Content Include="Areas\Chapter01\Views\Shared\ch01NavDemos.cshtml" />
+    <Content Include="Areas\Chapter03\Views\ch03Demos\ActionRendAction.cshtml" />
+    <Content Include="Areas\Chapter03\Views\ch03Demos\LayoutDemo.cshtml" />
+    <Content Include="Areas\Chapter03\Views\ch03NavDemos\ModelDemo2.cshtml" />
+    <Content Include="Areas\Chapter03\Views\ch03NavDemos\ModelDemo3.cshtml" />
+    <Content Include="Areas\Chapter03\Views\ch03Demos\Example9.cshtml" />
+    <Content Include="Areas\Chapter03\Views\ch03Demos\Partial1.cshtml" />
+    <Content Include="Areas\Chapter03\Views\ch03Demos\PartialPage1.cshtml" />
+    <Content Include="Areas\Chapter03\Views\ch03Demos\PartialRendPartial.cshtml" />
+    <Content Include="Areas\Chapter03\Views\ch03Demos\RendPageDemo.cshtml" />
+    <Content Include="Areas\Chapter03\Views\ch03Demos\RequestDemo.cshtml" />
+    <Content Include="Areas\Chapter03\Views\ch03Demos\ServerDemo.cshtml" />
+    <Content Include="Areas\Chapter03\Views\ch03Demos\ShowHello.cshtml" />
+    <Content Include="Areas\Chapter03\Views\ch03Demos\ViewDataViewBag.cshtml" />
+    <Content Include="Areas\Chapter02\Views\ch02Demos\Welcome.cshtml" />
+    <Content Include="Areas\Chapter02\Views\ch02Demos\ch02Index.cshtml" />
+    <Content Include="Areas\Chapter02\Views\Shared\ch02Demos.cshtml" />
+    <Content Include="Areas\Chapter02\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Chapter02\Views\ch02Demos\AjaxDemo.cshtml" />
+    <Content Include="Areas\Chapter02\Views\ch02Demos\grid1.cshtml" />
+    <Content Include="Areas\Chapter02\Views\ch02Demos\grid2.cshtml" />
+    <Content Include="Areas\Chapter02\Views\ch02Demos\grid3.cshtml" />
+    <Content Include="Areas\Chapter02\Views\ch02Demos\grid4.cshtml" />
+    <Content Include="Areas\Chapter02\Views\ch02Demos\grid5.cshtml" />
+    <Content Include="Areas\Chapter02\Views\ch02Demos\icon1.cshtml" />
+    <Content Include="Areas\Chapter02\Views\ch02Demos\icon2.cshtml" />
+    <Content Include="Areas\Chapter02\Views\ch02Demos\prefixbg.cshtml" />
+    <Content Include="Areas\Chapter02\Views\ch02Demos\prefixbtn.cshtml" />
+    <Content Include="Areas\Chapter02\Views\ch02Demos\prefixtext.cshtml" />
+    <Content Include="Areas\Chapter02\Views\ch02Demos\razor1.cshtml" />
+    <Content Include="Areas\Chapter02\Views\ch02Demos\razor2.cshtml" />
+    <Content Include="Areas\Chapter02\Views\ch02Demos\UrlHelperDemo.cshtml" />
+    <Content Include="Areas\Chapter03\Views\ch03Demos\ch03Index.cshtml" />
+    <Content Include="Areas\Chapter03\Views\Shared\ch03Demos.cshtml" />
+    <Content Include="Areas\Chapter03\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\a1.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\a2.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\attr.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\audio.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\ButtonDemo3.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\buttonDemo1.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\buttonDemo2.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\buttonDemo4.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\div.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\dl.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\other.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\hx.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\img.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\p.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\paiban.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\table1.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\table2.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\tablePartial.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\ul.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\video.cshtml" />
+    <Content Include="Areas\Chapter04\Views\ch04Demos\ch04Index.cshtml" />
+    <Content Include="Areas\Chapter04\Views\Shared\ch04Demos.cshtml" />
+    <Content Include="Areas\Chapter04\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Chapter04\Views\ch04Demos\array.cshtml" />
+    <Content Include="Areas\Chapter04\Views\ch04Demos\dataParse.cshtml" />
+    <Content Include="Areas\Chapter04\Views\ch04Demos\date.cshtml" />
+    <Content Include="Areas\Chapter04\Views\ch04Demos\for.cshtml" />
+    <Content Include="Areas\Chapter04\Views\ch04Demos\GetScreenInfo.cshtml" />
+    <Content Include="Areas\Chapter04\Views\ch04Demos\GetWindowInfo.cshtml" />
+    <Content Include="Areas\Chapter04\Views\ch04Demos\ifswitch.cshtml" />
+    <Content Include="Areas\Chapter04\Views\ch04Demos\Example1.cshtml" />
+    <Content Include="Areas\Chapter04\Views\ch04Demos\Example2.cshtml" />
+    <Content Include="Areas\Chapter04\Views\ch04Demos\math.cshtml" />
+    <Content Include="Areas\Chapter04\Views\ch04Demos\string.cshtml" />
+    <Content Include="Areas\Chapter04\Views\ch04Demos\TimeCount.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\ch05Index.cshtml" />
+    <Content Include="Areas\Chapter05\Views\Shared\ch05Demos.cshtml" />
+    <Content Include="Areas\Chapter05\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\attSelector.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\BasicSelector.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\jQuery2.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\boxShadow.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\CssDemo1.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\jQuery1.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\display.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\position.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\PseudoClassesSelector1.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\PseudoClassesSelector2.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\relationSelector.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\RoundCorner.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\ch06Index.cshtml" />
+    <Content Include="Areas\Chapter06\Views\Shared\ch06demosLeft.cshtml" />
+    <Content Include="Areas\Chapter06\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\accordion1.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\NewFolder1\NoUsebtnDemo1.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\NewFolder1\carousel.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\dialogAlert.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\dialogModal.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\dropdown1.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\accordion2UI.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\datePickerUI.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\NewFolder1\NoUseiconsUI.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\NewFolder1\NoUseselectMenuUI.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\sliderUI.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\panel1.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\panel2.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\popover.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\progressBar.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\NewFolder1\tabs1.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\tooltip.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\ch07Index.cshtml" />
+    <Content Include="Areas\Chapter07\Views\Shared\ch07Demos.cshtml" />
+    <Content Include="Areas\Chapter07\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\AjaxBeginForm.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\form1.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\form2.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\form3.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\form4.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\form5.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\HtmlBeginForm.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\HttpGetDemo.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\HttpPostDemo.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\inputDemo.cshtml" />
+    <Content Include="Areas\Chapter08\Views\ch08Demos\ch08Index.cshtml" />
+    <Content Include="Areas\Chapter08\Views\Shared\ch08Demos.cshtml" />
+    <Content Include="Areas\Chapter08\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Chapter09\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Chapter10\Views\ch10\ch10Index.cshtml" />
+    <Content Include="Areas\Chapter10\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Chapter10\Views\ch10Demos3D\animationCloth.cshtml" />
+    <Content Include="Areas\Chapter10\Views\Shared\ch10Demos.cshtml" />
+    <Content Include="Areas\Chapter10\Views\Shared\_ch10Layout3D.cshtml" />
+    <Content Include="Areas\Chapter03\Views\ch03Demos\ActionResultDemo.cshtml" />
+    <Content Include="Areas\Chapter03\downloadFiles\a1.doc" />
+    <Content Include="Areas\Chapter03\downloadFiles\a1.docx" />
+    <Content Include="Areas\Chapter03\downloadFiles\a1.rar" />
+    <Content Include="Areas\Chapter03\Views\Shared\_ch03Layout.cshtml" />
+    <Content Include="Areas\Chapter03\Views\Shared\ch03NavDemos.cshtml" />
+    <Content Include="Areas\Chapter03\Views\ch03NavDemos\ModelDemo1.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\a2Part1.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\a2Part4.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\a2Part2.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\a2Part3.cshtml" />
+    <Content Include="Areas\Chapter03\Views\ch03NavDemos\Validation2.cshtml" />
+    <Content Include="Areas\Chapter03\Views\ch03NavDemos\Validation1.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\formPartial.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\TextBoxPasswordTextArea.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\RadioButtonCheckBox.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\ListBoxDropDownList.cshtml" />
+    <Content Include="Areas\Chapter06\Views\Shared\_ch06Layout.cshtml" />
+    <Content Include="Areas\Chapter06\Views\Shared\ch06demosRight.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\PseudoElementsSelector.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\background.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\text1.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\transform.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\NewFolder1\tabs2UI.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\NewFolder1\NoUsebtnCheckBox1.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\buttonsetUI.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\NewFolder1\NoUsebtnRadioButton1.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\NewFolder1\NoUsebtnRadioButton2UI.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\NewFolder1\NoUsebtnRadioButton3.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\NewFolder1\CheckBox1.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\NewFolder1\CheckBox3.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\menu1UI.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\menu2UI.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\dropdown2.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\menu3UI.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\animation1.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\animation2.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\boxSizing.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\text2.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\animation3.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\animation4.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\animation5.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\animation6.cshtml" />
+    <Content Include="Areas\Chapter10\Views\ch10Demos2D\elipse.cshtml" />
+    <Content Include="Areas\Chapter10\Views\ch10Demos2D\polyline_polygon.cshtml" />
+    <Content Include="Areas\Chapter10\Views\ch10Demos2D\rect.cshtml" />
+    <Content Include="Areas\Chapter10\Views\ch10Demos2D\text.cshtml" />
+    <Content Include="Areas\Chapter10\Views\ch10Demos2D\demo3_svg_symbol.cshtml" />
+    <Content Include="Areas\Chapter10\Views\ch10Demos2D\line.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Areas\Chapter10\common\svgFiles\myRect2.svg" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\flex.cshtml" />
+    <None Include="Areas\Chapter10\common\svgFiles\myRect1.svg" />
+    <Content Include="Areas\Chapter10\Views\ch10Demos2D\demo1_svg.cshtml" />
+    <Content Include="Areas\Chapter10\Views\ch10Demos2D\demo4_canvas.cshtml" />
+    <Content Include="Areas\Chapter10\Views\ch10Demos2D\curves.cshtml" />
+    <Content Include="Areas\Chapter10\Views\ch10Demos2D\demo2_svg_viewbox.cshtml" />
+    <Content Include="Threejs\examples\files\inconsolata.woff" />
+    <Content Include="Threejs\examples\fonts\droid\NOTICE" />
+    <Content Include="Threejs\examples\fonts\LICENSE" />
+    <Content Include="Threejs\examples\models\animated\monster\monster.blend" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\src\ratamahatta.md2" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\src\weapon.md2" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\src\w_bfg.md2" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\src\w_blaster.md2" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\src\w_chaingun.MD2" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\src\w_glauncher.md2" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\src\w_hyperblaster.md2" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\src\w_machinegun.md2" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\src\w_railgun.md2" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\src\w_rlauncher.md2" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\src\w_shotgun.md2" />
+    <Content Include="Threejs\examples\models\animated\ratamahatta\src\w_sshotgun.md2" />
+    <Content Include="Threejs\examples\models\assimp\interior\interior.3ds" />
+    <Content Include="Threejs\examples\models\assimp\interior\interior.assimp.json" />
+    <Content Include="Threejs\examples\models\assimp\jeep\jeep.assimp.json" />
+    <Content Include="Threejs\examples\models\assimp\jeep\jeep1.ms3d" />
+    <Content Include="Threejs\examples\models\awd\simple\simple.awd" />
+    <Content Include="Threejs\examples\models\babylon\skull.babylon" />
+    <Content Include="Threejs\examples\models\collada\avatar.dae" />
+    <Content Include="Threejs\examples\models\collada\kawada-hironx.dae" />
+    <Content Include="Threejs\examples\models\collada\monster\monster.dae" />
+    <Content Include="Threejs\examples\models\collada\multimaterial.dae" />
+    <Content Include="Threejs\examples\models\collada\pump\pump.dae" />
+    <Content Include="Threejs\examples\models\ctm\ben.ctm" />
+    <Content Include="Threejs\examples\models\ctm\camaro\camaro.ctm" />
+    <Content Include="Threejs\examples\models\ctm\hand.ctm" />
+    <Content Include="Threejs\examples\models\ctm\LeePerry.ctm" />
+    <Content Include="Threejs\examples\models\ctm\WaltHead.ctm" />
+    <Content Include="Threejs\examples\models\gltf\duck\duck.bin" />
+    <Content Include="Threejs\examples\models\gltf\duck\duck.dae" />
+    <Content Include="Threejs\examples\models\gltf\duck\duck.json" />
+    <Content Include="Threejs\examples\models\gltf\duck\duck0FS.glsl" />
+    <Content Include="Threejs\examples\models\gltf\duck\duck0VS.glsl" />
+    <Content Include="Threejs\examples\models\gltf\monster\monster.bin" />
+    <Content Include="Threejs\examples\models\gltf\monster\monster.dae" />
+    <Content Include="Threejs\examples\models\gltf\monster\monster.json" />
+    <Content Include="Threejs\examples\models\gltf\monster\monster0FS.glsl" />
+    <Content Include="Threejs\examples\models\gltf\monster\monster0VS.glsl" />
+    <Content Include="Threejs\examples\models\json\pressure.json" />
+    <Content Include="Threejs\examples\models\molecules\.htaccess" />
+    <Content Include="Threejs\examples\models\platform\platform.json" />
+    <Content Include="Threejs\examples\models\ply\ascii\dolphins.ply" />
+    <Content Include="Threejs\examples\models\ply\ascii\dolphins_colored.ply" />
+    <Content Include="Threejs\examples\models\ply\binary\dolphins_be.ply" />
+    <Content Include="Threejs\examples\models\ply\binary\dolphins_le.ply" />
+    <Content Include="Threejs\examples\models\skinned\marine\m4.blend" />
+    <Content Include="Threejs\examples\models\skinned\marine\marine_anims.blend" />
+    <Content Include="Threejs\examples\models\skinned\marine\marine_fbx.blend" />
+    <Content Include="Threejs\examples\models\skinned\marine\marine_fk.blend" />
+    <Content Include="Threejs\examples\models\skinned\marine\marine_ikrig.blend" />
+    <Content Include="Threejs\examples\models\skinned\simple\simple.blend" />
+    <Content Include="Threejs\examples\models\skinned\UCS_config.json" />
+    <Content Include="Threejs\examples\models\skin_and_morph.dae" />
+    <Content Include="Threejs\examples\models\stl\ascii\pr2_head_pan.stl" />
+    <Content Include="Threejs\examples\models\stl\ascii\pr2_head_tilt.stl" />
+    <Content Include="Threejs\examples\models\stl\ascii\slotted_disk.stl" />
+    <Content Include="Threejs\examples\models\stl\binary\colored.stl" />
+    <Content Include="Threejs\examples\models\stl\binary\pr2_head_pan.stl" />
+    <Content Include="Threejs\examples\models\stl\binary\pr2_head_tilt.stl" />
+    <Content Include="Threejs\examples\models\utf8\ben.utf8" />
+    <Content Include="Threejs\examples\models\utf8\dds\James_Body_Lores.dds" />
+    <Content Include="Threejs\examples\models\utf8\dds\James_EyeLashBotTran.dds" />
+    <Content Include="Threejs\examples\models\utf8\dds\James_EyeLashTopTran.dds" />
+    <Content Include="Threejs\examples\models\utf8\dds\James_Eye_Green.dds" />
+    <Content Include="Threejs\examples\models\utf8\dds\James_Eye_Inner_Green.dds" />
+    <Content Include="Threejs\examples\models\utf8\dds\James_Face_Color_Hair_Lores.dds" />
+    <Content Include="Threejs\examples\models\utf8\dds\James_Mouth_Gum_Lores.dds" />
+    <Content Include="Threejs\examples\models\utf8\dds\James_Tongue_Lores.dds" />
+    <Content Include="Threejs\examples\models\utf8\dds\MCasShoe1TEX_Lores.dds" />
+    <Content Include="Threejs\examples\models\utf8\dds\MJeans1TEX_Lores.dds" />
+    <Content Include="Threejs\examples\models\utf8\dds\MTshirt3TEX_Lores.dds" />
+    <Content Include="Threejs\examples\models\utf8\dds\Nail_Hand_01_Lores.dds" />
+    <Content Include="Threejs\examples\models\utf8\hand.utf8" />
+    <Content Include="Threejs\examples\models\utf8\WaltHi.utf8" />
+    <Content Include="Threejs\examples\models\vrml\house.wrl" />
+    <Content Include="Threejs\examples\models\vrml\simple.wrl" />
+    <Content Include="Threejs\examples\models\vtk\bunny.vtk" />
+    <Content Include="Threejs\examples\obj\blenderscene\scene.blend" />
+    <Content Include="Threejs\examples\obj\box\box.bin" />
+    <Content Include="Threejs\examples\obj\camaro\.htaccess" />
+    <Content Include="Threejs\examples\obj\camaro\CamaroNoUv_bin.bin" />
+    <Content Include="Threejs\examples\obj\cubecolors\.htaccess" />
+    <Content Include="Threejs\examples\obj\cubecolors\cubecolors.blend" />
+    <Content Include="Threejs\examples\obj\cubecolors\cube_fvc.blend" />
+    <Content Include="Threejs\examples\obj\f50\.htaccess" />
+    <Content Include="Threejs\examples\obj\f50\F50NoUv_bin.bin" />
+    <Content Include="Threejs\examples\obj\female02\.htaccess" />
+    <Content Include="Threejs\examples\obj\female02\female02.mtl" />
+    <Content Include="Threejs\examples\obj\female02\female02.obj" />
+    <Content Include="Threejs\examples\obj\female02\Female02_bin.bin" />
+    <Content Include="Threejs\examples\obj\gallardo\.htaccess" />
+    <Content Include="Threejs\examples\obj\gallardo\GallardoNoUv_bin.bin" />
+    <Content Include="Threejs\examples\obj\gallardo\parts\gallardo_body_bin.bin" />
+    <Content Include="Threejs\examples\obj\gallardo\parts\gallardo_wheel_bin.bin" />
+    <Content Include="Threejs\examples\obj\leeperrysmith\.htaccess" />
+    <Content Include="Threejs\examples\obj\leeperrysmith\LeePerrySmith.obj" />
+    <Content Include="Threejs\examples\obj\lucy\.htaccess" />
+    <Content Include="Threejs\examples\obj\lucy\Lucy100k_bin.bin" />
+    <Content Include="Threejs\examples\obj\male02\.htaccess" />
+    <Content Include="Threejs\examples\obj\male02\01_-_Default1noCulling.dds" />
+    <Content Include="Threejs\examples\obj\male02\male-02-1noCulling.dds" />
+    <Content Include="Threejs\examples\obj\male02\male02.mtl" />
+    <Content Include="Threejs\examples\obj\male02\male02.obj" />
+    <Content Include="Threejs\examples\obj\male02\Male02_bin.bin" />
+    <Content Include="Threejs\examples\obj\male02\male02_dds.mtl" />
+    <Content Include="Threejs\examples\obj\male02\orig_02_-_Defaul1noCulling.dds" />
+    <Content Include="Threejs\examples\obj\ninja\.htaccess" />
+    <Content Include="Threejs\examples\obj\ninja\NinjaLo_bin.bin" />
+    <Content Include="Threejs\examples\obj\tree\.htaccess" />
+    <Content Include="Threejs\examples\obj\tree\tree.obj" />
+    <Content Include="Threejs\examples\obj\veyron\.htaccess" />
+    <Content Include="Threejs\examples\obj\veyron\parts\veyron_body_bin.bin" />
+    <Content Include="Threejs\examples\obj\veyron\parts\veyron_wheel_bin.bin" />
+    <Content Include="Threejs\examples\obj\veyron\VeyronNoUv_bin.bin" />
+    <Content Include="Threejs\examples\obj\walt\.htaccess" />
+    <Content Include="Threejs\examples\obj\walt\WaltHead.mtl" />
+    <Content Include="Threejs\examples\obj\walt\WaltHead.obj" />
+    <Content Include="Threejs\examples\obj\walt\WaltHead_bin.bin" />
+    <Content Include="Threejs\examples\scenes\robo_pigeon.pack" />
+    <Content Include="Threejs\examples\sounds\358232_j_s_song.ogg" />
+    <Content Include="Threejs\examples\sounds\376737_Skullbeatz___Bad_Cat_Maste.ogg" />
+    <Content Include="Threejs\examples\textures\compressed\disturb_2bpp_rgb.pvr" />
+    <Content Include="Threejs\examples\textures\compressed\disturb_4bpp_rgb.pvr" />
+    <Content Include="Threejs\examples\textures\compressed\disturb_4bpp_rgb_mips.pvr" />
+    <Content Include="Threejs\examples\textures\compressed\disturb_4bpp_rgb_v3.pvr" />
+    <Content Include="Threejs\examples\textures\compressed\disturb_argb_mip.dds" />
+    <Content Include="Threejs\examples\textures\compressed\disturb_argb_nomip.dds" />
+    <Content Include="Threejs\examples\textures\compressed\disturb_dxt1_mip.dds" />
+    <Content Include="Threejs\examples\textures\compressed\disturb_dxt1_nomip.dds" />
+    <Content Include="Threejs\examples\textures\compressed\explosion_dxt5_mip.dds" />
+    <Content Include="Threejs\examples\textures\compressed\flare_2bpp_rgba.pvr" />
+    <Content Include="Threejs\examples\textures\compressed\flare_4bpp_rgba.pvr" />
+    <Content Include="Threejs\examples\textures\compressed\hepatica_dxt3_mip.dds" />
+    <Content Include="Threejs\examples\textures\compressed\Mountains.dds" />
+    <Content Include="Threejs\examples\textures\compressed\Mountains_argb_mip.dds" />
+    <Content Include="Threejs\examples\textures\compressed\Mountains_argb_nomip.dds" />
+    <Content Include="Threejs\examples\textures\compressed\park3_cube_mip_2bpp_rgb_v3.pvr" />
+    <Content Include="Threejs\examples\textures\compressed\park3_cube_nomip_4bpp_rgb.pvr" />
+    <Content Include="Threejs\examples\textures\crate_color8.tga" />
+    <Content Include="Threejs\examples\textures\crate_grey8.tga" />
+    <Content Include="Threejs\examples\textures\cube\Escher\dds\nx.dds" />
+    <Content Include="Threejs\examples\textures\cube\Escher\dds\ny.dds" />
+    <Content Include="Threejs\examples\textures\cube\Escher\dds\nz.dds" />
+    <Content Include="Threejs\examples\textures\cube\Escher\dds\px.dds" />
+    <Content Include="Threejs\examples\textures\cube\Escher\dds\py.dds" />
+    <Content Include="Threejs\examples\textures\cube\Escher\dds\pz.dds" />
+    <Content Include="Threejs\examples\textures\kinect.nfo" />
+    <Content Include="Threejs\examples\textures\kinect.webm" />
+    <Content Include="Threejs\examples\textures\miranda_uncropped.hdr" />
+    <Content Include="Threejs\examples\textures\pano.webm" />
+    <Content Include="Threejs\examples\textures\sintel.ogv" />
+    <Content Include="Areas\Chapter10\Views\ch10Demos3D\Index3d.cshtml" />
+    <Content Include="Areas\Chapter10\Views\ch10Demos3D\demo1.cshtml" />
+    <Content Include="Areas\Chapter10\Views\ThreejsExamples\aIndex.cshtml" />
+    <Content Include="ClassDiagram1.cd" />
+    <None Include="Scripts\jquery-2.1.3.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-ui-1.11.3.js" />
+    <Content Include="Scripts\jquery-ui-1.11.3.min.js" />
+    <Content Include="Scripts\jquery-ui-datepicker-cn.js" />
+    <Content Include="Scripts\jquery-2.1.3.js" />
+    <Content Include="Scripts\jquery-2.1.3.min.js" />
+    <Content Include="Scripts\jquery-2.1.3.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\npm.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_AreasPartialAjax.cshtml" />
+    <Content Include="Views\Shared\_AreasLayout.cshtml" />
+    <Content Include="Views\Shared\_MainLayout.cshtml" />
+    <Content Include="Views\Home\emulator.cshtml" />
+    <Content Include="Views\Home\MainIndex.cshtml" />
+    <Content Include="Views\Shared\_AreasPartialRef.cshtml" />
+    <Content Include="Service References\StudentsService\service.edmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\Chapter01\Models\" />
+    <Folder Include="Areas\Chapter02\Models\" />
+    <Folder Include="Areas\Chapter03\js\" />
+    <Folder Include="Areas\Chapter04\Models\" />
+    <Folder Include="Areas\Chapter06\Models\" />
+    <Folder Include="Areas\Chapter07\Models\" />
+    <Folder Include="Areas\Chapter09\Models\" />
+    <Folder Include="Areas\Chapter10\Models\" />
+    <Folder Include="common\css\" />
+    <Folder Include="common\js\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ServiceReferenceMetadataStorage Include="Service References\StudentsService\">
+      <Type>datasvcmap</Type>
+    </ServiceReferenceMetadataStorage>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3000</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:3827/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

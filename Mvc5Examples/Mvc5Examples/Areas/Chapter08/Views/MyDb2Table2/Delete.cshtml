@@ -1,0 +1,35 @@
+﻿@model Mvc5Examples.Areas.Chapter08.Models.MyDb2Model.MyTable2
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header btn-success">
+                <h4 class="modal-title">确实要删除该行吗？</h4>
+            </div>
+            <div class="modal-body">
+                <dl class="dl-horizontal">
+                    <dt> @Html.DisplayNameFor(model => model.StudentID) </dt>
+                    <dd> @Html.DisplayFor(model => model.StudentID) </dd>
+
+                    <dt> @Html.DisplayNameFor(model => model.StudentName) </dt>
+                    <dd> @Html.DisplayFor(model => model.StudentName) </dd>
+
+                    <dt> @Html.DisplayNameFor(model => model.RuXueShiJian) </dt>
+                    <dd> @Html.DisplayFor(model => model.RuXueShiJian) </dd>
+                </dl>
+            </div>
+            <div class="modal-footer">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="btn-block text-right">
+                        <input type="submit" value="删除" class="btn btn-primary" />
+                        <a class="btn btn-primary" href="@Url.Action("Index")">取消</a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $("#myModal").modal();
+</script>

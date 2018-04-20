@@ -1,0 +1,55 @@
+﻿@{
+    AjaxOptions ajaxOptions = (AjaxOptions)TempData["AjaxOptions"];
+    var a = "Index1";      //Action
+    var c = "ch05Demos";  //Controller
+}
+<div id="demo" class="accordionDemo panel panel-info">
+    <h3 class="panel-heading">常用HTML5元素</h3>
+    <div class="list-group" style="max-height: 200px;">
+        @Ajax.ActionLink("例1：attr、prop", a, c, new { id = "attr" }, ajaxOptions, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例2：h1～h6", a, c, new { id = "hx" }, ajaxOptions, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例3：p", a, c, new { id = "p" }, ajaxOptions, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例4：其他排版标记", a, c, new { id = "paiban" }, ajaxOptions, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例5：div基本用法", a, c, new { id = "div" }, ajaxOptions, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例6：超链接基本用法", a, c, new { id = "a1" }, ajaxOptions, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例7：锚点基本用法", a, c, new { id = "a2" }, ajaxOptions, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例8：ul基本用法", a, c, new { id = "ul" }, ajaxOptions, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例9：dl基本用法", a, c, new { id = "dl" }, ajaxOptions, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例10：img基本用法", a, c, new { id = "img" }, ajaxOptions, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例11：audio基本用法", a, c, new { id = "audio" }, ajaxOptions, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例12：video基本用法", a, c, new { id = "video" }, ajaxOptions, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例13：表格基本用法1", a, c, new { id = "table1" }, ajaxOptions, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例14：表格基本用法2", a, c, new { id = "table2" }, ajaxOptions, new { @class = "list-group-item" })
+        @Html.ActionLink("例15：HttpGet", "HttpGetDemo", c, null, new { @class = "list-group-item" })
+        @Html.ActionLink("例16：HttpPost", "HttpPostDemo", "ch05Demos", null, new { @class = "list-group-item" })
+        @Html.ActionLink("例17：HtmlBeginForm", "HtmlBeginForm", "ch05Demos", null, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例18：AjaxBeginForm", "AjaxBeginForm", c, null, ajaxOptions, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例19：input", "inputDemo", c, null, ajaxOptions, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例20：按钮(1)-按钮类型", "buttonDemo1", c, null, ajaxOptions, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例21：按钮(2)-按钮样式", a, c, new { id = "buttonDemo2" }, ajaxOptions, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例22：按钮(3)-多按钮处理", "buttonDemo3", c, null, ajaxOptions, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例23：按钮(4)-按钮组", a, c, new { id = "buttonDemo4" }, ajaxOptions, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例24：其他基本交互元素", a, c, new { id = "other" }, ajaxOptions, new { @class = "list-group-item" })
+    </div>
+    <h3 class="panel-heading">表单基本布局</h3>
+    <div class="list-group">
+        @Ajax.ActionLink("例25：布局方式(1)-纵向排列)", "FormDemo", c, new { id = "form1" }, ajaxOptions, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例26：布局方式(2)-横向排列", "FormDemo", c, new { id = "form2" }, ajaxOptions, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例27：布局方式(3)-居中横向", "FormDemo", c, new { id = "form3" }, ajaxOptions, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例28：布局方式(4)-内联式", "FormDemo", c, new { id = "form4" }, ajaxOptions, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例29：布局方式(5)-导航栏", "FormDemo", c, new { id = "form5" }, ajaxOptions, new { @class = "list-group-item" })
+    </div>
+    <h3 class="panel-heading">常用表单控件</h3>
+    <div class="list-group">
+        @Ajax.ActionLink("例30：文本框和密码框", "FormDemo", c, new { id = "TextBoxPasswordTextArea" }, ajaxOptions, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例31：单选按钮和复选框", "FormControlDemo", c, new { id = "RadioButtonCheckBox" }, ajaxOptions, new { @class = "list-group-item" })
+        @Ajax.ActionLink("例32：列表和下拉列表", "FormControlDemo", c, new { id = "ListBoxDropDownList" }, ajaxOptions, new { @class = "list-group-item" })
+    </div>
+</div>
+<script>
+    var options = {
+        heightStyle: "content",
+        collapsible: true
+    };
+    $("#demo").accordion(options);
+</script>

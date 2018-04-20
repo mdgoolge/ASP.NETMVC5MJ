@@ -1,0 +1,26 @@
+﻿@{
+    var ajaxOptions = (AjaxOptions)TempData["AjaxOptions"];
+    var a1 = "list-group-item";
+    var controllerMame = "ch03Demos";
+}
+<div id="demo" class="accordionDemo panel panel-primary">
+    <h3 class="panel-heading">基本用法</h3>
+    <div class="list-group">
+        @Ajax.ActionLink("例1：ActionResultDemo", "Index", controllerMame, new { id = "ActionResultDemo" }, ajaxOptions, new { @class = a1 })
+        @Ajax.ActionLink("例2：ViewDataViewBag", "ViewDataViewBag", controllerMame, null, ajaxOptions, new { @class = a1 })
+        @Ajax.ActionLink("例3：ServerDemo", "ServerDemo", controllerMame, null, ajaxOptions, new { @class = a1 })
+        @Ajax.ActionLink("例4：RequestDemo", "RequestDemo", controllerMame, null, ajaxOptions, new { @class = a1 })
+        @Ajax.ActionLink("例5：LayoutDemo", "Index", controllerMame, new { id = "LayoutDemo" }, ajaxOptions, new { @class = a1 })
+        @Ajax.ActionLink("例6：PartialRendPartial", "Index", controllerMame, new { id = "PartialRendPartial" }, ajaxOptions, new { @class = a1 })
+        @Ajax.ActionLink("例7：ActionRendAction", "Index", controllerMame, new { id = "ActionRendAction" }, ajaxOptions, new { @class = a1 })
+        @Ajax.ActionLink("例8：RendPageDemo", "Index", controllerMame, new { id = "RendPageDemo" }, ajaxOptions, new { @class = a1 })
+        @Ajax.ActionLink("例9：强类型帮助器基本用法", "Example9", controllerMame, null, ajaxOptions, new { @class = a1 })
+    </div>
+</div>
+<script>
+    var options = {
+        heightStyle: "content",
+        collapsible: true
+    };
+    $("#demo").accordion(options);
+</script>

@@ -1,0 +1,35 @@
+﻿<h4 class="btn-success text-center">浮动（float）的含义和基本用法</h4>
+@{
+    string s1 = "朝辞白帝彩云间，千里江陵一日还。两岸猿声啼不住，轻舟已过万重山。";
+    string s2 = s1 + s1 + s1;
+    var src = "/Areas/Chapter06/common/smile.gif";
+}
+<style>
+    #text p{ text-indent:2em;}
+    .a{border:1px solid red;}
+    .a1{width:50px; float:left; }
+    .a2{width:50px; float: right;}
+    .a3{width:30px; display:inline-block;}
+    .a4{width:25px; display:inline;}
+</style>
+<div id="text" class="row">
+    <div class="col-md-6">
+        <p>
+            <img class="a a1" src="@src" />@s2
+        </p>
+        <p>
+            @s2<img class="a a1" src="@src" />@s1
+        </p>
+        <p>
+            @s1<img class="a a2" src="@src" />@s2
+        </p>
+    </div>
+    <div class="col-md-6">
+        <p>
+            @s1<img class="a a1" src="@src" />@s1
+            @s1<img class="a a3" src="@src" />@s1
+            @s1<img class="a a4" src="@src" />@s1
+            @s1<img class="a a2" src="@src" />@s2
+        </p>
+    </div>
+</div>

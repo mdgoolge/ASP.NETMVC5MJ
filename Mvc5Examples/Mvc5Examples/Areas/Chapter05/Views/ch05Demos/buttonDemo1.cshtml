@@ -1,0 +1,36 @@
+﻿@model Mvc5Examples.Areas.Chapter05.Models.MyClass1Model
+@using (Ajax.BeginForm(new AjaxOptions{ UpdateTargetId = "bodyContent" }))
+{
+    <h4>按钮基本用法1：button元素的3种type（不指定时，默认为button类型）</h4>
+    <hr />
+    <p>
+        <label>第1个数：</label>
+        @Html.TextBoxFor(m => m.n1)
+        <label>第2个数：</label>
+        @Html.TextBoxFor(m => m.n2)
+    </p>
+    <p>
+        <button id="btn1" type="reset" name="btn" value="按钮1" class="btn btn-primary">按钮1(reset)</button>
+        <button id="btn2" type="button" name="btn" value="按钮2" class="btn btn-primary">按钮2(button)</button>
+        <button id="btn3" type="submit" name="btn" value="求和" class="btn btn-primary">求和(submit)</button>
+        <button id="btn4" type="submit" name="btn" value="求积" class="btn btn-primary">求积(submit)</button>
+    </p>
+}
+<div id="div1" class="alert alert-success"></div>
+@if (this.IsPost)
+{
+    <script>
+        $("#div1").text("@ViewBag.result");
+    </script>
+}
+<script>
+    $(document).ready(function () {
+        var m = "（客户端响应）你单击的按钮是：";
+        $("#btn1").click(function () {
+            $("#div1").text(m + $("#btn1").attr("value"));
+        });
+        $("#btn2").click(function () {
+            $("#div1").text(m + $("#btn2").attr("value"));
+        });
+    });
+</script>
