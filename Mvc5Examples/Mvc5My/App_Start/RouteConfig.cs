@@ -16,7 +16,7 @@ namespace Mvc5My
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "MainIndex", id = UrlParameter.Optional }
             );
         }
     }
