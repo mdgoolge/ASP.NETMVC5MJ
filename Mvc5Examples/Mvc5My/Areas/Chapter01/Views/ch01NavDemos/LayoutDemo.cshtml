@@ -1,0 +1,33 @@
+﻿<h2 class="text-center">本书各章示例的布局</h2>
+<div class="bg-danger">
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <span style="margin-left:100px;">（NavDemos导航区）</span>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="collapse1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>@Html.ActionLink("返回主页", "Index", "Home", new { area = "" }, null)</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="panel panel-primary">
+                <div class="text-center" style="min-height:300px; padding-top:130px; font-size:20px">
+                    （Demos导航区）
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9" style="padding-left: 0;">
+            <div class="panel panel-default" style="min-height: 300px;">
+                <div class="panel-body">
+                    <div class="bg-info text-center" style="min-height:300px; padding-top:140px; font-size:35px">
+                        主窗口
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

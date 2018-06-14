@@ -13,5 +13,9 @@ namespace Mvc5My.Areas.Chapter01.Controllers
         {
             return View(id);
         }
+        public ActionResult LayoutDemo(string id)
+        {
+            return View(id);
+        }
     }
 }
