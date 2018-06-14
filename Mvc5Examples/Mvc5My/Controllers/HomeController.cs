@@ -26,5 +26,11 @@ namespace Mvc5My.Controllers
 
             return View();
         }
+
+        public ActionResult MainIndex()
+        {
+            ViewBag.Message = "ASP.NET MVC 程序设计教程（第三版）";
+            return View();
+        }
     }
 }
