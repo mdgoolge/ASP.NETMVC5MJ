@@ -25,7 +25,7 @@
                     <span class="icon-bar"></span>
                 </button>
             </nav>
-            <nav class="navbar-collapse">
+            <nav class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("第1章", "Index", "ch01NavDemos", new { area = "Chapter01", id = "ch01Index" }, null)</li>
                     @for (int i = 2; i <= 9; i++)
@@ -37,7 +37,7 @@
                             string.Format("第{0}章", i),   //链接提示信息(linkText)
                             "Index",  //操作方法名(actionName)
                             string.Format("ch{0:d2}Demos", i), //控制器名
-                            new { area = areaName, id = chIndex }, //路由参数(routervalues)
+                            new { area = areaName ,id = chIndex}, //路由参数(routervalues)
                             null  //HTML特性(htmlAttributes)
                          )
                         </li>
