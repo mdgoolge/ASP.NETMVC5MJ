@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Html.Partial("~/Views/Shared/_AreasPartialRef.cshtml")
+    @Html.Partial("~/Views/Shared/_AreasPartialAjax.cshtml")
+</head>
+<body>
+    @{
+        int chapter = ViewContext.ViewBag.Chapter;
+    }
+    <div class="container">
+        <div class="panel panel-default" style="min-height: 350px;">
+            <div class="panel-heading">
+                <span>第@(chapter)章</span>
+                <span class="pull-right">@Html.ActionLink("返回主页", "MainIndex", "Home", new { area = "" }, null)</span>
+                <span id="loading" class="pull-right" style="display: none; color: red; margin-right:20px;">（正在加载，请稍等...）</span>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.Partial(string.Format("ch{0:d2}Demos", chapter))
+                    </div>
+                    <div id="bodyContent" class="col-md-9">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
