@@ -123,6 +123,11 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Chapter01\Chapter01AreaRegistration.cs" />
     <Compile Include="Areas\Chapter01\Controllers\ch01NavDemosController.cs" />
+    <Compile Include="Areas\Chapter03\Chapter03AreaRegistration.cs" />
+    <Compile Include="Areas\Chapter03\Controllers\ch03Controller.cs" />
+    <Compile Include="Areas\Chapter03\Controllers\ch03DemosController.cs" />
+    <Compile Include="Areas\Chapter03\Controllers\ch03NavDemosController.cs" />
+    <Compile Include="Areas\Chapter03\Models\MyColorModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -191,6 +196,28 @@
     <Content Include="Areas\Chapter01\Views\Shared\ch01NavDemos.cshtml" />
     <Content Include="Areas\Chapter01\Views\ch01NavDemos\ServerInfo.cshtml" />
     <Content Include="Areas\Chapter01\Views\ch01NavDemos\LayoutDemo.cshtml" />
+    <Content Include="Areas\Chapter03\Views\web.config" />
+    <Content Include="Areas\Chapter03\Views\Shared\ch03Demos.cshtml">
+      <SubType>
+      </SubType>
+    </Content>
+    <Content Include="Areas\Chapter03\Views\Shared\_ch03Layout.cshtml" />
+    <Content Include="Areas\Chapter03\Views\_ViewStart.cshtml">
+      <SubType>
+      </SubType>
+    </Content>
+    <Content Include="Areas\Chapter03\Views\ch03Demos\ch03Index.cshtml" />
+    <Content Include="Areas\Chapter03\Views\Shared\ch03NavDemos.cshtml" />
+    <Content Include="Areas\Chapter03\Views\ch03Demos\ActionResultDemo.cshtml" />
+    <Content Include="Areas\Chapter03\downloadFiles\a1.doc" />
+    <Content Include="Areas\Chapter03\downloadFiles\a1.docx" />
+    <Content Include="Areas\Chapter03\downloadFiles\a1.rar" />
+    <Content Include="Areas\Chapter03\Views\ch03Demos\ActionRendAction.cshtml" />
+    <Content Include="Areas\Chapter03\Views\ch03Demos\ShowHello.cshtml" />
+    <Content Include="Areas\Chapter03\Views\ch03Demos\ViewDataViewBag.cshtml">
+      <SubType>
+      </SubType>
+    </Content>
     <None Include="Properties\PublishProfiles\MVC5My.pubxml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
@@ -232,6 +259,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Chapter01\Models\" />
+    <Folder Include="Areas\Chapter03\css\" />
+    <Folder Include="Areas\Chapter03\Views\ch03NavDemos\" />
+    <Folder Include="Areas\Chapter03\Views\ch03\" />
     <Folder Include="common\css\" />
     <Folder Include="common\js\" />
     <Folder Include="Models\" />

@@ -1,0 +1,21 @@
+﻿@{
+    var action1 = Html.Action("ShowHello", "ch03Demos", new { name = "张三" });
+    var action2 = Html.Action("ShowHello", "ch03Demos", new { name = "王五" });
+}
+
+<h4>呈现子视图的Html帮助器（Action、RendAction）基本用法</h4>
+
+<h4 class="bg-success">基本用法1</h4>
+<p>@Html.Action("ShowHello", "ch03Demos")</p>
+<p>@action1</p>
+<p>@{Html.RenderAction("ShowHello", "ch03Demos", new { name = "李四" });}</p>
+
+<h4 class="bg-success">基本用法2</h4>
+@{
+    var today = DateTime.Now;
+    if (today.Year >= 2014)
+    {
+        <p>@action2</p>
+        Html.RenderAction("ShowHello", "ch03Demos", new { name = "赵六" });
+    }
+}

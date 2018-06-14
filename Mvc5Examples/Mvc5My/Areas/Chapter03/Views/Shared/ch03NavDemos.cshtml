@@ -1,0 +1,10 @@
+﻿@{
+    var ajaxOptions = (AjaxOptions)TempData["AjaxOptions"];
+}
+<ul class="nav navbar-nav">
+    <li>@Ajax.ActionLink("例10", "ModelDemo1", "ch03NavDemos", null, ajaxOptions)</li>
+    <li>@Ajax.ActionLink("例11", "ModelDemo2", "ch03NavDemos", null, ajaxOptions)</li>
+    <li>@Ajax.ActionLink("例12", "ModelDemo3", "ch03NavDemos", null, ajaxOptions)</li>
+    <li>@Ajax.ActionLink("例13", "Validation1", "ch03NavDemos", null, ajaxOptions)</li>
+    <li>@Ajax.ActionLink("例14", "Validation2", "ch03NavDemos", null, ajaxOptions)</li>
+</ul>
