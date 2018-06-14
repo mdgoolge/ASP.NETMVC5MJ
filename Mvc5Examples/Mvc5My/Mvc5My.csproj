@@ -191,6 +191,7 @@
     <Content Include="Areas\Chapter01\Views\Shared\ch01NavDemos.cshtml" />
     <Content Include="Areas\Chapter01\Views\ch01NavDemos\ServerInfo.cshtml" />
     <Content Include="Areas\Chapter01\Views\ch01NavDemos\LayoutDemo.cshtml" />
+    <None Include="Properties\PublishProfiles\MVC5My.pubxml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
