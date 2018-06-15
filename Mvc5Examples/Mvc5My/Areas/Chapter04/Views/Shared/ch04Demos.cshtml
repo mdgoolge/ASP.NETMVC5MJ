@@ -1,0 +1,42 @@
+﻿@{
+    AjaxOptions ajaxOptions = (AjaxOptions)TempData["AjaxOptions"];
+    var a = "Index";   //action
+    var c = "ch04Demos";  //controller
+    var attr = new { @class = "list-group-item" };
+}
+<div id="demo" class="accordionDemo panel panel-success">
+    <h3 class="panel-heading">JavaScript基础</h3>
+    <div class="list-group" style="max-height:200px;">
+        @{
+            string[,] s1 =
+            {
+                {"例1：基本用法","Example1"},
+                {"例2：变量和作用域","Example2"},
+                {"例3：数学函数","math"},
+                {"例4：字符串","string"},
+                {"例5：数组","array"},
+                {"例6：日期时间","date"},
+                {"例7：数据类型转换","dataParse"},
+                {"例8：if、switch语句","ifswitch"},
+                {"例9：for、for/in语句","for"},
+            };
+            for (int i = 0; i < s1.GetLength(0); i++)
+            {
+                @Ajax.ActionLink(s1[i, 0], a, c, new { id = s1[i, 1] }, ajaxOptions, attr);
+            }
+        }
+    </div>
+    <h3 class="panel-heading">浏览器窗口和客户端事件</h3>
+    <div class="list-group">
+        @Ajax.ActionLink("例10：获取客户端屏幕信息", a, c, new { id = "GetScreenInfo" }, ajaxOptions, attr)
+        @Ajax.ActionLink("例11：获取浏览器窗口信息", a, c, new { id = "GetWindowInfo" }, ajaxOptions, attr)
+        @Ajax.ActionLink("例12：计时器基本用法", a, c, new { id = "TimeCount" }, ajaxOptions, attr)
+    </div>
+</div>
+<script>
+    var options = {
+        collapsible: true,
+        active: false
+    };
+    $("#demo").accordion(options);
+</script>

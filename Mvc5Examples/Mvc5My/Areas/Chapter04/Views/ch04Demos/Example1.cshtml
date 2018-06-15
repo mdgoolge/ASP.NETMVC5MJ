@@ -1,0 +1,34 @@
+﻿<style>
+    .mydiv {
+        display: inline-block;
+        margin: 100px auto 20px auto;
+        padding: 20px 0;
+        border-radius: 50%;
+        border-width: 1px;
+        border-style: solid;
+        width: 150px;
+    }
+</style>
+<div class="center-block text-center">
+    <canvas id="canvas1" style="width: 100%; height:200px;"></canvas>
+    <p class="text-center" style="margin-top:-120px;">JavaScript和jQuery基本用法</p>
+    <div id="div1" class="mydiv">Hello!</div>
+    <p>
+        <button id="btn1" type="button" class="btn btn-success">弹出对话框</button>
+        <button id="btn2" type="button" class="btn btn-primary">显示/隐藏div框</button>
+    </p>
+</div>
+
+<script src="~/Areas/Chapter04/common/ch04Scripts.js"></script>
+<script>
+    $(document).ready(function () {
+        DrawCanvas("canvas1");
+        $("#btn1").click(function () {
+            ShowMessage("hello");
+        });
+        $("#btn2").click(function () {
+            //在显示和隐藏之间切换(动画速度为500ms，不带参数表示无动画效果）
+            $("#div1").toggle(500);
+        });
+    });
+</script>

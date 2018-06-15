@@ -1,0 +1,36 @@
+﻿<h2>变量和作用域的含义</h2>
+<p id="p1"></p>
+<p id="p2"></p>
+<p id="p3"></p>
+<p id="p4"></p>
+<p id="p5"></p>
+<script>
+    var x = 100;
+    var y = 200;
+    $(document).ready(function () {
+        f1();
+        f2();
+        f3();
+        f4();
+    });
+    function f1() {
+        $("#p1").html("f1输出结果：x=" + x + ",y=" + y);
+    }
+    function f2() {
+        z = 200;
+        $("#p2").html("f2输出结果：x=" + x + ",y=" + y+",z="+z);
+    }
+    function f3() {
+        var x;
+        y = 500;
+        $("#p3").html("f3第一次输出结果：x=" + x + ",y=" + y + ",z=" + z);
+        y = 400;
+        $("#p4").html("f3第二次输出结果：x=" + x + ",y=" + y + ",z=" + z);
+    }
+    function f4() {
+        if (z>100) {
+            var a = 5;
+        }
+        $("#p5").html("f4输出结果：x=" + x + ",y=" + y + ",z=" + z + ",a=" + a);
+    }
+</script>

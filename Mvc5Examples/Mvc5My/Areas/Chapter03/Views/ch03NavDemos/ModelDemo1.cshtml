@@ -1,0 +1,10 @@
+﻿@model List<string>
+<ul class="list-inline">
+    <li>喜欢的颜色：  </li>
+    @foreach (var v in Model)
+    {
+        var c = v.Split(',');
+        <li style="color:@c[0]">@c[1]</li>
+    }
+</ul>
+

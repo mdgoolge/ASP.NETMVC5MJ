@@ -1,0 +1,23 @@
+﻿<h2>JavaScript数学函数的基本用法</h2>
+<pre id="pre1"></pre>
+<div id="div1"></div>
+<script>
+    $(document).ready(function () {
+        $("#pre1").html("初始值：d1 = -15, d2 = 13.74");
+        $("#div1").html(MathDemo());
+    });
+    function MathDemo() {
+        var d1 = -15;
+        var d2 = 13.74;
+        var a =
+        [
+            "d1的绝对值：" + Math.abs(d1),
+            "大于等于d2的最小整数：" + Math.ceil(d2),
+            "小于等于d2的最大整数：" + Math.floor(d2),
+            "d2四舍五入取整：" + Math.round(d2),
+            "d1的正弦函数：" + Math.sin(d1),
+            "PI/2的余弦函数：" + Math.cos(Math.PI / 2)
+        ];
+        return a.join("<br/>");
+    }
+</script>

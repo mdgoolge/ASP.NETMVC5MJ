@@ -1,0 +1,22 @@
+﻿@model List<Mvc5My.Areas.Chapter03.Models.MyStudentModel>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>学号</th>
+            <th>姓名 </th>
+            <th>性别</th>
+            <th>年龄</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var v in Model)
+        {
+            <tr>
+                <td>@v.XueHao</td>
+                <td>@v.XingMing </td>
+                <td>@v.XingBie</td>
+                <td>@v.NianLing</td>
+            </tr>
+        }
+    </tbody>
+</table>

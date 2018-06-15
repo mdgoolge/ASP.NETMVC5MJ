@@ -1,0 +1,22 @@
+﻿<h2>JavaScript日期时间函数的基本用法</h2>
+<pre id="pre1"></pre>
+<pre id="pre2"></pre>
+<pre id="pre3"></pre>
+<pre id="pre4"></pre>
+<script>
+    $(document).ready(function () {
+        var d = new Date();
+        $("#pre1").html("当前日期：" + d.toLocaleString());
+        var s = d.getFullYear();
+        var m = d.getMonth() + 1;
+        s += "-" + m + "-" + d.getDate();
+        s = s.replace(/\b(\w)\b/g, '0$1'); //利用正则表达式将其转换为yyyy-MM-dd格式
+        $("#pre2").html("自定义格式：" + s);
+        var d1 = new Date(d);
+        d1.setDate(d1.getDate() - 3);
+        $("#pre3").html("3天前：" + d1.toLocaleString());
+        var d2 = new Date(d);
+        d2.setMonth(d2.getMonth() - 6);
+        $("#pre4").html("6个月前：" + d2.toLocaleString());
+    });
+</script>

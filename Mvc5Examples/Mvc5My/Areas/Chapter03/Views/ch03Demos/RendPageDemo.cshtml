@@ -1,0 +1,12 @@
+﻿<div class="panel panel-success">
+    <div class="panel-heading">
+        RendPage方法的基本用法
+    </div>
+    <div class="panel-body">
+        @*将分部视图（Partial1.cshtml）插入到当前位置*@
+        @RenderPage("Partial1.cshtml")
+
+        @*将分部页（_PartialPage1.cshtml）插入到当前位置*@
+        @RenderPage("PartialPage1.cshtml", new { name = "张三", age = 20 })
+    </div>
+</div>
