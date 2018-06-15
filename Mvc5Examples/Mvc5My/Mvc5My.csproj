@@ -251,6 +251,8 @@
     <Content Include="Areas\Chapter04\Views\ch04Demos\string.cshtml" />
     <Content Include="Areas\Chapter04\Views\ch04Demos\array.cshtml" />
     <Content Include="Areas\Chapter04\Views\ch04Demos\date.cshtml" />
+    <Content Include="Areas\Chapter04\Views\ch04Demos\dataParse.cshtml" />
+    <Content Include="Areas\Chapter04\Views\ch04Demos\ifswitch.cshtml" />
     <None Include="Properties\PublishProfiles\MVC5My.pubxml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />

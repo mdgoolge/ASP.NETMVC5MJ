@@ -1,0 +1,24 @@
+﻿<h2>将整数或浮点数转换为字符串</h2>
+<pre id="pre1"></pre>
+<pre id="pre2"></pre>
+<script>
+    $(function () {
+        $("#pre1").html("a = 123.45667,b = 123.763");
+        var a = 123.45667;
+        var b = 123.763;
+        var msg =
+        [
+        //toString函数：将数字转换为字符串
+           "a.toString(8)=" + a.toString(8), //转换为八进制字符串
+           "a.toString(16)=" + a.toString(16), //转换为十六进制字符串
+           "b.toString()=" + b.toString(), //转换为十进制字符串
+        //toFixed函数：将数字转换为字符串并指定小数位数(4舍5入)
+           "a.toFixed(2)=" + a.toFixed(2), //保留小数后2位,结果：123.46
+           "b.toFixed(0)=" + b.toFixed(0), //只保留整数,结果：124
+        //toExponential函数：将数字转换为指数形式的字符串,参数指定小数位数
+           "a.toExponential(2)=" + a.toExponential(2),
+           "b.toExponential(1)=" + b.toExponential(1),
+        ];
+        $("#pre2").html(msg.join("<br />"));
+    });
+</script>
