@@ -1,0 +1,32 @@
+﻿@{
+    Layout = null;  //不引用布局页
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>例5</title>
+
+    @Scripts.Render("~/bundles/jquery")
+
+    @*下面的代码是通过将解决方案资源管理器中的文件直接拖放到此处自动生成的*@
+    <link href="~/Areas/Chapter03/css/ch03Styles.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="text-center">
+        <h3>（Layout=null表示不引用布局页）</h3>
+        <div id="div1" class="round1">
+            欢迎使用ASP.NET MVC 5
+        </div>
+        <form>
+            <input id="btn1" class="round" type="button" value="单击改变div的样式" />
+        </form>
+    </div>
+    <script>
+        $("#btn1").click(function () {
+            $("#div1").toggleClass("round1 round2");
+        });
+    </script>
+</body>
+</html>

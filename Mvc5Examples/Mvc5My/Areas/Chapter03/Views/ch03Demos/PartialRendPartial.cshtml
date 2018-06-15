@@ -1,0 +1,11 @@
+﻿<h3>用于分部页或分部视图的Html帮助器（Patial、RendPartial）基本用法</h3>
+
+<p>Partial基本用法：@Html.Partial("Partial1")</p>
+<p>RenderPartial基本用法：@{Html.RenderPartial("Partial1");}</p>
+@{
+    var p = Html.Partial("Partial1");
+    if (p != MvcHtmlString.Empty)
+    {
+        <p>满足条件时插入分部页：@p</p>
+    }
+}

@@ -135,6 +135,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Chapter03\css\ch03Styles.css" />
     <Content Include="common\images\ch08\smile.gif" />
     <Content Include="common\images\ch08\xiaotu.jpg" />
     <Content Include="common\images\home\ipad.jpg" />
@@ -220,6 +221,9 @@
     </Content>
     <Content Include="Areas\Chapter03\Views\ch03Demos\ServerDemo.cshtml" />
     <Content Include="Areas\Chapter03\Views\ch03Demos\RequestDemo.cshtml" />
+    <Content Include="Areas\Chapter03\Views\ch03Demos\LayoutDemo.cshtml" />
+    <Content Include="Areas\Chapter03\Views\ch03Demos\PartialRendPartial.cshtml" />
+    <Content Include="Areas\Chapter03\Views\ch03Demos\Partial1.cshtml" />
     <None Include="Properties\PublishProfiles\MVC5My.pubxml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
@@ -261,7 +265,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Chapter01\Models\" />
-    <Folder Include="Areas\Chapter03\css\" />
     <Folder Include="Areas\Chapter03\Views\ch03NavDemos\" />
     <Folder Include="Areas\Chapter03\Views\ch03\" />
     <Folder Include="common\css\" />
