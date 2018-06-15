@@ -218,6 +218,8 @@
       <SubType>
       </SubType>
     </Content>
+    <Content Include="Areas\Chapter03\Views\ch03Demos\ServerDemo.cshtml" />
+    <Content Include="Areas\Chapter03\Views\ch03Demos\RequestDemo.cshtml" />
     <None Include="Properties\PublishProfiles\MVC5My.pubxml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />

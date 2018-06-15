@@ -103,5 +103,32 @@ namespace Mvc5My.Areas.Chapter03.Controllers
 
             return PartialView();
         }
+
+        //例3
+        public ActionResult ServerDemo()
+        {
+            var str = "<hello>,张三";
+            ViewBag.Str = str;
+            ViewBag.HtmlEncodeStr = Server.HtmlEncode(str);
+            ViewBag.HtmlDecodeStr = Server.HtmlDecode(str);
+            ViewBag.UrlEncodeStr = Server.UrlEncode(str);
+            ViewBag.UrlDecodeStr = Server.UrlDecode(str);
+            ViewBag.MapPath1 = Server.MapPath("~/Common/images");
+            ViewBag.MapPath2 = Server.MapPath("Common/images");
+            return PartialView();
+        }  
+        
+        //例4
+        public ActionResult RequestDemo()
+        {
+            string s = "";
+            s += string.Format("<p>请求的URL：{0}</p>", Request.Url);
+            string filePath = Request.FilePath;
+            s += string.Format("<p>相对路径：{0}</p>", filePath);
+            s += string.Format("<p>完整路径：{0}</p>", Request.MapPath(filePath));
+            s += string.Format("<p>HTTP请求类型：{0}</p>", Request.RequestType);
+            ViewBag.Result = MvcHtmlString.Create(s);
+            return PartialView();
+        }
     }
 }
