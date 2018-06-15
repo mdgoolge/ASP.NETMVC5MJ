@@ -129,6 +129,34 @@ namespace Mvc5My.Areas.Chapter03.Controllers
             s += string.Format("<p>HTTP请求类型：{0}</p>", Request.RequestType);
             ViewBag.Result = MvcHtmlString.Create(s);
             return PartialView();
+        } 
+        
+        //例9
+        public ActionResult Example9(MyStudentModel student)
+        {
+            if (Request.HttpMethod == "GET")
+            {
+                student = new MyStudentModel
+                {
+                    XueHao = "001",
+                    XingMing = "张三",
+                    XingBie = "男",
+                    NianLing = 20
+                };
+                return PartialView(student);
+            }
+            else  //Request.HttpMethod == "POST"
+            {
+                string s = "输入信息有错！";
+                if (ModelState.IsValid)
+                {
+                    s = string.Format(
+                        "提交结果：学号：{0}，姓名：{1}，性别：{2}，年龄：{3}",
+                        student.XueHao, student.XingMing,
+                        student.XingBie, student.NianLing);
+                }
+                return JavaScript(string.Format("alert('{0}')", s));
+            }
         }
     }
 }

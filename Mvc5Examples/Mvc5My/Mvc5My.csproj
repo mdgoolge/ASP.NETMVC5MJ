@@ -128,6 +128,7 @@
     <Compile Include="Areas\Chapter03\Controllers\ch03DemosController.cs" />
     <Compile Include="Areas\Chapter03\Controllers\ch03NavDemosController.cs" />
     <Compile Include="Areas\Chapter03\Models\MyColorModel.cs" />
+    <Compile Include="Areas\Chapter03\Models\MyStudentModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -224,6 +225,9 @@
     <Content Include="Areas\Chapter03\Views\ch03Demos\LayoutDemo.cshtml" />
     <Content Include="Areas\Chapter03\Views\ch03Demos\PartialRendPartial.cshtml" />
     <Content Include="Areas\Chapter03\Views\ch03Demos\Partial1.cshtml" />
+    <Content Include="Areas\Chapter03\Views\ch03Demos\RendPageDemo.cshtml" />
+    <Content Include="Areas\Chapter03\Views\ch03Demos\PartialPage1.cshtml" />
+    <Content Include="Areas\Chapter03\Views\ch03Demos\Example9.cshtml" />
     <None Include="Properties\PublishProfiles\MVC5My.pubxml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
