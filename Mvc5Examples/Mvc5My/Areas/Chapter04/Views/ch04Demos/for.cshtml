@@ -1,0 +1,28 @@
+﻿<h2>JavaScript的for语句和for/in语句的基本用法</h2>
+<button id="btn1" type="button">for语句用法</button>
+<p>
+    <pre id="pre1"></pre>
+</p>
+<button id="btn2" type="button">for/in语句用法</button>
+<p>
+    <pre id="pre2"></pre>
+</p>
+<script>
+    $(function () {
+        $("#btn1").click(function () {
+            var s = "";
+            var m = { x: 10, y: 20, z: 30 };
+            for (var v in m) {
+                s += "属性名：" + v + "；属性值：" + m[v] + "\n";
+            }
+            $("#pre1").html(s);
+        });
+        $("#btn2").click(function () {
+            var n = 0;
+            for (i = 1; i < 5; i++) {
+                n += i;
+            }
+            $("#pre2").html("1～4的和为：" + n);
+        });
+    });
+</script>

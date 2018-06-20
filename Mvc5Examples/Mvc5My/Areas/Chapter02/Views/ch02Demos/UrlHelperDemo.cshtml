@@ -1,0 +1,37 @@
+﻿<p class="h4 bg-success">Url帮助器的基本用法</p>
+
+<p>用法1：在脚本中利用Url帮助器得到Url地址</p>
+<p>
+    Url.Action("Welcome", "ch02Demos")的结果为：<div id="div1"></div>
+</p>
+<script>
+    $("#div1").text("@Url.Action("Welcome", "ch02Demos")");
+</script>
+
+<p>用法2：在HTML标记中利用Url帮助器得到Url地址</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>基本用法</th>
+            <th>得到的URL字符串</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Url.Action("Welcome", "ch02Demos")</td>
+            <td>@Url.Action("Welcome", "ch02Demos")</td>
+        </tr>
+        <tr>
+            <td>Url.Action("Index", "ch02Demos")</td>
+            <td>@Url.Action("Index", "ch02Demos")</td>
+        </tr>
+        <tr>
+            <td>Url.Content("∼/Content/Site.css")</td>
+            <td>@Url.Content("~/Content/Site.css")</td>
+        </tr>
+        <tr>
+            <td>Url.RouteUrl(new { controller = "c", action = "a" })</td>
+            <td>@Url.RouteUrl(new { controller = "c", action = "a" })</td>
+        </tr>
+    </tbody>
+</table>

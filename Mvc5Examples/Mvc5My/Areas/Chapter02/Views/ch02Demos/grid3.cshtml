@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "grid3";
+}
+<style>
+    .col-style {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+<div class="panel panel-info text-center">
+    <div class="panel-heading">“col-sm-”前缀用法1</div>
+    <div class="panel-body row">
+        <div class="col-xs-12 col-sm-6 col-md-8 col-style">col-xs-12、col-sm-6、col-md-8</div>
+        <div class="col-xs-6 col-md-4 col-style">col-xs-6、col-md-4</div>
+    </div>
+</div>
+<div class="panel panel-info text-center">
+    <div class="panel-heading">“col-sm-”前缀用法2</div>
+    <div class="panel-body row">
+        <div class="col-xs-6 col-sm-4 col-style">col-xs-6、col-sm-4</div>
+        <div class="col-xs-6 col-sm-4 col-style">col-xs-6、col-sm-4</div>
+
+        @*如果内容和高度不匹配，就清除xs列的固定高度*@
+        <div class="clearfix visible-xs col-style"></div>
+
+        <div class="col-xs-6 col-sm-4 col-style">col-xs-6、col-sm-4</div>
+    </div>
+</div>
+
+

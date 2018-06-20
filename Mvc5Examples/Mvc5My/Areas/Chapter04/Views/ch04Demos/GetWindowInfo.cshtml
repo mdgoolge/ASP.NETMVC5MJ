@@ -1,0 +1,22 @@
+﻿<h2>获取浏览器窗口信息（GetWindowInfo）</h2>
+<pre id="pre1"></pre>
+<script>
+    $(function () {
+        $("#pre1").html(getBrowerWindowProperty());
+    });
+    function getBrowerWindowProperty() {
+        var w = window;
+        var s =
+        [
+            "浏览器窗口大小:" +
+            w.outerWidth + "×" + w.outerHeight,
+            "浏览器窗口相对于屏幕左上角的位置:" +
+            w.screenX + "，" + w.screenY,
+            "浏览器工作区大小（不包括工具条、菜单条、状态条）:" +
+            w.innerWidth + "×" + w.innerHeight,
+            "浏览器滚动条相对于工作区左上角的位置:" +
+            w.pageXOffset + "，" + w.pageYOffset
+        ];
+        return s.join("<br/>");
+    }
+</script>
