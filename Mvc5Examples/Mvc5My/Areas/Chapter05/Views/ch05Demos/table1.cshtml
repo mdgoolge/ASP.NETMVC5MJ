@@ -1,0 +1,36 @@
+﻿<style>
+    table, th, td { border: 1px solid black; border-collapse: collapse; }
+    table { width: 100%; }
+    td { width: 20%; }
+</style>
+
+<h3>表格（table）基本用法1</h3>
+
+<h4>（1）规则表格</h4>
+<table>
+    @Html.Partial("tablePartial")
+</table>
+
+<h4>（2）非规则表格</h4>
+<table>
+    <caption>
+        非规则表格示例</caption>
+    <tr>
+        <td colspan="5">本单元格占5列
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="2">本单元格占2行</td>
+        <td>22</td>
+        <td>23</td>
+        <td>24</td>
+        <td>25</td>
+    </tr>
+    <tr>
+        <td>32</td>
+        <td>33</td>
+        <td>34</td>
+        <td>35</td>
+    </tr>
+</table>
+

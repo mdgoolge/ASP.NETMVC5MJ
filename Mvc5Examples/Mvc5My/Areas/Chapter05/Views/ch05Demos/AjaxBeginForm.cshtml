@@ -1,0 +1,33 @@
+﻿@model Mvc5My.Areas.Chapter05.Models.MyClass1Model
+@{
+    var ajaxOptions = new AjaxOptions { UpdateTargetId = "bodyContent" };
+    var c1 = new { @class = "control-label col-md-2" };
+    var c2 = "col-md-10";
+    var c3 = new { @class = "form-control" };
+}
+<h2>Ajax.BeginForm方法的基本用法</h2>
+@using (Ajax.BeginForm(ajaxOptions))
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.Label("n1：", c1)
+            <div class="@c2">
+                @Html.TextBoxFor(m => m.n1, c3)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("n2：", c1)
+            <div class="@c2">
+                @Html.TextBoxFor(m => m.n2, c3)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10 col-md-offset-2">
+                <input type="submit" class="btn btn-primary" value="提交" />
+            </div>
+        </div>
+    </div>
+}
+<pre>
+    @ViewBag.Result
+</pre>

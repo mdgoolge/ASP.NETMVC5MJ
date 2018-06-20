@@ -136,6 +136,8 @@
     <Compile Include="Areas\Chapter04\Controllers\ch04DemosController.cs" />
     <Compile Include="Areas\Chapter05\Chapter05AreaRegistration.cs" />
     <Compile Include="Areas\Chapter05\Controllers\ch05DemosController.cs" />
+    <Compile Include="Areas\Chapter05\Models\MyClass1Model.cs" />
+    <Compile Include="Areas\Chapter05\Models\MyClass2Model.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -146,6 +148,12 @@
     <Content Include="Areas\Chapter03\css\ch03Styles.css" />
     <Content Include="Areas\Chapter03\js\jquery.validate.messages_cn.js" />
     <Content Include="Areas\Chapter04\common\ch04Scripts.js" />
+    <Content Include="Areas\Chapter05\common\dj.mp3" />
+    <Content Include="Areas\Chapter05\common\happyfit.mp4" />
+    <Content Include="Areas\Chapter05\common\pic1.jpg" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\buttonDemo1.cshtml">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="common\images\ch08\smile.gif" />
     <Content Include="common\images\ch08\xiaotu.jpg" />
     <Content Include="common\images\home\ipad.jpg" />
@@ -298,6 +306,20 @@
     <Content Include="Areas\Chapter05\Views\ch05Demos\a2Part4.cshtml" />
     <Content Include="Areas\Chapter05\Views\ch05Demos\ul.cshtml" />
     <Content Include="Areas\Chapter05\Views\ch05Demos\dl.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\img.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\audio.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\video.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\table1.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\tablePartial.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\table2.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\HttpGetDemo.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\HttpPostDemo.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\HtmlBeginForm.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\AjaxBeginForm.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\inputDemo.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\buttonDemo2.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\ButtonDemo3.cshtml" />
+    <Content Include="Areas\Chapter05\Views\ch05Demos\buttonDemo4.cshtml" />
     <None Include="Properties\PublishProfiles\MVC5My.pubxml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
@@ -342,7 +364,6 @@
     <Folder Include="Areas\Chapter02\Models\" />
     <Folder Include="Areas\Chapter03\Views\ch03\" />
     <Folder Include="Areas\Chapter04\Models\" />
-    <Folder Include="Areas\Chapter05\Models\" />
     <Folder Include="common\css\" />
     <Folder Include="common\js\" />
     <Folder Include="Models\" />

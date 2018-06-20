@@ -1,0 +1,33 @@
+﻿@model Mvc5My.Areas.Chapter05.Models.MyClass1Model
+@{
+    ViewBag.Title = "HtmlBeginForm";
+    var c1 = new { @class = "control-label col-md-2" };
+    var c2 = "col-md-10";
+    var c3 = "form-control";
+}
+<h2>Html.BeginForm基本用法(整页刷新)</h2>
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.Label("n1：", c1)
+            <div class="@c2">
+                <input type="text" name="n1" value="@Model.n1" class="@c3" />
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("n2：", c1)
+            <div class="@c2">
+                <input type="text" name="n2" value="@Model.n2" class="@c3" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-primary" value="提交" />
+            </div>
+        </div>
+    </div>
+}
+<pre>
+    @ViewBag.Result
+</pre>
