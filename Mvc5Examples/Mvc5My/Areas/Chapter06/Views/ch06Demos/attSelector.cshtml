@@ -1,0 +1,77 @@
+﻿<style>
+    .main .selector { background-color: red; color: white; border: 1px solid red; }
+</style>
+<h2 class="text-center">特性选择器的基本用法</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <p>
+            <input id="btn1" type="button" value="用法1-E[att]" /></p>
+        <p>
+            <input id="btn2" type="button" value='用法2-E[att="val"]' /></p>
+        <p>
+            <input id="btn3" type="button" value='用法3-E[att~="val"]' /></p>
+        <p>
+            <input id="btn4" type="button" value='用法4-E[att|="val"]' /></p>
+        <p>
+            <input id="btn5" type="button" value='用法5-E[att^="val"]' /></p>
+        <p>
+            <input id="btn6" type="button" value='用法6-E[att$="val"]' /></p>
+        <p>
+            <input id="btn7" type="button" value='用法7-E[att*="val"]' /></p>
+    </div>
+    <div class="main col-md-8">
+        <p id="p1">p（id="p1"）</p>
+        <p class="a1 a2 a3">p（class="a1 a2 a3"）</p>
+        <p id="p3" class="a1 a2 a3">p（id="p3" class="a1 a2 a3"）</p>
+        <p class="abc-bca-cab">p（class="abc-bca-cab"）</p>
+        <p class="abc-bca-cab">p（class="abc-cab aaa"）</p>
+        <p class="abc bca cab">p（class="abc bca cab"）</p>
+        <p class="abd cab abc">p（class="abd cab abc"）</p>
+        <p class="cab abc cbc">p（class="cab abc cbc"）</p>
+    </div>
+</div>
+<hr />
+<pre id="result"></pre>
+<script>
+    $(document).ready(function () {
+        $("#btn1").click(function () {
+            RemoveClass();
+            $("p[id]").addClass("selector");
+            $("#result").text('选择器：p[id]，含义：选择具有特性名为id的所有p元素。');
+        });
+        $("#btn2").click(function () {
+            RemoveClass();
+            $('p[id="p1"]').addClass("selector");
+            $("#result").text('选择器：p[id="p1"]，含义：选择特性名为id且特性值为p1的所有p元素。');
+        });
+        $("#btn3").click(function () {
+            RemoveClass();
+            $("p[class~=a2]").addClass("selector");
+            $("#result").text('选择器：p[class~="a2"],含义：选择特姓名为class且特性值为用空格分隔的单词，其中一个单词等于a2的所有p元素。');
+        });
+        $("#btn4").click(function () {
+            RemoveClass();
+            $('p[class|="abc"]').addClass("selector");
+            $("#result").text('选择器：p[class|="abc"],含义：选择特姓名为class且特性值以“abc-”开头的所有p元素。');
+        });
+        $("#btn5").click(function () {
+            RemoveClass();
+            $('p[class^="abc"]').addClass("selector");
+            $("#result").text('选择器：p[class^="abc"],含义：选择特姓名为class且特性值以“abc”开头的所有p元素。');
+        });
+        $("#btn6").click(function () {
+            RemoveClass();
+            $('p[class$="bc"]').addClass("selector");
+            $("#result").text('选择器：p[class$="bc"],含义：选择特姓名为class且特性值以“bc”结尾的所有p元素。');
+        });
+        $("#btn7").click(function () {
+            RemoveClass();
+            $('p[class*="ca"]').addClass("selector");
+            $("#result").text('选择器：p[class*="ca"],含义：选择特姓名为class且特性值包含“ca”的所有p元素。');
+        });
+    });
+    function RemoveClass() {
+        $(".main *").removeClass("selector");
+    }
+</script>

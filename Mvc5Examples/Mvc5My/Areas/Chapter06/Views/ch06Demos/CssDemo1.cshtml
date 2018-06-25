@@ -1,0 +1,18 @@
+﻿<h4 class="btn-success text-center">CSS级联控制的基本用法</h4>
+
+@*外部链接式*@
+<link href="~/Areas/Chapter06/common/ch06Styles.css" rel="stylesheet" />
+
+@*嵌入式*@
+<style>
+    .style3 { border-width: 20px; border-color: Red; }
+</style>
+
+@*内联式*@
+<p style="font-size: 12pt; color: green;">Hello，张三</p>
+
+@*级联控制*@
+<p class="style1" style="color: green;">Hello，李四</p>
+<div class="center-block style2 style3" style="width: 200px; height: 80px;">
+    这是div
+</div>

@@ -1,0 +1,29 @@
+﻿@{
+    AjaxOptions opts = (AjaxOptions)TempData["AjaxOptions"];
+    var attr = new { @class = "list-group-item" };
+    string a = "Index1", c = "ch06Demos";
+}
+<div style="perspective:350px">
+    <div id="AccordionDemoLeft" class="accordionDemo"
+         style="transform: rotateY(10deg) translate3d(-10px, 23px, 0) skewY(-18deg)">
+        <h3 class="btn-success">基本用法和选择器</h3>
+        <div class="list-group" style="max-height: 210px">
+            @Ajax.ActionLink("例1-CssDemo1", a, c, new { id = "CssDemo1" }, opts, attr)
+            @Ajax.ActionLink("例2-盒大小", a, c, new { id = "boxSizing" }, opts, attr)
+            @Ajax.ActionLink("例3-盒阴影效果", a, c, new { id = "boxShadow" }, opts, attr)
+            @Ajax.ActionLink("例4-基本选择器", a, c, new { id = "BasicSelector" }, opts, attr)
+            @Ajax.ActionLink("例5-关系选择器", a, c, new { id = "relationSelector" }, opts, attr)
+            @Ajax.ActionLink("例6-特性选择器", a, c, new { id = "attSelector" }, opts, attr)
+            @Ajax.ActionLink("例7-伪类选择器1", a, c, new { id = "PseudoClassesSelector1" }, opts, attr)
+            @Ajax.ActionLink("例8-伪类选择器2", a, c, new { id = "PseudoClassesSelector2" }, opts, attr)
+            @Ajax.ActionLink("例9-伪元素选择器", a, c, new { id = "PseudoElementsSelector" }, opts, attr)
+        </div>
+    </div>
+</div>
+<script>
+    var options = {
+        heightStyle: "content",
+        collapsible: true
+    };
+    $("#AccordionDemoLeft").accordion(options);
+</script>

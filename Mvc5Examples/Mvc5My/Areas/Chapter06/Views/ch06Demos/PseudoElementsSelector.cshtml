@@ -1,0 +1,15 @@
+﻿<style>
+    #p1 { width: 220px; padding: 5px 10px; border: 1px solid #ddd; font: 14px/1.5 楷体; }
+        #p1::first-letter { float: left; font-size: 40px; font-weight: bold; line-height: 1; }
+    #p2 { position: relative; color: #f00; font-size: 14px; }
+        #p2::before { position: relative; background: #fff; color: #000; content: "今天阳光明媚"; font-size: 14px; }
+    #p3::selection { background: #000; color: #f00; }
+</style>
+<h2>伪元素选择器的基本用法</h2>
+<h4>用法1（首字下沉效果）：</h4>
+<p id="p1">今天阳光明媚，天高气爽，晴空万里，非常适合户外活动，你准备出去吗？</p>
+<h4>用法2（自动添加前缀）：</h4>
+<p id="p2" style="font-family:KaiTi">晴空万里，非常适合户外活动。</p>
+<h4>用法3（部分选择）：</h4>
+<p id="p3">选中这段文字中的其中一部分，看看它们的文本颜色和背景色，就能明白::selection的作用。</p>
+

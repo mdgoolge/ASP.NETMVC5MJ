@@ -1,0 +1,23 @@
+﻿<style>
+    .myBorder { background-color: yellow;
+             width: 100px; height: 30px;
+             border: 5px solid #008080;
+             margin: 10px; padding: 2px; }
+    .shadow1 { box-shadow: 5px 5px; /*水平偏移、垂直偏移*/ }
+    .shadow2 { box-shadow: 5px 5px 5px;/*水平偏移、垂直偏移、模糊值*/ }
+    .shadow3 { box-shadow: 5px 5px 5px 5px; /*水平偏移、垂直偏移、模糊值、扩散值*/}
+    .shadow4 { box-shadow: 5px 5px 5px gray; /*水平偏移、垂直偏移、模糊值、颜色*/}
+    .shadow5 { box-shadow: 5px 5px 5px 10px gray;/*水平偏移、垂直偏移、模糊值、扩散值、颜色*/ }
+    .multiple-shadow { width: 400px; padding: 10px; background: #eee; box-shadow: 0 0 5px 3px rgba(255,0,0,.6), 0 0 5px 6px rgba(0,182,0,.6), 0 0 5px 10px rgba(255,255,0,.6); }
+</style>
+<h3>boxShadow:盒阴影效果</h3>
+<ul class="list-inline text-center">
+    <li class="myBorder shadow1">第1项</li>
+    <li class="myBorder shadow2">第2项</li>
+    <li class="myBorder shadow3">第3项</li>
+    <li class="myBorder shadow4">第4项</li>
+    <li class="myBorder shadow5">第5项</li>
+</ul>
+<ul class="list-inline text-center" style="margin-top:50px;">
+    <li class="multiple-shadow">外阴影模糊效果</li>
+</ul>

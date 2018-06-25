@@ -1,0 +1,26 @@
+﻿<style>
+    #nav1 { list-style-type: none; margin: 0 0 0 20px; padding: 0; }
+        #nav1 li { float: left; }
+            #nav1 li a { display: block; padding: 8px 16px; background-color: #036; color: #fff; font-weight: bold; font-size: 14px; text-decoration: none; border-right: 2px solid #fff; }
+            #nav1 li:first-of-type a { border-radius: 12px 0 0 12px; }
+            #nav1 li:last-of-type a { border-radius: 0 12px 12px 0; border-right: none; }
+    .myimg { width: 100px; }
+        .myimg:hover { width: 200px; }
+</style>
+<h3>伪类选择器的基本用法(2)</h3>
+<ul id="nav1">
+    <li><a href="#">第1项</a></li>
+    <li><a href="#">第2项</a></li>
+    <li><a href="#">第3项</a></li>
+    <li><a href="#">第4项</a></li>
+    <li><a href="#">第5项</a></li>
+    <li><a href="#">第6项</a></li>
+</ul>
+<h4 style="clear:both; margin-top: 80px;">将鼠标移到图片上面观察效果：</h4>
+<img class="myimg" src="~/Areas/Chapter06/common/smile.gif" />
+<pre id="result"></pre>
+<script>
+    $("#nav1 li").click(function () {
+        $("#result").text("你单击的选项是：" + $(this).text());
+    });
+</script>

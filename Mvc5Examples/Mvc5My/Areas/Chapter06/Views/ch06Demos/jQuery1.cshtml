@@ -1,0 +1,54 @@
+﻿<style>
+    .div1 { width: 60px; height: 60px; margin: 5px; display:inline-block}
+    #result { width: 260px; height: 100px; border:1px solid grey; }
+</style>
+<h2>jQuery提供的css方法的基本用法</h2>
+<div class="row">
+    <div class="col-md-6">
+        <p>（1）用jQuery方法获取CSS属性值</p>
+        <div class="div1" style="background-color: blue;" />
+        <div class="div1" style="background-color: rgb(15,99,30);" />
+        <div class="div1" style="background-color: #123456;" />
+        <div class="div1" style="background-color: #f11;" />
+        <p>（提示：请单击不同的颜色框观察结果）</p>
+    </div>
+    <div class="col-md-6">
+        <div id="result"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div id="div2" class="btn-block btn-primary" style="height:50px;">（2）请多次单击</div>
+    </div>
+    <div class="col-md-6">
+        <p>（3）利用mouseover事件设置样式</p>
+        <p class="p2">（将鼠标移动到本行上面看效果）</p>
+    </div>
+</div>
+<script>
+    //（1）获取CSS属性值
+    $(".div1").click(function () {
+        var s = "background-color:" + $(this).css("background-color") + "<br/>" +
+                "width:" + $(this).css("width") + "<br/>" +
+                "height:" + $(this).css("height") + "<br/>";
+        $("#result").html(s);
+    });
+    //（2）单击改变高度（从50到80循环，每次递增10）
+    $("#div2").click(function () {
+        $(this).css("height", function (n, v) {
+            var x = parseFloat(v) + 10;
+            if (x >= 80) x = 50;
+            return x;
+        });
+    });
+    //（3）第1个参数是悬停时的样式，第2个参数是离开时的样式
+    $(".p2").hover(
+        function () {
+            $(this).css("background-color", "yellow")
+        },
+        function () {
+            $(this).css("background-color", "white");
+        }
+    );
+    //（4）
+</script>

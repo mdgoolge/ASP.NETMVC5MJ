@@ -1,0 +1,60 @@
+﻿<style>
+    .mydiv { background-color: white; color: black; }
+        .mydiv:hover { background-color: blue; color: white; }
+    .border { border: 1px solid black; }
+    .selector { background-color: red; color: white; border: 1px solid red; }
+</style>
+<h3>伪类选择器的基本用法(1)</h3>
+<div class="mydiv border">
+    将鼠标悬停和离开该div观察效果。
+</div>
+<div id="div2" style="margin-top:10px">
+    <div style="margin: 10px auto;">div2的子元素1（div）</div>
+    <p>div2的子元素2（p）</p>
+    <p>div2的子元素3（p）</p>
+    <div style="margin: 10px auto;">div2的子元素4（div）</div>
+    <p class="sub">div2的子元素5（p）</p>
+    <p class="sub">div2的子元素6（p）</p>
+</div>
+<div>
+    <p>
+        <input id="btn1" type="button" value="用法1" />
+        <input id="btn2" type="button" value="用法2" />
+        <input id="btn3" type="button" value="用法3" />
+        <input id="btn4" type="button" value="用法4" />
+        <input id="btn5" type="button" value="用法5" />
+    </p>
+</div>
+<pre id="result"></pre>
+<script>
+    $(document).ready(function () {
+        $("#btn1").click(function () {
+            RemoveClass();
+            $("#div2 :first-child").addClass("selector");
+            $("#result").text('选择器：#div2 :first-child，含义：选择id为div2的第1个子元素。');
+        });
+        $("#btn2").click(function () {
+            RemoveClass();
+            $("#div2 :nth-child(2)").addClass("selector");
+            $("#result").text('选择器：#div2 :nth-child(2)，含义：选择id为div2的第2个子元素。');
+        });
+        $("#btn3").click(function () {
+            RemoveClass();
+            $("#div2 p:nth-child(3)").addClass("selector");
+            $("#result").text('选择器：#div2 p:nth-child(3)，含义：选择id为div2的第3个子元素p，如果第3个子元素不是p元素，则返回null。');
+        });
+        $("#btn4").click(function () {
+            RemoveClass();
+            $("#div2 p:not(:first-child)").addClass("selector");
+            $("#result").text('选择器：#div2 p:not(:first-child)，含义：选择div2中除了第1个子元素以外的其他子元素，而且这些子元素都是p元素。');
+        });
+        $("#btn5").click(function () {
+            RemoveClass();
+            $("#div2 :nth-child(2n+1)").addClass("selector");
+            $("#result").text('选择器：#div2 :nth-child(2n+1)，含义：选择序号为奇数的所有子元素（隔行设置背景色）。');
+        });
+    });
+    function RemoveClass() {
+        $("#div2 *").removeClass("selector");
+    }
+</script>

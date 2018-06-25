@@ -1,0 +1,89 @@
+﻿<style>
+    #main ul li { list-style-type: none; float: left; height: 40px; line-height: 40px; border: 1px solid black; border-radius: 50%; text-align: center; background-color: white; color: black; margin-left: 2px; margin-right: 2px; padding-left: 5px; padding-right: 5px; }
+    #main .active { background-color: Green; color: White; border: 1px solid red; border-radius: 0; }
+    #main .selector { background-color: Red; color: White; border: 1px solid red; border-radius: 50%; }
+</style>
+<h2>关系选择器的基本用法</h2>
+<hr />
+<div id="main" style="height: 110px;">
+    <ul id="parent">
+        <li id="a01">01</li>
+        <li id="a02">02</li>
+        <li>03</li>
+        <li id="a04">04
+            <ul>
+                <li>04-1</li>
+                <li>04-2</li>
+                <li>04-3</li>
+            </ul>
+        </li>
+        <li>05</li>
+        <li>06</li>
+        <li>07
+            <ul>
+                <li>07-1</li>
+                <li>07-2</li>
+                <li>07-3</li>
+            </ul>
+        </li>
+        <li>08</li>
+        <li>09</li>
+        <li>10</li>
+    </ul>
+</div>
+<div class="text-center">
+    <input id="btn1" type="button" value="用法1" />
+    <input id="btn2" type="button" value="用法2" />
+    <input id="btn3" type="button" value="用法3" />
+    <input id="btn4" type="button" value="用法4" />
+    <input id="btn5" type="button" value="用法5" />
+    <input id="btn6" type="button" value="用法6" />
+</div>
+<hr />
+<pre id="result1"></pre>
+<pre id="result2"></pre>
+<script>
+    $(document).ready(function () {
+        $("#btn1").click(function () {
+            $("#main li").removeClass("active selector");
+            $("#parent ul li").addClass("selector");
+            $("#result1").text("选择后代ul中的所有li：#parent ul li");
+            $("#result2").text("其后代元素为红色背景，包括：04-1～04-3、07-1～07-3");
+        });
+        $("#btn2").click(function () {
+            $("#main li").removeClass("active selector");
+            $("#a04").addClass("active");
+            $("#a04 > ul li").addClass("selector");
+            $("#result1").text("选择04的子元素：#a04 > ul li");
+            $("#result2").text("所选元素为04（绿色背景），其子元素为04-1～04-3（红色背景）");
+        });
+        $("#btn3").click(function () {
+            $("#main li").removeClass("active selector");
+            $("#a02").addClass("active");
+            $("#a02~li").addClass("selector");
+            $("#result1").text("选择02后的所有兄弟：#a02、#a02~li");
+            $("#result2").text("所选元素为02（绿色背景),其兄弟元素为03～10（红色背景）");
+        });
+        $("#btn4").click(function () {
+            $("#main li").removeClass("active selector");
+            $("#parent ul li").addClass("active");
+            $("#parent ul li+li").addClass("selector");
+            $("#result1").text("选择后代ul中第1个li的所有相邻兄弟：#parent ul li、#parent ul li+li");
+            $("#result2").text("所选元素为04-1、07-1（绿色背景），其相邻元素为04-2～04-3、07-2～07-3（红色背景）");
+        });
+        $("#btn5").click(function () {
+            $("#main li").removeClass("active selector");
+            $("#a02").addClass("active");
+            $("#a02+li").addClass("selector");
+            $("#result1").text("选择02后的相邻兄弟：#a02、#a02+li");
+            $("#result2").text("所选元素为02（绿色背景），其相邻元素为03（红色背景）");
+        });
+        $("#btn6").click(function () {
+            $("#main li").removeClass("active selector");
+            $("#a02").addClass("active");
+            $("#a02+li+li").addClass("selector");
+            $("#result1").text("选择02后的相邻兄弟的相邻兄弟：#a02、#a02+li+li");
+            $("#result2").text("所选元素为02（绿色背景），其相邻元素的相邻元素为04（红色背景）");
+        });
+    });
+</script>

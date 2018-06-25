@@ -138,6 +138,8 @@
     <Compile Include="Areas\Chapter05\Controllers\ch05DemosController.cs" />
     <Compile Include="Areas\Chapter05\Models\MyClass1Model.cs" />
     <Compile Include="Areas\Chapter05\Models\MyClass2Model.cs" />
+    <Compile Include="Areas\Chapter06\Chapter06AreaRegistration.cs" />
+    <Compile Include="Areas\Chapter06\Controllers\ch06DemosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -154,6 +156,10 @@
     <Content Include="Areas\Chapter05\Views\ch05Demos\buttonDemo1.cshtml">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="Areas\Chapter06\common\a1.jpg" />
+    <Content Include="Areas\Chapter06\common\border.png" />
+    <Content Include="Areas\Chapter06\common\ch06Styles.css" />
+    <Content Include="Areas\Chapter06\common\smile.gif" />
     <Content Include="common\images\ch08\smile.gif" />
     <Content Include="common\images\ch08\xiaotu.jpg" />
     <Content Include="common\images\home\ipad.jpg" />
@@ -329,6 +335,43 @@
     <Content Include="Areas\Chapter05\Views\ch05Demos\TextBoxPasswordTextArea.cshtml" />
     <Content Include="Areas\Chapter05\Views\ch05Demos\RadioButtonCheckBox.cshtml" />
     <Content Include="Areas\Chapter05\Views\ch05Demos\ListBoxDropDownList.cshtml" />
+    <Content Include="Areas\Chapter06\Views\web.config" />
+    <Content Include="Areas\Chapter06\Views\Shared\ch06DemosLeft.cshtml">
+      <SubType>
+      </SubType>
+    </Content>
+    <Content Include="Areas\Chapter06\Views\Shared\ch06DemosRight.cshtml">
+      <SubType>
+      </SubType>
+    </Content>
+    <Content Include="Areas\Chapter06\Views\Shared\_ch06Layout.cshtml">
+      <SubType>
+      </SubType>
+    </Content>
+    <Content Include="Areas\Chapter06\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\CssDemo1.cshtml">
+      <SubType>
+      </SubType>
+    </Content>
+    <Content Include="Areas\Chapter06\Views\ch06Demos\ch06Index.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\boxSizing.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\boxShadow.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\BasicSelector.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\relationSelector.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\attSelector.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\PseudoClassesSelector1.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\PseudoClassesSelector2.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\PseudoElementsSelector.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\background.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\display.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\text1.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\position.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\text2.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\RoundCorner.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\flex.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\transform.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\jQuery1.cshtml" />
+    <Content Include="Areas\Chapter06\Views\ch06Demos\jQuery2.cshtml" />
     <None Include="Properties\PublishProfiles\MVC5My.pubxml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
@@ -373,6 +416,7 @@
     <Folder Include="Areas\Chapter02\Models\" />
     <Folder Include="Areas\Chapter03\Views\ch03\" />
     <Folder Include="Areas\Chapter04\Models\" />
+    <Folder Include="Areas\Chapter06\Models\" />
     <Folder Include="common\css\" />
     <Folder Include="common\js\" />
     <Folder Include="Models\" />
