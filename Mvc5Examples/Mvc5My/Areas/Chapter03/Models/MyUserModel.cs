@@ -13,7 +13,7 @@ namespace Mvc5My.Areas.Chapter03.Models
         [StringLength(3, MinimumLength = 3, ErrorMessage = "用户Id必须为3个字符")]
         public string UserId { get; set; }
 
-        [Display(Name = "用户名")]
+        [Display(Name = "用户名000")]
         [Required(ErrorMessage = "用户名不能为空")]
         [StringLength(50, MinimumLength = 2)]
         public string UserName { get; set; }

@@ -1,0 +1,23 @@
+﻿@model Mvc5My.Areas.Chapter03.Models.MyUserModel 
+@{
+    var ajaxOptions = new AjaxOptions { UpdateTargetId = "bodyContent" };
+    var c3 = "form-control";
+}
+<h4 class="bg-success">基本用法4：以内联式全部放置在同一行</h4>
+@using (Ajax.BeginForm(ajaxOptions))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-inline">
+        <div class="form-group">
+            @Html.LabelFor(m => m.UserName)
+            @Html.TextBoxFor(m => m.UserName, new { @class = c3 })
+            @Html.LabelFor(m => m.Age)
+            @Html.TextBoxFor(m => m.Age, new { @class = c3, @style = "max-width:60px;" })
+            <button type="submit" class="btn btn-primary ">提交</button>
+        </div>
+    </div>
+    <div style="margin-top:15px;">
+        @Html.ValidationSummary("", new { @class = "alert-danger" })
+    </div>
+}
+<pre>@ViewBag.Result</pre>

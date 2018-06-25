@@ -1,4 +1,5 @@
-﻿using Mvc5My.Areas.Chapter05.Models;
+﻿using Mvc5My.Areas.Chapter03.Models;
+using Mvc5My.Areas.Chapter05.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -140,7 +141,66 @@ namespace Mvc5My.Areas.Chapter05.Controllers
 
 
 
+        // 例25～例30
+        public ActionResult FormDemo(string id)
+        {
+            ViewBag.Result = "提示：单击提交按钮时将自动验证，请输入不同数据测试。";
+            //初值为空是为了演示文本框中的水印效果
+            MyUserModel user = new MyUserModel { UserName = "" };
+            return PartialView(id, user);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult FormDemo(string id, MyUserModel user)
+        {
+            ViewBag.Result = "数据验证失败，请输入有效的数据后再提交！";
+            if (this.ModelState.IsValid)
+            {
+                //此处继续进一步验证，比如与数据库中的数据进一步比较……等
+                //这里假设进一步验证失败，因此调用AddModelError继续添加错误消息
+                if (user.UserName != "张三")
+                {
+                    //第1个参数为“键”，即MyUserModel.cs中定义的属性名
+                    //第2个参数为与该键关联的错误信息
+                    //添加的错误信息会自动显示在页面中
+                    this.ModelState.AddModelError("UserName", "用户名不存在");
+                }
+                else
+                {
+                    //程序执行到此处，说明进一步验证也成功了。
+                    //此时可继续处理成功提交的数据，比如将结果保存到数据库中等
+                    ViewBag.Result = "数据提交成功！";
+                }
+            }
+            return PartialView(id, user);
+        }
 
-
+        //例31～例32
+        public ActionResult FormControlDemo(string id)
+        {
+            ViewBag.Result = "提示：按住<Ctrl>键可多选，单击提交按钮时将自动验证。";
+            MyClass2Model c2 = new MyClass2Model();
+            return PartialView(id, c2);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult FormControlDemo(string id, MyClass2Model c2)
+        {
+            ViewBag.Result = "数据验证失败，请输入有效的数据后再提交！";
+            if (this.ModelState.IsValid)
+            {
+                string s = "数据提交成功！服务器接收的结果如下：";
+                s += string.Format("\n性别：{0}", c2.Gender);
+                s += "\n体育活动：";
+                var sports = c2.MySports.Where(x => x.Value == true).ToList();
+                s += string.Join("、", sports.Select(x => x.Key).ToArray());
+                s += "\n常规业余活动：";
+                s += string.Join("、", c2.MyExtDoings.ToArray());
+                s += "\n最喜欢的业余活动：";
+                s += string.Join("、", c2.MyFavExtDoings.ToArray());
+                ViewBag.Result = s;
+            }
+            return PartialView(id, c2);
+        }
     }
 }

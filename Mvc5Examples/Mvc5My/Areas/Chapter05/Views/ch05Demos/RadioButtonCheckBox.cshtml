@@ -1,0 +1,81 @@
+﻿@model Mvc5My.Areas.Chapter05.Models.MyClass2Model 
+@{
+    var ajaxOptions = new AjaxOptions { UpdateTargetId = "bodyContent" };
+    var c1 = "col-md-2 control-label";
+    var c2 = "col-md-6";
+    var genders = new string[] { "男", "女", "未知" };
+}
+<h4 class="bg-success">1、单选按钮和复选框的基本用法</h4>
+@using (Ajax.BeginForm(ajaxOptions))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="@c1">性别：</label>
+            <div class="@c2">
+                @for (int i = 0; i < genders.Length; i++)
+                {
+                    var g = genders[i];
+                    var gid = "r" + i;
+                    object attr = new { @id = gid };
+                    if (g == Model.Gender)
+                    {
+                        attr = new { @id = gid, @checked = "checked" };
+                    }
+                    <label class="radio-inline">
+                        @Html.RadioButtonFor(x => x.Gender, g, attr)@g
+                    </label>
+                }
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="@c1">体育活动：</label>
+            <div class="@c2">
+                @foreach (var v in Model.MySports)
+                {
+                    <label class="checkbox-inline">
+                        @Html.CheckBoxFor(x => x.MySports[v.Key])@v.Key
+                    </label>
+                }
+            </div>
+        </div>
+        @Html.ValidationSummary("", new { @class = "alert-danger" })
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-8">
+                <input type="submit" class="btn btn-primary" value="提交" />
+            </div>
+        </div>
+    </div>
+}
+<pre style="margin-top:15px; margin-bottom:15px">@ViewBag.Result</pre>
+
+<div class="row">
+    <div class="col-md-6">
+        <h4 class="bg-success">2、以按钮组的形式排列单选按钮（两种方式）</h4>
+        <div id="radioGroup1" class="btn-group" data-toggle="buttons">
+            <label class="btn btn-success"><input name="r1" type="radio">选项11</label>
+            <label class="btn btn-success"><input name="r1" type="radio">选项12</label>
+            <label class="btn btn-success"><input name="r1" type="radio">选项13</label>
+        </div>
+        <br />
+        <div id="radioGroup2" class="btn-group" style="margin-top:10px">
+            <label class="btn btn-success"><input name="r2" type="radio">选项14</label>
+            <label class="btn btn-success"><input name="r2" type="radio">选项15</label>
+            <label class="btn btn-success"><input name="r2" type="radio">选项16</label>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <h4 class="bg-success">3、以按钮组的形式排列复选框（两种方式）</h4>
+        <div id="checkGroup1" class="btn-group" data-toggle="buttons">
+            <label class="btn btn-primary"><input type="checkbox">选项21</label>
+            <label class="btn btn-primary"><input type="checkbox">选项22</label>
+            <label class="btn btn-primary"><input type="checkbox">选项23</label>
+        </div>
+        <br />
+        <div id="checkGroup2" class="btn-group" style="margin-top:10px">
+            <label class="btn btn-primary"><input type="checkbox">选项24</label>
+            <label class="btn btn-primary"><input type="checkbox">选项25</label>
+            <label class="btn btn-primary"><input type="checkbox">选项26</label>
+        </div>
+    </div>
+</div>

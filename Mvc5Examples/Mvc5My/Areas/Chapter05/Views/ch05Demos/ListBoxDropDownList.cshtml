@@ -1,0 +1,37 @@
+﻿@model Mvc5My.Areas.Chapter05.Models.MyClass2Model 
+@{
+    var ajaxOptions = new AjaxOptions { UpdateTargetId = "bodyContent" };
+    var c1 = "col-md-2 control-label";
+    var c2 = "col-md-4";
+    var selectList = new SelectList(Model.ExtDoingList);
+    var s1 = new { @class = "list-group-item", @style = "height:150px; width:90%;" };
+    var s2 = new { @class = "list-group-item", @style = "width:90%;" };
+}
+@using (Ajax.BeginForm(ajaxOptions))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="btn-lg btn-danger btn-block text-center">（列表和下拉列表的基本用法）请选择业余活动</div>
+        </div>
+        <div class="form-group">
+            <label class="@c1">常规(可多选)：</label>
+            <div class="@c2">
+                <div class="list-group">
+                    @Html.ListBoxFor(x => x.MyExtDoings, selectList, s1)
+                </div>
+            </div>
+            <label class="@c1">最喜欢：</label>
+            <div class="@c2">
+                <div class="list-group">
+                    @Html.DropDownListFor(x => x.MyFavExtDoings, selectList, s2)
+                </div>
+            </div>
+        </div>
+        @Html.ValidationSummary("", new { @class = "alert-danger" })
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary center-block" style="width:30%;" value="提交" />
+        </div>
+    </div>
+}
+<pre>@ViewBag.Result</pre>
