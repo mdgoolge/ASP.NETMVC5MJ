@@ -140,6 +140,8 @@
     <Compile Include="Areas\Chapter05\Models\MyClass2Model.cs" />
     <Compile Include="Areas\Chapter06\Chapter06AreaRegistration.cs" />
     <Compile Include="Areas\Chapter06\Controllers\ch06DemosController.cs" />
+    <Compile Include="Areas\Chapter07\Chapter07AreaRegistration.cs" />
+    <Compile Include="Areas\Chapter07\Controllers\ch07DemosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -160,6 +162,7 @@
     <Content Include="Areas\Chapter06\common\border.png" />
     <Content Include="Areas\Chapter06\common\ch06Styles.css" />
     <Content Include="Areas\Chapter06\common\smile.gif" />
+    <Content Include="Areas\Chapter07\common\ch07Styles.css" />
     <Content Include="common\images\ch08\smile.gif" />
     <Content Include="common\images\ch08\xiaotu.jpg" />
     <Content Include="common\images\home\ipad.jpg" />
@@ -372,6 +375,11 @@
     <Content Include="Areas\Chapter06\Views\ch06Demos\transform.cshtml" />
     <Content Include="Areas\Chapter06\Views\ch06Demos\jQuery1.cshtml" />
     <Content Include="Areas\Chapter06\Views\ch06Demos\jQuery2.cshtml" />
+    <Content Include="Areas\Chapter07\Views\web.config" />
+    <Content Include="Areas\Chapter07\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Chapter07\Views\Shared\ch07Demos.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\ch07Index.cshtml" />
+    <Content Include="Areas\Chapter07\Views\ch07Demos\buttonsetUI.cshtml" />
     <None Include="Properties\PublishProfiles\MVC5My.pubxml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
@@ -417,6 +425,7 @@
     <Folder Include="Areas\Chapter03\Views\ch03\" />
     <Folder Include="Areas\Chapter04\Models\" />
     <Folder Include="Areas\Chapter06\Models\" />
+    <Folder Include="Areas\Chapter07\Models\" />
     <Folder Include="common\css\" />
     <Folder Include="common\js\" />
     <Folder Include="Models\" />

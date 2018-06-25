@@ -1,0 +1,35 @@
+﻿<div class="panel panel-primary">
+    <div class="panel-heading">按钮样式的单选功能(选择喜欢的颜色)</div>
+    <div class="panel-body">
+        <h4>用法1（用Bootstrap实现，通过按钮的按压状态呈现选项）：</h4>
+        <div id="Group1" class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default"><input id="r1" name="g1" type="radio">红色</label>
+            <label class="btn btn-default"><input id="r2" name="g1" type="radio">绿色</label>
+            <label class="btn btn-default"><input id="r3" name="g1" type="radio">蓝色</label>
+        </div>
+        <h4>用法2（用jQueryUI实现，通过按钮的按压状态呈现选项）：</h4>
+        <input id="chk1" type="checkbox" /><label for="chk1">选择</label>
+        <div id="Group2">
+            <input id="r4" name="g2" type="radio"><label for="r4">红色</label>
+            <input id="r5" name="g2" type="radio"><label for="r5">绿色</label>
+            <input id="r6" name="g2" type="radio"><label for="r6">蓝色</label>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        //解决button冲突
+        try { $.fn.button.noConflict(); } catch (e) { }
+        //解决冲突后，就可以使用jQueryUI的button和buttonset方法了
+        $("#chk1").button()
+            .click(function () {
+                if ($(this).prop("checked") == true) {
+                    $(this).button("option", { label: "取消选择" });
+                }
+                else {
+                    $(this).button("option", { label: "选择" });
+                }
+            });
+        $("#Group2").buttonset();
+    });
+</script>

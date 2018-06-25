@@ -1,0 +1,38 @@
+﻿@keyframes animation2 {
+    from { left: 400px; top: 60px; }
+    to { left: 100px; top: 60px; }
+}
+.my-animation2 { animation: animation2 1s alternate infinite; }
+
+
+
+
+
+
+
+
+
+@keyframes wobble {
+    0% { left: 100px; }
+    40% { left: 150px; }
+    60% { left: 75px; }
+    100% { left: 100px; }
+}
+
+@keyframes bounce {
+    from { top: 100px; animation-timing-function: ease-out; }
+    25% { top: 50px; animation-timing-function: ease-in; }
+    50% { top: 100px; animation-timing-function: ease-out; }
+    75% { top: 75px; animation-timing-function: ease-in; }
+    to { top: 100px; }
+}
+
+@keyframes myfirst {
+    0% { background: red; left: 0px; top: 0px; }
+    25% { background: yellow; left: 200px; top: 0px; }
+    50% { background: blue; left: 200px; top: 200px; }
+    75% { background: green; left: 0px; top: 200px; }
+    100% { background: red; left: 0px; top: 0px; }
+}
+
+.myfirstanimation { animation: myfirst 5s; }
