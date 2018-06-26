@@ -1,0 +1,23 @@
+﻿<style>
+    .mydiv {
+         color:white; background-color: #0094ff;
+         border: solid 1px #c3c3c3;
+         width:100%; text-align: center;
+         line-height:120px; vertical-align:middle;
+    }
+</style>
+<h3>滑动效果（slideDown、slideUp、slideToggle）的基本用法</h3>
+<p class="text-center">
+    <button id="btn1" class="btn btn-primary">向下滑动</button>
+    <button id="btn2" class="btn btn-primary">向上滑动</button>
+    <button id="btn3" class="btn btn-primary">[向下/向上]滑动切换</button>
+</p>
+<div id="slide" class="mydiv" style="display:none">
+    <p>今天天气很好，晴空万里，适合户外活动。</p>
+</div>
+<script>
+    var t = $("#slide");
+    $("#btn1").click(function () { t.slideDown(1000); });
+    $("#btn2").click(function () { t.slideUp(1000); });
+    $("#btn3").click(function () { t.slideToggle(1000); });
+</script>

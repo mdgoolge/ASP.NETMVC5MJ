@@ -1,0 +1,56 @@
+﻿@{
+    string s = "<div><p>段落1</p><p>段落2</p></div>";
+    string s1 = "", s2 = "", s3 = "",s4="";
+    string[] h3Styles = { "btn-primary", "btn-success", "btn-info","btn-warning" };
+    for (int i = 1; i < 5; i++)
+    {
+        s1 += "<h3>标题" + i + "</h3>" + s;
+        var k = i % h3Styles.Length;
+        s2 +=  string.Format("<div class=\"{0}\">标题{1}</div>",h3Styles[k], i) + s;
+        s3 += "<h3 class=\"btn-primary\">标题" + i + "</h3>" + s;
+        s4 += "<h3 class=\"btn-success\">标题" + i + "</h3>" + s;
+    }
+}
+
+<h4>jQueryUI accordion基本用法</h4>
+<div class="row">
+    <div class="col-md-3">
+        <h5>用法1：默认样式</h5>
+        <div id="div1">
+            @Html.Raw(s1)
+        </div>
+    </div>
+    <div class="col-md-3">
+        <h5>用法2：自定义标题样式</h5>
+        <div id="div2">
+            @Html.Raw(s2)
+        </div>
+    </div>
+    <div class="col-md-3">
+        <h5>用法3：让每项都可以“折叠/展开”切换</h5>
+        <div id="div3">
+            @Html.Raw(s3)
+        </div>
+    </div>
+    <div class="col-md-3">
+        <h5>用法4：鼠标悬停自动展开</h5>
+        <div id="div4">
+            @Html.Raw(s4)
+        </div>
+    </div>
+</div>
+<script>
+    $.ui.accordion(null, "#div1")
+    $.ui.accordion(null, "#div2");
+    var options3 = {
+        collapsible: true,
+        active: false
+    };
+    $.ui.accordion(options3, "#div3");
+    var options4 = {
+        collapsible: true,
+        active: false,
+        event: "mouseover"
+    };
+    $.ui.accordion(options4, "#div4");
+</script>

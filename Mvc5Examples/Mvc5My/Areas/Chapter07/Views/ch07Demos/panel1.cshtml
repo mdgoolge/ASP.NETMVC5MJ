@@ -1,0 +1,56 @@
+﻿<ul class="list-inline">
+    <li>单击按钮可改变面板组合色：</li>
+    <li>
+        <div class="btn-group-sm">
+            <button id="btn1" class="btn btn-default">default</button>
+            <button id="btn2" class="btn btn-primary">primary</button>
+            <button id="btn3" class="btn btn-success">success</button>
+            <button id="btn4" class="btn btn-info">info</button>
+            <button id="btn5" class="btn btn-warning">warning</button>
+            <button id="btn6" class="btn btn-danger">danger</button>
+        </div>
+    </li>
+</ul>
+<div class="row">
+    <div class="col-md-3">
+        <div id="panel1" class="panel panel-default">
+            <div class="panel-body">1、主体</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div id="panel2" class="panel panel-default">
+            <div class="panel-heading">2、头部</div>
+            <div class="panel-body">主体</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div id="panel3" class="panel panel-default">
+            <div class="panel-body">3、主体</div>
+            <div class="panel-footer">尾部（灰色背景）</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div id="panel4" class="panel panel-default">
+            <div class="panel-heading">4、头部</div>
+            <div class="panel-body">主体</div>
+            <div class="panel-footer">尾部（灰色背景）</div>
+        </div>
+    </div>
+</div>
+<div id="panel5" class="panel panel-default">
+    <div class="panel-heading panel-title">5、头部（大字体）</div>
+    <div class="panel-body">主体</div>
+    <div class="panel-footer">尾部（灰色背景）</div>
+</div>
+<script>
+    $(function () {
+        $("button").click(function (e) {
+            var v = "panel panel-" + e.target.textContent;
+            $("#panel1").attr("class", v);
+            $("#panel2").attr("class", v);
+            $("#panel3").attr("class", v);
+            $("#panel4").attr("class", v);
+            $("#panel5").attr("class", v);
+        });
+    });
+</script>

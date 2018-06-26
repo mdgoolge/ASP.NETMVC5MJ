@@ -1,0 +1,24 @@
+﻿<h4>jQueryUI提供的datepicker基本用法</h4>
+<p>
+    用法1：<input type="text" id="datepicker1">
+</p>
+<p>
+    用法2：<input type="text" id="datepicker2">
+</p>
+<p>
+    用法3：<input type="text" id="datepicker3">
+</p>
+<div id="datepicker4">用法4：</div>
+<script>
+    $("#datepicker1").datepicker();
+    $("#datepicker2").datepicker({
+        changeMonth: true,
+        changeYear: true
+    });
+    $("#datepicker3").datepicker({
+        numberOfMonths: 3,
+        showButtonPanel: true
+    });
+    $("#datepicker4").datepicker();
+</script>
+

@@ -1,0 +1,34 @@
+﻿<h4>警告框基本用法（dialogAlert）</h4>
+<p>
+    <button id="btn1" class="btn btn-primary">弹出警告框1</button>
+    <button id="btn2" class="btn btn-primary">显示警告框2</button>
+    <button id="btn3" class="btn btn-primary">显示警告框3</button>
+</p>
+
+<div id="alert2" class="alert alert-warning">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <p>（警告框2）嗨，这是警告信息</p>
+</div>
+<div id="alert3" class="alert alert-danger">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <h4>（警告框3）嗨，出错了！</h4>
+    <p>先把错纠正过来吧。</p>
+    <p>
+        <button type="button" class="btn btn-danger">按方式1处理</button>
+        <button type="button" class="btn btn-default">按方式2处理</button>
+    </p>
+</div>
+<script>
+    $(function () {
+        $(".alert").hide();  //刚开始隐藏
+    });
+    $("#btn1").click(function () {
+        alert("hello");
+    });
+    $("#btn2").click(function () {
+        $("#alert2").show();
+    });
+    $("#btn3").click(function () {
+        $("#alert3").show();
+    });
+</script>

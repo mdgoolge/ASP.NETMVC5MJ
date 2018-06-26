@@ -1,0 +1,48 @@
+﻿<style>
+    .mytext{ font-size:20px; }
+    .mydiv {
+        display: table-cell;vertical-align: middle; text-align:center;
+        background-origin: border-box; width:250px;  height:120px;
+    }
+    .mydiv1 {
+        background-image: linear-gradient(45deg, red, yellow, green);
+        border-width: 20px; border-radius: 20%;
+     }
+    .mydiv2 {
+        background-image: radial-gradient(red, yellow, green);
+        border-width: 10px; border-radius: 50%;
+     }
+    .mydiv3 {
+        background-image: linear-gradient(to bottom, red, yellow, green);
+        border-width: 2px; border-radius: 5%;
+     }
+</style>
+<h3>显示、隐藏和切换（hide、show、toggle）的基本用法</h3>
+<p class="text-center">
+    <button id="btn1" class="btn btn-primary">显示</button>
+    <button id="btn2" class="btn btn-primary">隐藏</button>
+    <button id="btn3" class="btn btn-primary">[显示/隐藏]切换</button>
+</p>
+<div class="row">
+    <div class="col-md-4">
+        <div id="div1" class="mydiv mydiv1">
+            <span class="mytext">Hello，我是div1</span>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div id="div2" class="mydiv mydiv2">
+            <span class="mytext">Hello，我是div2</span>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div id="div3" class="mydiv mydiv3">
+            <span class="mytext">Hello，我是div3</span>
+        </div>
+    </div>
+</div>
+<script>
+    var t = $("#div1, #div2, #div3");
+    $("#btn1").click(function () { t.show(500); });
+    $("#btn2").click(function () { t.hide(500); });
+    $("#btn3").click(function () { t.toggle(1000); });
+</script>

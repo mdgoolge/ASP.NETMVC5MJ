@@ -1,0 +1,22 @@
+﻿<style>
+    input[type=text] { max-width: 150px; }
+</style>
+<h4>工具提示（tooltip）基本用法</h4>
+<div class="form-horizontal">
+    <div class="form-group">
+        <label class="col-md-2 control-label">姓名：</label>
+        <div class="col-md-6">
+            <input type="text" class="form-control" title="请输入长度在3～20之间的字符" />
+        </div>
+    </div>
+</div>
+<div>
+    <button class="btn btn-default" data-placement="left" title="提示信息1">左侧弹出</button>
+    <button class="btn btn-default" data-placement="top" title="提示信息2">上方弹出</button>
+    <button class="btn btn-default" data-placement="bottom" title="提示信息3">下方弹出</button>
+    <button class="btn btn-default" data-placement="right" title="提示信息4">右侧弹出</button>
+</div>
+<script>
+    $("input[type=text]").tooltip({ placement: "right" });
+    $(".btn").tooltip();
+</script>
