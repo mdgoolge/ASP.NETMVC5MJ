@@ -1,0 +1,66 @@
+﻿@model List<Mvc5My.Areas.Chapter08.Models.MyDb2Model.MyTable3>
+
+<p class="text-center h4">成绩管理</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            @{var t = Model.FirstOrDefault();}
+            <th>@Html.DisplayNameFor(model => t.StudentID)</th>
+            <th>@Html.DisplayNameFor(model => t.MyTable2.StudentName)</th>
+            <th>@Html.DisplayNameFor(model => t.MyTable1.KeChengID)</th>
+            <th>@Html.DisplayNameFor(model => t.MyTable1.KeChengName)</th>
+            <th>@Html.DisplayNameFor(model => t.Grade)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => m.StudentID)</td>
+                <td>@Html.DisplayFor(modelItem => m.MyTable2.StudentName)</td>
+                <td>@Html.DisplayFor(modelItem => m.KeChengID)</td>
+                <td>@Html.DisplayFor(modelItem => m.MyTable1.KeChengName)</td>
+                <th>@Html.DisplayFor(model => m.Grade)</th>
+
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5">
+                @using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "bodyContent" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <label>选择课程：</label>
+                    @Html.DropDownListFor(
+                         m => Model.FirstOrDefault().KeChengID,
+                         (SelectList)ViewBag.kcList,
+                         htmlAttributes: new { @style = "min-width:160px;" })
+                    <input type="submit" name="btn" value="选择" class="btn btn-success" />
+                    if ((bool)ViewBag.CanAdd == false)
+                    {
+                        <input type="submit" name="btn" value="添加成绩" class="btn btn-default" disabled style="margin-left:30px" />
+                        @Html.ActionLink("编辑成绩", "Edit", new { kcid = ViewBag.kcID }, new { @class = "btn btn-success", @style = "margin-left:10px;" })
+                        @Ajax.ActionLink("删除成绩", "Delete",
+                            new { kcid = ViewBag.kcID },
+                            new AjaxOptions
+                            {
+                                UpdateTargetId = "bodyContent",
+                                HttpMethod = "POST",
+                                Confirm = "确实要删除所有学生课程号为 " + ViewBag.kcID + " 的成绩吗？"
+                            },
+                            new { @class = "btn btn-success", @style = "margin-left:10px;" })
+                    }
+                    else
+                    {
+                        <input type="submit" name="btn" value="添加成绩" class="btn btn-success" style="margin-left:30px" />
+                        <input type="submit" name="btn" value="编辑成绩" class="btn btn-default" disabled />
+                        <input type="submit" name="btn" value="删除成绩" class="btn btn-default" disabled />
+                    }
+                }
+
+            </td>
+        </tr>
+    </tfoot>
+</table>

@@ -39,10 +39,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -142,13 +152,33 @@
     <Compile Include="Areas\Chapter06\Controllers\ch06DemosController.cs" />
     <Compile Include="Areas\Chapter07\Chapter07AreaRegistration.cs" />
     <Compile Include="Areas\Chapter07\Controllers\ch07DemosController.cs" />
+    <Compile Include="Areas\Chapter08\Chapter08AreaRegistration.cs" />
+    <Compile Include="Areas\Chapter08\Controllers\ch08DemosController.cs" />
+    <Compile Include="Areas\Chapter08\Controllers\MyDb2Controllers\MyDb2Table1Controller.cs" />
+    <Compile Include="Areas\Chapter08\Controllers\MyDb2Controllers\MyDb2Table2Controller.cs" />
+    <Compile Include="Areas\Chapter08\Controllers\MyDb2Controllers\MyDb2Table3Controller.cs" />
+    <Compile Include="Areas\Chapter08\cs\MyDb2Init.cs" />
+    <Compile Include="Areas\Chapter08\cs\MyDb2InitAlways.cs" />
+    <Compile Include="Areas\Chapter08\Models\MyDb2Model\MyDb2.cs" />
+    <Compile Include="Areas\Chapter08\Models\MyDb2Model\MyTable2.cs" />
+    <Compile Include="Areas\Chapter08\Models\MyDb2Model\MyTable3.cs" />
+    <Compile Include="Areas\Chapter08\Models\MyDb2Model\MyTable1.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\MyDb1Model\MyDb1.cs" />
+    <Compile Include="Models\MyDb1Model\MyTable1.cs" />
+    <Compile Include="Models\MyDb1Model\MyTable2.cs" />
+    <Compile Include="Models\MyDb1Model\MyTable3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\dbo.Table.sql" />
+    <Content Include="App_Data\MyDb1.mdf" />
+    <Content Include="App_Data\MyDb1_log.ldf">
+      <DependentUpon>MyDb1.mdf</DependentUpon>
+    </Content>
     <Content Include="Areas\Chapter03\css\ch03Styles.css" />
     <Content Include="Areas\Chapter03\js\jquery.validate.messages_cn.js" />
     <Content Include="Areas\Chapter04\common\ch04Scripts.js" />
@@ -402,6 +432,27 @@
     <Content Include="Areas\Chapter07\Views\ch07Demos\animation4.cshtml" />
     <Content Include="Areas\Chapter07\Views\ch07Demos\animation5.cshtml" />
     <Content Include="Areas\Chapter07\Views\ch07Demos\animation6.cshtml" />
+    <Content Include="Areas\Chapter08\Views\web.config" />
+    <Content Include="Areas\Chapter08\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Chapter08\Views\MyDb2Table1\Create.cshtml" />
+    <Content Include="Areas\Chapter08\Views\MyDb2Table1\Delete.cshtml" />
+    <Content Include="Areas\Chapter08\Views\MyDb2Table1\Details.cshtml" />
+    <Content Include="Areas\Chapter08\Views\MyDb2Table1\Edit.cshtml" />
+    <Content Include="Areas\Chapter08\Views\MyDb2Table1\Index.cshtml" />
+    <Content Include="Areas\Chapter08\Views\MyDb2Table2\Create.cshtml" />
+    <Content Include="Areas\Chapter08\Views\MyDb2Table2\Delete.cshtml" />
+    <Content Include="Areas\Chapter08\Views\MyDb2Table2\Details.cshtml" />
+    <Content Include="Areas\Chapter08\Views\MyDb2Table2\Edit.cshtml" />
+    <Content Include="Areas\Chapter08\Views\MyDb2Table2\Index.cshtml" />
+    <Content Include="Areas\Chapter08\Views\MyDb2Table3\Create.cshtml" />
+    <Content Include="Areas\Chapter08\Views\MyDb2Table3\Delete.cshtml" />
+    <Content Include="Areas\Chapter08\Views\MyDb2Table3\Details.cshtml" />
+    <Content Include="Areas\Chapter08\Views\MyDb2Table3\Edit.cshtml" />
+    <Content Include="Areas\Chapter08\Views\MyDb2Table3\Index.cshtml" />
+    <Content Include="Areas\Chapter08\Views\Shared\ch08Demos.cshtml" />
+    <Content Include="Areas\Chapter08\Views\ch08Demos\ch08Index.cshtml" />
+    <Content Include="Areas\Chapter08\Views\ch08Demos\InitMyDb2.cshtml" />
+    <Content Include="Areas\Chapter08\Views\MyDb2Table3\GradeInfo.cshtml" />
     <None Include="Properties\PublishProfiles\MVC5My.pubxml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
@@ -442,7 +493,6 @@
     <Content Include="Views\Shared\_AreasLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Areas\Chapter01\Models\" />
     <Folder Include="Areas\Chapter02\Models\" />
     <Folder Include="Areas\Chapter03\Views\ch03\" />
@@ -451,7 +501,6 @@
     <Folder Include="Areas\Chapter07\Models\" />
     <Folder Include="common\css\" />
     <Folder Include="common\js\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

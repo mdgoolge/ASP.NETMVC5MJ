@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Mvc5Examples.Areas.Chapter08.cs;
+using Mvc5My.Areas.Chapter08.Models.MyDb2Model;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -12,7 +15,11 @@ namespace Mvc5My
     public class MvcApplication : System.Web.HttpApplication
     {
         protected void Application_Start()
-        {
+        { 
+            //（第8章示例）发布时要注释掉该行语句
+            Database.SetInitializer<MyDb2>(new MyDb2Init());
+
+
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

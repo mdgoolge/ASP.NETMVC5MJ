@@ -1,0 +1,42 @@
+﻿@model Mvc5My.Areas.Chapter08.Models.MyDb2Model.MyTable3
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MyTable3</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MyTable1.KeChengName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MyTable1.KeChengName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MyTable2.StudentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MyTable2.StudentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Grade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Grade)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
