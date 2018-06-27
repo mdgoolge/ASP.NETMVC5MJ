@@ -48,17 +48,33 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Spatial, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.6.0\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http.OData, Version=5.3.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.5.3.1\lib\net45\System.Web.Http.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -127,6 +143,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiService\Controllers\MyStudentsController.cs" />
+    <Compile Include="ApiService\Models\MyDb3.cs" />
+    <Compile Include="ApiService\Models\MyStudent.cs" />
+    <Compile Include="ApiService\Models\Student.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -163,6 +183,8 @@
     <Compile Include="Areas\Chapter08\Models\MyDb2Model\MyTable2.cs" />
     <Compile Include="Areas\Chapter08\Models\MyDb2Model\MyTable3.cs" />
     <Compile Include="Areas\Chapter08\Models\MyDb2Model\MyTable1.cs" />
+    <Compile Include="Areas\Chapter09\Chapter09AreaRegistration.cs" />
+    <Compile Include="Areas\Chapter09\Controllers\ch09DemosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -453,6 +475,13 @@
     <Content Include="Areas\Chapter08\Views\ch08Demos\ch08Index.cshtml" />
     <Content Include="Areas\Chapter08\Views\ch08Demos\InitMyDb2.cshtml" />
     <Content Include="Areas\Chapter08\Views\MyDb2Table3\GradeInfo.cshtml" />
+    <Content Include="Areas\Chapter09\Views\web.config" />
+    <Content Include="Areas\Chapter09\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Chapter09\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Chapter09\Views\ch09Demos\Index.cshtml" />
+    <Content Include="Areas\Chapter09\Views\Shared\ch09Demos.cshtml" />
+    <Content Include="Areas\Chapter09\Views\ch09Demos\ch09Index.cshtml" />
+    <Content Include="Areas\Chapter09\Views\ch09Demos\Demo1.cshtml" />
     <None Include="Properties\PublishProfiles\MVC5My.pubxml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
@@ -499,8 +528,10 @@
     <Folder Include="Areas\Chapter04\Models\" />
     <Folder Include="Areas\Chapter06\Models\" />
     <Folder Include="Areas\Chapter07\Models\" />
+    <Folder Include="Areas\Chapter09\Models\" />
     <Folder Include="common\css\" />
     <Folder Include="common\js\" />
+    <Folder Include="Views\MyStudents\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

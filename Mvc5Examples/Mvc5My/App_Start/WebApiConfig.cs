@@ -1,7 +1,10 @@
-﻿using System;
+﻿using Mvc5My.ApiService.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.OData.Builder;
+using System.Web.Http.OData.Extensions;
 
 namespace Mvc5My
 {
@@ -10,6 +13,10 @@ namespace Mvc5My
         public static void Register(HttpConfiguration config)
         {
             // Web API 配置和服务
+            ODataConventionModelBuilder builder = new ODataConventionModelBuilder();
+            builder.EntitySet<Student>("Students");
+            config.Routes.MapODataServiceRoute ("odata", "odata", builder.GetEdmModel());
+
 
             // Web API 路由
             config.MapHttpAttributeRoutes();
