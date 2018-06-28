@@ -1,0 +1,10 @@
+﻿@model  IQueryable<Mvc5My.StudentsService.Student>
+<h4 class="bg-primary">获取所有学生信息</h4>
+
+<h5> use: odata/Students @ViewBag.uri </h5>
+<ul>
+    @foreach (var v in Model)
+    {
+        <li>@string.Format("{0},{1},{2}", v.ID, v.Name, v.Grade)</li>
+    }
+</ul>

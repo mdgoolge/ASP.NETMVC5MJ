@@ -1,0 +1,67 @@
+﻿@{
+    var r1 = "/odata/Students";
+    var r2 = "/odata/Students(15001002)";
+    //也可以用下面的办法实现：
+    //var r1 = Url.HttpRouteUrl("odata", new { odatapath = "Students" });
+    //var r2 = Url.HttpRouteUrl("odata", new { odatapath = "Students(15001002)" });
+}
+<pre>
+r1=@r1
+r2=@r2
+</pre>
+<h5>调用GetStudents结果为：</h5>
+<ul id="result1"></ul>
+<h5>调用Students("15001002")结果为：</h5>
+<ul id="result2"></ul>
+<script>
+    $(document).ready(function () {
+        $.ajax("@r1", { dataType: "json" })
+            .done(function (data) {
+                $.each(data, function (dataKey, dataValue) {
+                    if (dataKey === 'odata.metadata') {
+                        $('#result1').append('<li>' + dataValue + '</li>');
+                    }
+                    else {
+                        $.each(dataValue, function (index, value) {
+                            $('#result1').append('<li>' + Details(value) + '</li>');
+                        });
+                    }
+                });
+            })
+            .fail(function (jqXHR) {
+                showFail(jqXHR, $('#result1'));
+            });
+
+        $.ajax("@r2")
+            .done(function (data) {
+                $('#result2').append('<li>' + Details(data) + '</li>');
+            })
+            .fail(function (jqXHR) {
+                showFail(jqXHR, $('#result2'));
+            });
+    });
+    function Details(item) {
+        var s = "";
+        $.each(item, function (key, value) {
+            if (key === 'odata.metadata') {
+                s += value + '<br/>';
+            }
+            else {
+                s += $.validator.format('{0}={1}，', key, value);
+            }
+        });
+        return s.substr(0, s.length - 1);
+    }
+
+    function showFail(xhr, selector) {
+        selector.append('<li>出错了！</li>');
+        if (xhr.responseJSON != undefined) {
+            $.each(xhr.responseJSON, function (key, value) {
+                $('<li>', { text: key + '：' + value }).appendTo(selector);
+            });
+        }
+        selector.append(
+            '<li>status：' + xhr.status + '</li>' +
+            '<li>statusText：' + xhr.statusText + '</li>');
+    }
+</script>

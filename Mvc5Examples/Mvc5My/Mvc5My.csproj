@@ -56,11 +56,16 @@
       <HintPath>..\packages\Microsoft.Data.OData.5.6.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.6.0\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Spatial, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Spatial.5.6.0\lib\net40\System.Spatial.dll</HintPath>
       <Private>True</Private>
@@ -144,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiService\Controllers\MyStudentsController.cs" />
+    <Compile Include="ApiService\Controllers\StudentsController.cs" />
     <Compile Include="ApiService\Models\MyDb3.cs" />
     <Compile Include="ApiService\Models\MyStudent.cs" />
     <Compile Include="ApiService\Models\Student.cs" />
@@ -194,6 +200,11 @@
     <Compile Include="Models\MyDb1Model\MyTable2.cs" />
     <Compile Include="Models\MyDb1Model\MyTable3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\StudentsService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.datasvcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\dbo.Table.sql" />
@@ -482,6 +493,18 @@
     <Content Include="Areas\Chapter09\Views\Shared\ch09Demos.cshtml" />
     <Content Include="Areas\Chapter09\Views\ch09Demos\ch09Index.cshtml" />
     <Content Include="Areas\Chapter09\Views\ch09Demos\Demo1.cshtml" />
+    <Content Include="Areas\Chapter09\Views\ch09Demos\Demo2.cshtml">
+      <SubType>
+      </SubType>
+    </Content>
+    <Content Include="Areas\Chapter09\Views\ch09Demos\Init.cshtml" />
+    <Content Include="Areas\Chapter09\Views\ch09Demos\httpStatusCode.cshtml" />
+    <Content Include="Areas\Chapter09\Views\ch09Demos\Demo3.cshtml" />
+    <Content Include="Areas\Chapter09\Views\ch09Demos\Other1_GetByID.cshtml" />
+    <Content Include="Areas\Chapter09\Views\ch09Demos\Other2_Filter.cshtml" />
+    <Content Include="Areas\Chapter09\Views\ch09Demos\Other3_OrderBy.cshtml" />
+    <Content Include="Areas\Chapter09\Views\ch09Demos\Other4_Paging.cshtml" />
+    <Content Include="Areas\Chapter09\Views\ch09Demos\Other5_Create.cshtml" />
     <None Include="Properties\PublishProfiles\MVC5My.pubxml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
@@ -501,6 +524,10 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Service References\StudentsService\Reference.datasvcmap">
+      <Generator>DataServicesCoreClientGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -520,6 +547,7 @@
     <Content Include="Views\Shared\_AreasPartialRef.cshtml" />
     <Content Include="Views\Shared\_AreasPartialAjax.cshtml" />
     <Content Include="Views\Shared\_AreasLayout.cshtml" />
+    <Content Include="Service References\StudentsService\service.edmx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Chapter01\Models\" />
@@ -539,6 +567,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ServiceReferenceMetadataStorage Include="Service References\StudentsService\">
+      <Type>datasvcmap</Type>
+    </ServiceReferenceMetadataStorage>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

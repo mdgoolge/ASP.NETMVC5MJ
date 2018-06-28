@@ -1,0 +1,9 @@
+﻿@model  IQueryable<Mvc5My.StudentsService.Student>
+<h4 class="bg-primary">Other4_Paging</h4>
+<ul>
+    @foreach (var v in Model)
+    {
+        <li>@string.Format("{0},{1},{2}", v.ID, v.Name, v.Grade)</li>
+    }
+</ul>
+
