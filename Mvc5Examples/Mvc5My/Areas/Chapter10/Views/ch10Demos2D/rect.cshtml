@@ -1,0 +1,45 @@
+﻿<style>
+    svg, canvas { width:100%; height: 200px; border: 1px solid grey; }
+</style>
+<h3 class="btn-success">矩形</h3>
+<div class="row">
+    <div class="col-md-6">
+        <h4>用svg实现</h4>
+        <svg>
+            @{  int x = 10, w = 100, h = 80; }
+            <rect x="@x" y="10" width="@w" height="@h"
+                  rx="8" ry="8" fill="green"
+                  stroke="red" stroke-width="10" />
+            <rect x="@(x+w+20)" y="10" width="@w" height="@h"
+                  rx="10" ry="50" fill="orange" stroke="black" />
+            <rect x="@(x+2*(w+20))" y="10" rx="20" ry="20" width="@h" height="@h"
+                  style="fill: none; stroke: black; stroke-width: 5; opacity: 0.5" />
+        </svg>
+    </div>
+    <div class="col-md-6">
+        <h4>用canvas实现</h4>
+        <canvas id="c1"></canvas>
+    </div>
+</div>
+<script>
+    var v = $("#c1");
+    v.attr("width", v.css("width"));
+    v.attr("height", v.css("height"));
+    var ctx = document.getElementById("c1").getContext("2d");
+    var x = 10, y = 10, w = 100, h = 80;
+    ctx.fillStyle = "#00FF00";
+    ctx.fillRect(x, y, w, h);
+    ctx.lineWidth = 10;
+    ctx.strokeStyle = "#FF0000";
+    ctx.strokeRect(x, y, w, h);
+
+    ctx.fillStyle = "orange";
+    ctx.fillRect(x + w + 20, y, w, h);
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "black";
+    ctx.strokeRect(x + w + 20, y, w, h);
+
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "black";
+    ctx.strokeRect(x + 2 * (w + 20), y, w, h);
+</script>

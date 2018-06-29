@@ -1,0 +1,30 @@
+﻿<canvas id="canvas1" width="500" height="120"></canvas>
+<script>
+    $(document).ready(function () {
+        drawRect();
+    })
+    function drawRect() {
+        var canvas = document.getElementById("canvas1");
+        var ctx = canvas.getContext("2d");
+        var x1 = 15, y1 = 10, width = 100, height = 100;
+        // 绘制带红色轮廓的黑色矩形
+        ctx.fillRect(x1, y1, width, height);
+        ctx.lineWidth = 5;  //线宽
+        ctx.strokeStyle = "#ff0000";
+        ctx.strokeRect(x1, y1, width, height);
+
+        //绘制带绿色轮廓的蓝色矩形
+        x1 += width + 25;
+        ctx.fillStyle = "rgb(0, 162, 232)";
+        ctx.fillRect(x1, y1, width, height);
+        ctx.strokeStyle = "rgb(0, 255, 0)";
+        ctx.strokeRect(x1, y1, width, height);
+
+        //只绘制轮廓
+        x1 += width + 25;
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = "rgb(0, 0, 255)";
+        ctx.strokeRect(x1, y1, width, height);
+
+    }
+</script>
