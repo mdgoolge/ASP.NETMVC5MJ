@@ -1,0 +1,15 @@
+﻿<style>
+   #loading3D{position:absolute;top:160px;width:100%;
+              font-size:36px;text-align:center;
+   }
+</style>
+<div id="loading3D">正在加载3D场景......</div>
+<iframe id="viewer"
+        src="@Url.Action("Rend3dScene", "ch10Demos3D", new { src = ViewBag.src }) ";
+        style="width:100%;min-height:360px;border:1px solid red"></iframe>
+<script>
+    $("#viewer").height(document.body.scrollHeight);
+    $("#viewer").load(function () {
+        $("#loading3D").hide();
+    });
+</script>

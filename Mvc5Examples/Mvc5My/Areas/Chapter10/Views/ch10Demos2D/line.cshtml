@@ -1,0 +1,76 @@
+﻿<style>
+    svg, canvas { width: 100%; height: 150px; border: 1px solid grey; }
+</style>
+<h3 class="btn-success">直线</h3>
+<h4>用svg实现</h4>
+<svg>
+    <desc>横线</desc>
+    <line x1="0" y1="50%" x2="100%" y2="50%" stroke="red" />
+    <desc>纵线</desc>
+    <line x1="50%" y1="10%" x2="50%" y2="90%" stroke="red" />
+    @{
+        //一系列逐渐加粗的竖线
+        for (int i = 1; i < 30; i++)
+        {
+            var w = i * 0.2;
+            var x = i * 25;
+            <line x1="@x" y1="10%" x2="@x" y2="90%" stroke-width="@w" stroke="#00FF00"></line>
+        }
+        //用画直线的办法绘制正弦曲线
+        var dx = 360;
+        double x1 = 50.0, y1 = 75.0;
+        for (var x = -dx; x < dx; x++)
+        {
+            var x2 = 50.0 + dx + x;
+            var y2 = 75.0 - Math.Sin(x * Math.PI / 180.0) * 70;
+            <line x1="@x1" y1="@y1" x2="@x2" y2="@y2" stroke="#0000FF"></line>
+            x1 = x2;
+            y1 = y2;
+        }
+    }
+</svg>
+<h4>用canvas实现</h4>
+<canvas id="c1"></canvas>
+<script>
+    var v = $("#c1");
+    v.attr("width", v.css("width"));
+    v.attr("height", v.css("height"));
+    var ctx = document.getElementById("c1").getContext("2d");
+    var w = v.attr("width");
+    var h = v.attr("height");
+    var halfW = w / 2;
+    var halfH = h / 2;
+
+    ctx.beginPath();
+    //横线
+    ctx.moveTo(0, halfH);
+    ctx.lineTo(w, halfH);
+    //纵线
+    ctx.moveTo(halfW, 0);
+    ctx.lineTo(halfW, h);
+    ctx.strokeStyle = "#FF0000";
+    ctx.stroke();
+
+    //一系列逐渐加粗的竖线
+    ctx.strokeStyle = "#00FF00";
+    for (var i = 1; i < 30; i++) {
+        ctx.lineWidth = i * 0.2;
+        ctx.beginPath();
+        ctx.moveTo(i * 25, 10);
+        ctx.lineTo(i * 25, h - 10);
+        ctx.stroke();
+    }
+
+    //用画直线的办法绘制正弦曲线
+    ctx.strokeStyle = "#0000FF";
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    dx = 360;
+    dy = 70;
+    ctx.moveTo(halfW - dx, halfH);
+    for (var x = -dx; x < dx; x++) {
+        var y = Math.sin(x * Math.PI / 180.0);
+        ctx.lineTo(halfW + x, halfH - dy * y);
+    }
+    ctx.stroke();
+</script>
